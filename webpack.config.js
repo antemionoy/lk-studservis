@@ -64,7 +64,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
-            title: 'pack',
+            title: 'lk',
             inject: 'body',
             template: 'index.html'
         }),
@@ -75,7 +75,7 @@ module.exports = {
     devServer: {
         static: path.join(__dirname, './dist'),
         compress: true,
-        port: 3001,
+        port: 3000,
         open: true,
         client: {
             overlay: true,
