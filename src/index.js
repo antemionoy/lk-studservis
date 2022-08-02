@@ -1,18 +1,16 @@
-import { createRoot } from 'react-dom/client';
 import './assets/styles/index.scss'
-import App from "./App";
-
-const title = 'Title 4';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+import App from './components/App';
+import store from './slices/index'
 
 const container = document.getElementById('app');
 const root = createRoot(container);
 root.render(
-    <App title={title}/>
+    <Provider store={store}>
+        <App />
+    </Provider>
 );
 
-// ReactDOM.render(
-//     <App title={title}/>,
-//     document.getElementById('app')
-// )
 
 module.hot.accept()
