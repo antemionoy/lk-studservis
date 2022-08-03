@@ -1,0 +1,19 @@
+.sign-in{
+    height: 100vh;
+
+    &__sidebar{
+        background-color: #3B4B64;
+        width: 33.33%;
+        height: inherit;
+    }
+
+    &__content{
+        background-color: #fff;
+        height: inherit;
+    }
+
+    &__icon{
+        width: 24px;
+        height: 24px;
+    }
+}

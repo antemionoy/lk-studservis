@@ -1,8 +1,10 @@
-const LoginPage = () =>{
-    return(
-        <div>
-            Login
-        </div>
+import SignIn from "../components/SignIn/SignIn"
+
+const LoginPage = () => {
+    return (
+        <main className="main">
+            <SignIn />
+        </main>
     )
 }
 
