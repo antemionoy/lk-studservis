@@ -1,24 +1,24 @@
-import Icon from '../Ui/Icon'
+import { Link } from 'react-router-dom'
 import './SignIn.scss'
-
 
 const SignIn = () => {
     return (
         <div className="sign-in d-flex">
-            <div className="sign-in__sidebar d-flex">
-                <div className="sign-in__header">
-                    <img src="@assets/images/logo.svg" alt="" className="sign-in__logo" />
-                    <p className="sign-in__desc">партнерская программа</p>
-                </div>
-                <img src="" alt="" className="sign-in__picture" />
-                <p className="sign-in__text d-flex">
-                    <u>Наш чат</u> в Telegram
-                    <Icon name='tg' className='sign-in__icon'  />
-                </p>
-            </div>
-            <div className="sign-in__content d-flex">
+            <p className="sign-in__title">Войти в личный кабинет партнера</p>
 
-            </div>
+            <form action="#" className='sign-in__form form form-auth'>
+                <div className="form-auth__group">
+                    <label htmlFor="" className="form-auth__label">Email</label>
+                    <input type="text" className="form-auth__element form-auth__input" placeholder='Введите адрес электронной почты' />
+                </div>
+                <div className="form-auth__group">
+                    <label htmlFor="" className="form-auth__label">Пароль</label>
+                    <input type="text" className="form-auth__element form-auth__input" placeholder='Введите пароль' />
+                </div>
+                <button className="form__button" type='submit'>Войти</button>
+            </form>
+
+            <p>Еще не зарегестрированы? <Link to=''>Регистрация</Link></p>
         </div>
     )
 }

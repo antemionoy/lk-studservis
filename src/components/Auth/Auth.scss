@@ -1,0 +1,61 @@
+.auth {
+    &__grid {
+        height: 100vh;
+    }
+    &__main {
+        background-color: #fff;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+    }
+
+    &__sidebar {
+        background-color: #3b4b64;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 33.33%;
+        // width: 480px;
+        height: inherit;
+        color: #fff;
+    }
+
+    &__inner {
+        max-width: 278px;
+    }
+
+    &__content{
+        max-width: 360px;
+    }
+
+    &__picture {
+        margin: 62px 0px 60px;
+    }
+
+    &__header {
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__content {
+        background-color: #fff;
+        height: inherit;
+    }
+
+    &__desc {
+        font-size: 7px;
+        line-height: 8px;
+        text-transform: uppercase;
+        margin-left: 12px;
+    }
+
+    &__bottom {
+        justify-content: center;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        margin-left: 12px;
+    }
+}
