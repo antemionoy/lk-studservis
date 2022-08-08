@@ -3,7 +3,7 @@ import './SignIn.scss'
 
 const SignIn = () => {
     return (
-        <div className="sign-in d-flex">
+        <div className="sign-in">
             <p className="sign-in__title">Войти в личный кабинет партнера</p>
 
             <form action="#" className='sign-in__form form form-auth'>
