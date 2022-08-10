@@ -1,0 +1,43 @@
+$font-main: "Inter", Verdana, Arial, sans-serif;
+
+$font-secondary: "EB Garamond", Verdana, Arial, sans-serif;
+
+$color-primary: #2979ff;
+$color-dark: #2e3831;
+$color-warning: #d50000;
+
+$color-sucess: #11c339;
+
+$color-main: #fecf28;
+
+$color-green: #b4e13d;
+$color-green2: #93d18e;
+
+$color-blue: #3779bd;
+$color-blue2: #0498ce;
+
+$color-red: #aa1916;
+$color-red2: #ff6363;
+
+$color-darkblue: #3B4B64;
+
+$color-skyblue: #5fc3f1;
+
+$box-shadow-default: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+$spacing: 20px;
+
+$spacing-double: ($spacing * 2);
+
+$letter: 0.02em;
+
+$breakpoints: (
+    sm: 370px,
+    md: 870px,
+    lg: 1440px,
+    xl: 1920px,
+);
+
+$wrapper_container_md: 520px;
+$wrapper_container_lg: 815px;
+$wrapper_container_xl: 970px;

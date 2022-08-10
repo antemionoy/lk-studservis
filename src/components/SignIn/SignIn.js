@@ -17,7 +17,6 @@ const SignIn = () => {
                 </div>
                 <button className="form__button" type='submit'>Войти</button>
             </form>
-
             <p>Еще не зарегестрированы? <Link to=''>Регистрация</Link></p>
         </div>
     )

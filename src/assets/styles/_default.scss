@@ -1,72 +1,3 @@
-
-
-$font-main: "Inter", Verdana, Arial, sans-serif;
-
-$font-secondary: "EB Garamond", Verdana, Arial, sans-serif;
-
-$color-primary: #2979ff;
-
-$color-dark: #2e3831;
-
-$color-warning: #d50000;
-
-$color-sucess: #11c339;
-
-$color-main: #fecf28;
-
-$color-green: #b4e13d;
-$color-green2: #93d18e;
-
-$color-blue: #3779bd;
-$color-blue2: #0498ce;
-
-$color-red: #aa1916;
-$color-red2: #ff6363;
-
-$color-darkblue: #02225c;
-
-$color-skyblue: #5fc3f1;
-
-$color-gray: #c8c7c7;
-$color-gray2: #c4c4c4;
-$color-gray3: #f7f7f7;
-$color-gray4: #e5e5e5;
-$color-grayA5: #A5A5A5;
-$color-grayF3: #F3F5F9;
-
-$color-darkgray: #8e8e8e;
-
-$box-shadow-default: 2px 2px 4px rgba(0, 0, 0, 0.1);
-
-$spacing: 20px;
-
-$spacing-double: ($spacing * 2);
-
-$letter: 0.02em;
-
-$breakpoints: (
-    sm: 370px,
-    md: 870px,
-    lg: 1440px,
-    xl: 1920px,
-);
-
-@mixin media($breakpoint) {
-    @if map-get($breakpoints, $breakpoint) {
-        @media (min-width: map-get($breakpoints, $breakpoint)) {
-            @content;
-        }
-    } @else {
-        @media (min-width: #{$breakpoint}px) {
-            @content;
-        }
-    }
-}
-
-$wrapper_container_md: 520px;
-$wrapper_container_lg: 815px;
-$wrapper_container_xl: 970px;
-
 *,
 *::before,
 *::after {
@@ -147,7 +78,7 @@ select {
 body {
     font-family: $font-main;
     min-width: 320px;
-    font-size: rem(16px);
+    font-size: 16px;
     font-weight: 400;
     background-color: #fff;
     scroll-behavior: smooth;
@@ -449,31 +380,6 @@ button {
     line-height: 28px;
     letter-spacing: 0.4em;
     text-transform: uppercase;
-}
-
-.discount-text {
-    color: #fff;
-    position: relative;
-    display: inline-block;
-    font-size: inherit;
-    line-height: inherit;
-    z-index: inherit;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-5.11deg);
-        display: inline-block;
-        vertical-align: middle;
-        min-width: 92px;
-        width: 100%;
-        max-width: 100%;
-        height: 51px;
-        background-color: #0498ce;
-        z-index: -1;
-    }
 }
 
 .close {

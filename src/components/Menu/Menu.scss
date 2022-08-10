@@ -1,0 +1,17 @@
+.menu{
+    &__item{
+        margin-bottom: 48px;
+    }
+
+    &__link{
+        align-items: center;
+        color: #9DA5B1;
+    }
+
+    &__icon{
+        fill: currentColor;
+        max-width: 18px;
+        max-height: 16px;
+        margin-right: 10px;
+    }
+}

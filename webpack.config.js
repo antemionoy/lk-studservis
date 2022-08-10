@@ -16,7 +16,18 @@ module.exports = {
             {
                 test: /\.(s[ac]|c)ss$/i,
                 exclude: /node_modules/,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "sass-loader",
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            // additionalData: "@import ./assets/styles/index.scss",
+                        },
+                    },
+                ],
+
             },
             {
                 test: /\.(woff|woff2)$/,
@@ -81,8 +92,8 @@ module.exports = {
         client: {
             overlay: true,
         }
-    },     
+    },
     stats: {
         children: true,
-      },
+    },
 };
