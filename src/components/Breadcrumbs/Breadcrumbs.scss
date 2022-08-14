@@ -1,0 +1,25 @@
+.breadcrumbs {
+    padding: 16px 0px;
+
+    &__item {
+        font-size: 14px;
+        line-height: 17px;
+        display: flex;
+        
+        &::after {
+            content: "/";
+            margin: 0px 8px;
+        }
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &__link {
+        &_active {
+            color: #9da5b1;
+        }
+    }
+}

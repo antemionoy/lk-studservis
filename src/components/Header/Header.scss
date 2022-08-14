@@ -1,9 +1,14 @@
-.header{
-    padding: 12px 0px 12px;
+.header {
     background-color: #fff;
-    border-bottom: 1px solid #ACB7BD;
 
-    &__container{
+    &__top {
+        padding: 12px 0px 12px;
+        border-bottom: 1px solid #acb7bd;
         justify-content: space-between;
     }
+
+    &__bottom{
+        border-bottom: 1px solid #acb7bd;
+    }
+
 }

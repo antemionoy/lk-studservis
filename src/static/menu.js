@@ -1,10 +1,12 @@
 export default [
     {
         name: 'Главная страницы',
+        icon: 'home',
         href: '/home/',
     },
     {
         name: 'Финансы',
+        icon: 'home',
         href: '/finance/',
         subItems: [
             {
@@ -19,6 +21,7 @@ export default [
     },
     {
         name: 'Статистика',
+        icon: 'home',
         href: '/stats/',
         subItems: [
             {
@@ -33,18 +36,22 @@ export default [
     },
     {
         name: 'Промоматериалы',
+        icon: 'home',
         href: '/promo/',
     },
     {
         name: 'Новости и Блог',
+        icon: 'home',
         href: '/news/',
     },
     {
         name: 'Техподдержка',
+        icon: 'home',
         href: '/support/',
     },
     {
         name: 'Рефералы',
+        icon: 'refs',
         href: '/refs/',
     },
 ]

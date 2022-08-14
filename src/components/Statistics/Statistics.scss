@@ -1,0 +1,13 @@
+.statistics {
+    padding: 24px 0px 24px;
+
+    &__list {
+        grid-template-columns: repeat(3, 264px);
+        gap: 20px;
+    }
+
+    &__item {
+        min-height: 164px;
+        background-color: #000;
+    }
+}
