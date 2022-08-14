@@ -1,3 +1,4 @@
+import './Content.scss'
 import Header from "../Header/Header"
 
 const Content = () =>{
@@ -5,6 +6,7 @@ const Content = () =>{
         <div className="content">
             <Header/>
 
+            
         </div>
     )
 }

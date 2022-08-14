@@ -1,11 +1,15 @@
 import React from "react";
-import image from '@/assets/images/Df5Tkv1QlA8.jpeg'
 import './Header.scss'
+import HeaderMoney from "./HeaderMoney";
+import HeaderUser from "./HeaderUser";
 
 const Header = () => {
-    return(
-        <header>
-            <img src={image} alt=""/>
+    return (
+        <header className="header">
+            <div className="header__container container d-flex">
+                <HeaderMoney className='header__money' />
+                <HeaderUser className='header__user' />
+            </div>
         </header>
     )
 }

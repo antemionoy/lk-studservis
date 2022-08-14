@@ -137,7 +137,7 @@ button {
 .container {
     width: 100%;
     // max-width: (480px + $spacing * 2);
-    max-width: (580px + $spacing * 2);
+    // max-width: (580px + $spacing * 2);
     margin: 0 auto;
     padding-left: $spacing;
     padding-right: $spacing;
@@ -152,19 +152,19 @@ button {
 
 @include media(md) {
     .container {
-        max-width: (920px + $spacing * 2);
+        // max-width: (920px + $spacing * 2);
     }
 }
 
 @include media(lg) {
     .container {
-        max-width: (1260px + $spacing * 2);
+        // max-width: (1260px + $spacing * 2);
     }
 }
 
 @include media(xl) {
     .container {
-        max-width: (1580px + $spacing * 2);
+        // max-width: (1580px + $spacing * 2);
     }
 }
 
