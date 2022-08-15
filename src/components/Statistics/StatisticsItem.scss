@@ -1,0 +1,43 @@
+.statistics-item {
+    padding: 16px;
+    color: #fff;
+    min-height: 164px;
+    border-radius: 4px;
+
+    &:first-child {
+        background-color: #321fdb;
+    }
+
+    &:nth-child(2) {
+        background-color: #f8b114;
+    }
+
+    &:last-child {
+        background-color: #e45353;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+    }
+
+    &__inner {
+        margin: 12px 0px 0px;
+        align-items: center;
+    }
+
+    &__count {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        text-transform: uppercase;
+    }
+
+    &__percent {
+        font-size: 20px;
+        line-height: 24px;
+        margin-left: 4px;
+    }
+}

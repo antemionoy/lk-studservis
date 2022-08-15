@@ -15,7 +15,7 @@ const HeaderMoney = ({ className }) => {
                 <Icon name='show' width='21' height='24' className="header-money__icon"/>
                 <div className="header-money__inner">
                     <p className="header-money__text">Заморожено</p>
-                    <p className="header-money__total">49679786</p>
+                    <p className="header-money__total header-money__total_color-grey">49679786</p>
                 </div>
             </div>
         </div>

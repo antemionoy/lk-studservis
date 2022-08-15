@@ -1,10 +1,16 @@
 .header {
+    $parent: '.header';
     background-color: #fff;
 
     &__top {
         padding: 12px 0px 12px;
         border-bottom: 1px solid #acb7bd;
-        justify-content: space-between;
+
+        #{$parent}{
+            &__container{
+                justify-content: space-between;
+            }
+        }
     }
 
     &__bottom{

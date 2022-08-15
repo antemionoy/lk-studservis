@@ -6,7 +6,7 @@ export default [
     },
     {
         name: 'Финансы',
-        icon: 'home',
+        icon: 'card',
         href: '/finance/',
         subItems: [
             {
@@ -21,7 +21,7 @@ export default [
     },
     {
         name: 'Статистика',
-        icon: 'home',
+        icon: 'stats',
         href: '/stats/',
         subItems: [
             {
@@ -36,17 +36,17 @@ export default [
     },
     {
         name: 'Промоматериалы',
-        icon: 'home',
+        icon: 'materials',
         href: '/promo/',
     },
     {
         name: 'Новости и Блог',
-        icon: 'home',
+        icon: 'news',
         href: '/news/',
     },
     {
         name: 'Техподдержка',
-        icon: 'home',
+        icon: 'chat',
         href: '/support/',
     },
     {
