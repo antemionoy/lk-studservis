@@ -1,22 +1,29 @@
 import { Link } from 'react-router-dom'
+import Form from '../Form/Form'
+import FormInput from '../Form/FormInput'
+import Button from '../Ui/Button'
 import './SignIn.scss'
 
 const SignIn = () => {
     return (
         <div className="sign-in">
-            <p className="sign-in__title">Войти в личный кабинет партнера</p>
-
-            <form action="#" className='sign-in__form form form-auth'>
-                <div className="form-auth__group">
-                    <label htmlFor="" className="form-auth__label">Email</label>
-                    <input type="text" className="form-auth__element form-auth__input" placeholder='Введите адрес электронной почты' />
-                </div>
-                <div className="form-auth__group">
-                    <label htmlFor="" className="form-auth__label">Пароль</label>
-                    <input type="text" className="form-auth__element form-auth__input" placeholder='Введите пароль' />
-                </div>
-                <button className="form__button" type='submit'>Войти</button>
-            </form>
+            <h1 className="sign-in__title title title_h2">Войти в личный кабинет партнера</h1>
+            <Form className='sign-in__form' name='auth' buttonText ='Войти' method='post'>
+                <FormInput
+                    label='Email'
+                    name='email'
+                    type='text'
+                    placeholder='Введите адрес электронной почты'
+                    error='Введите корректный email'
+                />
+                <FormInput
+                    label='Пароль'
+                    name='password'
+                    type='password'
+                    placeholder='Введите пароль'
+                    error='Не верный пароль'
+                />
+            </Form>
             <p>Еще не зарегестрированы? <Link to=''>Регистрация</Link></p>
         </div>
     )

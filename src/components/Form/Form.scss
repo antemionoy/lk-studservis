@@ -1,0 +1,30 @@
+.form {
+    &__button {
+        width: 100%;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+        color: #303C54;
+    }
+
+    &__group {
+        margin-bottom: 16px;
+    }
+
+    &__element{
+        width: 100%;
+        font-size: 14px;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        color: #9DA5B1;
+        border-radius: 4px;
+        padding: 7px 13px 8px;
+    }
+
+    &__button {
+        margin: 24px 0px 0px;
+    }
+}
