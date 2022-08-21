@@ -3,6 +3,7 @@ import Icon from "../Ui/Icon"
 import Logo from "@/assets/images/logo.png"
 import Promo from "@/assets/images/promo.png"
 import SignIn from '../SignIn/SignIn'
+import SignUp from '../SignUp/SignUp'
 
 const Auth = () => {
     return (
@@ -25,7 +26,8 @@ const Auth = () => {
                 </div>
                 <div className="auth__main d-flex">
                     <div className="auth__content">
-                        <SignIn />
+                        {/* <SignIn /> */}
+                        <SignUp />
                     </div>
                 </div>
             </div>

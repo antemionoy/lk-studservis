@@ -4,7 +4,7 @@ import Button from '../Ui/Button'
 import './Form.scss'
 import FormError from './FormError'
 
-const Form = ({ children, className, name, buttonText, method }) => {
+const Form = ({ children, className, name, buttonText, method, description }) => {
     const [submit, setSubmit] = useState(false)
 
     const formClass = cn(
@@ -20,7 +20,16 @@ const Form = ({ children, className, name, buttonText, method }) => {
                         !!element.props.label &&
                         <label htmlFor={element.props.name} className="form__label">
                             {element.props.label}
+                            {
+                                !!element.props.error &&
+                                <span className='form__required'>*</span>
+                            }
                         </label>
+                    }
+                    {!!element.props.description &&
+                        <p className="form__description">
+                            {element.props.description}
+                        </p>
                     }
                     <element.type {...element.props} key={index} />
                     {!!element.props.error && <FormError text={element.props.error} />}
