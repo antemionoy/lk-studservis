@@ -1,0 +1,38 @@
+.form-field {
+    margin: 0px 0px 16px;
+
+    &:last-of-type{
+        margin: 0px;
+    }
+
+    &__element {
+        width: 100%;
+        font-size: 14px;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        color: #9da5b1;
+        border-radius: 4px;
+        padding: 7px 13px 8px;
+        height: 35px;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+        color: #303c54;
+    }
+
+    &__required {
+        font-size: 16px;
+        margin-left: 4px;
+        color: #e45353;
+    }
+
+    &__description {
+        margin-bottom: 8px;
+        color: #303c54;
+        font-size: 12px;
+        line-height: 1;
+    }
+}

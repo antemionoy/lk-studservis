@@ -11,7 +11,7 @@ export default [
         subItems: [
             {
                 name: 'Вывести деньги',
-                href: '/finance/'
+                href: '/money/'
             },
             {
                 name: 'История транзакций',

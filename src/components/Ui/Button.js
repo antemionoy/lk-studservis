@@ -1,18 +1,18 @@
 import cn from "classnames"
 
-const Button = (props) => {
+const Button = ({ bordered, size, bgcolor, type, className, children, handler }) => {
 
     const buttonClass = cn(
-        props.className,
+        className,
         'button',
-        { ['button_bordered']: props.bordered },
-        { [`button_size-${props.size}`]: props.size },
-        { [`button_bgcolor-${props.bgcolor}`]: props.bgcolor }
+        { ['button_bordered']: bordered },
+        { [`button_size-${size}`]: size },
+        { [`button_bgcolor-${bgcolor}`]: bgcolor }
     )
 
     return (
-        <button type={props.type ?? 'button'} className={buttonClass}>
-            {props.children}
+        <button type={type ?? 'button'} className={buttonClass} onClick={handler}>
+            {children}
         </button>
     )
 }

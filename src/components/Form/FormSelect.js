@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import './FormSelect.scss'
 
 const FormSelect = ({ type, name, description, className, options, currentSelect }) => {
-    const [showSelect, setShowSelect] = useState(true)
+    const [showSelect, setShowSelect] = useState(false)
     const [sources, setSources] = useState([]);
     const wrapperRef = useRef(null)
 
@@ -15,13 +15,31 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
         showSelect && 'form-select_show'
     )
 
-    const handlerSource = (value) => {
-        const ar = [...sources, value];
-        setSources(ar)
+    const addSource = (value, e) => {
+        let arraySources = [...sources, value]
+        if (!e.target.checked) {
+            arraySources = arraySources.filter(el => {
+                return el != value
+            })
+        }
+        setSources(arraySources)
+    }
+
+    const deleteSource = (e) => {
+        console.log(e.target)
+    }
+
+    const toggleSelect = (e) => {
+        if (!showSelect) {
+            setShowSelect(true)
+            return
+        }
+        setShowSelect(false)
     }
 
     useEffect(() => {
         const handlerClick = (e) => {
+            console.log(wrapperRef.current.contains(e.target))
             wrapperRef.current.contains(e.target) || setShowSelect(false)
         };
         document.addEventListener('click', handlerClick);
@@ -29,7 +47,7 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
     }, [])
 
     return (
-        <div className={selectClass} ref={wrapperRef}>
+        <div className={selectClass} onClick={(e) => toggleSelect(e)} ref={wrapperRef}>
             <select className="form-select__hidden" name={name} value={currentSelect}>
                 {options.map((el, index) => (
                     <option value={el.value ?? el.name} key={index}>{el.name}</option>
@@ -39,7 +57,7 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
                 {sources.length > 0 ?
                     <div className="form-select__list d-flex">
                         {sources.map((el, i) => (
-                            <div className="form-select__source">
+                            <div className="form-select__source" onClick={(e) => deleteSource(e)} key={i}>
                                 {el}
                                 <div className="form-select__close close"></div>
                             </div>
@@ -50,25 +68,24 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
                         {currentSelect}
                     </div>
                 }
-                {showSelect &&
-                    <div className='form-select__dropdown'>
-                        {options.map((el, index) => (
+                <div className={`form-select__dropdown ${showSelect ? 'form-select__dropdown_show' : ''}`}>
+                    {
+                        options.map((el, index) => (
                             <label
                                 className='form-select__element d-flex'
                                 key={index}
                                 htmlFor={index}
-                                onClick={() => handlerSource(el.name)}
                             >
 
-                                <input type="checkbox" id={index} value={el.value ?? el.name} className="form-select__checkbox" />
+                                <input type="checkbox" id={index} value={el.value ?? el.name} onChange={(e) => addSource(el.name, e)} className="form-select__checkbox" />
                                 <span className='form-select__value'>{el.name}</span>
                             </label>
-                        ))}
-                    </div>
-                }
+                        ))
+                    }
+                </div>
             </div>
 
-        </div>
+        </div >
     )
 }
 

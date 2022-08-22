@@ -1,21 +1,22 @@
 import './Content.scss'
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
-import Statistics from '../Statistics/Statistics'
-import Traffic from '../Traffic/Traffic'
-import Orders from '../Orders/Orders'
+import Sidebar from '../Sidebar/Sidebar'
 
-const Content = () => {
+const Content = ({ children }) => {
     return (
-        <div className="content">
-            <Header />
-            <div className="content__central">
-                <Statistics />
-                <Traffic />
-                <Orders />
+        <main className='main'>
+            <div className="main__grid d-flex">
+                <Sidebar />
+                <div className="content">
+                    <Header />
+                    <div className="content__central">
+                        {children}
+                    </div>
+                    <Footer />
+                </div>
             </div>
-            <Footer />
-        </div>
+        </main>
     )
 }
 

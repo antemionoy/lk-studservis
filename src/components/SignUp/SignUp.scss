@@ -10,7 +10,54 @@
 
     &__descr {
         text-align: center;
-        margin: 12px 0px 0px;
+        margin: 12px 0px 24px;
+        font-size: 16px;
+        line-height: 24px;
         color: #9da5b1;
+
+        &-bold {
+            color: #000;
+        }
+    }
+
+    // &__steps {
+    //     // overflow: hidden;
+    // }
+
+    &__wrapper {
+        transition: transform 0.5s ease;
+    }
+
+    &__button {
+        width: 100%;
+    }
+
+    &__bottom {
+        display: flex;
+        margin: 32px 0px 0px;
+        justify-content: center;
+    }
+
+    &__step {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.3s ease-out;
+        flex-shrink: 0;
+        width: 100%;
+
+        &_active {
+            opacity: 1;
+            pointer-events: all;
+            flex: 1 0 100%;
+        }
+    }
+
+    &__message {
+        margin: 32px 0px 0px;
+        background-color: #f8f9fa;
+        border: 1px solid #ffe4e6;
+        border-radius: 4px;
+        padding: 16px;
+        line-height: 22px;
     }
 }
