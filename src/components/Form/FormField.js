@@ -3,13 +3,13 @@ import cn from "classnames"
 import FormSelect from './FormSelect'
 
 const FormField = ({ type, name, placeholder, className, label, error, options, currentSelect, description }) => {
-    const inputClass = cn(
+    const formFieldClass = cn(
         className,
-        'form-field__element',
+        'form-field'
     )
 
     return (
-        <div className="form-field">
+        <div className={formFieldClass}>
             {
                 !!label &&
                 <label htmlFor={name} className="form-field__label">

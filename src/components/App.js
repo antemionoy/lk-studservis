@@ -5,6 +5,7 @@ import HomePage from "../pages/HomePage"
 import WithdrawMoneyPage from "../pages/WithdrawMoneyPage"
 import NewsPage from "../pages/NewsPage"
 import SupportPage from "../pages/SupportPage"
+import ProfilePage from "../pages/ProfilePage"
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
                 <Route path='money' element={<WithdrawMoneyPage />}></Route>
                 <Route path='news' element={<NewsPage />}></Route>
                 <Route path='support' element={<SupportPage />}></Route>
+                <Route path='profile' element={<ProfilePage />}></Route>
             </Routes>
         </BrowserRouter>
     )

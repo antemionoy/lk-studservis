@@ -26,6 +26,7 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
     }
 
     const deleteSource = (e) => {
+        e.stopPropagation()
         console.log(e.target)
     }
 
@@ -47,13 +48,13 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
     }, [])
 
     return (
-        <div className={selectClass} onClick={(e) => toggleSelect(e)} ref={wrapperRef}>
+        <div className={selectClass} ref={wrapperRef}>
             <select className="form-select__hidden" name={name} value={currentSelect}>
                 {options.map((el, index) => (
                     <option value={el.value ?? el.name} key={index}>{el.name}</option>
                 ))}
             </select>
-            <div className="form-select__box">
+            <div className="form-select__box" onClick={toggleSelect}>
                 {sources.length > 0 ?
                     <div className="form-select__list d-flex">
                         {sources.map((el, i) => (
@@ -68,21 +69,21 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
                         {currentSelect}
                     </div>
                 }
-                <div className={`form-select__dropdown ${showSelect ? 'form-select__dropdown_show' : ''}`}>
-                    {
-                        options.map((el, index) => (
-                            <label
-                                className='form-select__element d-flex'
-                                key={index}
-                                htmlFor={index}
-                            >
+            </div>
+            <div className={`form-select__dropdown ${showSelect ? 'form-select__dropdown_show' : ''}`}>
+                {
+                    options.map((el, index) => (
+                        <label
+                            className='form-select__element d-flex'
+                            key={index}
+                            htmlFor={index}
+                        >
 
-                                <input type="checkbox" id={index} value={el.value ?? el.name} onChange={(e) => addSource(el.name, e)} className="form-select__checkbox" />
-                                <span className='form-select__value'>{el.name}</span>
-                            </label>
-                        ))
-                    }
-                </div>
+                            <input type="checkbox" id={index} value={el.value ?? el.name} onChange={(e) => addSource(el.name, e)} className="form-select__checkbox" />
+                            <span className='form-select__value'>{el.name}</span>
+                        </label>
+                    ))
+                }
             </div>
 
         </div >

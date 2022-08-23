@@ -10,8 +10,9 @@ import Button from '../Ui/Button'
 const SignUp = () => {
     let [currentStep, setCurrentStep] = useState(0)
 
-    const stepClass = cn(
+    const stepClass = (index) => cn(
         'sign-up__step',
+        {'sign-up__step_active': currentStep === index}
     )
 
     const options = [
@@ -39,8 +40,7 @@ const SignUp = () => {
             <form className="sign-up__form" action='' method=''>
                 <div className="sign-up__steps">
                     <div className="sign-up__wrapper d-flex" style={{ transform: `translateX(${currentStep * -100}%)` }}>
-
-                        <div className={`sign-up__step ${currentStep === 0 && 'sign-up__step_active'}`}>
+                        <div className={stepClass(0)}>
                             <h2 className="sign-up__title title title_center title_h2">
                                 Регистрация (шаг 1)
                             </h2>
@@ -79,8 +79,7 @@ const SignUp = () => {
 
                             <div className='sign-up__bottom'>Есть аккаунт? <Link to=''>Войти</Link></div>
                         </div>
-
-                        <div className={`sign-up__step ${currentStep === 1 && 'sign-up__step_active'}`}>
+                        <div className={stepClass(1)}>
                             <h2 className="sign-up__title title title_center title_h2">
                                 Регистрация (шаг 2)
                             </h2>
@@ -115,7 +114,7 @@ const SignUp = () => {
                                 <button type='button' className="sign-up__back" onClick={handlerPrev}>вернуться назад</button>
                             </div>
                         </div>
-                        <div className={`sign-up__step ${currentStep === 2 && 'sign-up__step_active'}`}>
+                        <div className={stepClass(2)}>
                             <h2 className="sign-up__title title title_center title_h2">
                                 Регистрация (шаг 3)
                             </h2>
