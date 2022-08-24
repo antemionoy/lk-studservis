@@ -77,7 +77,7 @@ const SignUp = () => {
                                 Продолжить
                             </Button>
 
-                            <div className='sign-up__bottom'>Есть аккаунт? <Link to=''>Войти</Link></div>
+                            <div className='sign-up__bottom'>Есть аккаунт? <Link to='/'>Войти</Link></div>
                         </div>
                         <div className={stepClass(1)}>
                             <h2 className="sign-up__title title title_center title_h2">

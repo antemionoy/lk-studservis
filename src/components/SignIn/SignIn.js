@@ -8,7 +8,7 @@ const SignIn = () => {
     return (
         <div className="sign-in">
             <h1 className="sign-in__title title title_h2">Войти в личный кабинет партнера</h1>
-            
+            <form className="sign-in__form" action='' method=''>
                 <FormField
                     label='Email'
                     name='email'
@@ -23,7 +23,8 @@ const SignIn = () => {
                     placeholder='Введите пароль'
                     error='Не верный пароль'
                 />
-            <p>Еще не зарегестрированы? <Link to=''>Регистрация</Link></p>
+            </form>
+            <p>Еще не зарегестрированы? <Link to='sign-up'>Регистрация</Link></p>
         </div>
     )
 }

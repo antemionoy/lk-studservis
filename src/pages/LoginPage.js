@@ -4,7 +4,9 @@ import SignIn from "../components/SignIn/SignIn"
 const LoginPage = () => {
     return (
         <main className="main">
-            <Auth />
+            <Auth>
+                <SignIn />
+            </Auth>
         </main>
     )
 }

@@ -5,7 +5,7 @@ import Promo from "@/assets/images/promo.png"
 import SignIn from '../SignIn/SignIn'
 import SignUp from '../SignUp/SignUp'
 
-const Auth = () => {
+const Auth = ({ children }) => {
     return (
         <div className="auth">
             <div className="auth__grid d-flex">
@@ -26,8 +26,7 @@ const Auth = () => {
                 </div>
                 <div className="auth__main d-flex">
                     <div className="auth__content">
-                        {/* <SignIn /> */}
-                        <SignUp />
+                        {children}
                     </div>
                 </div>
             </div>

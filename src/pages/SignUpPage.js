@@ -1,6 +1,13 @@
-const SignUpPage = () =>{
-    return(
-        <div>sign up</div>
+import Auth from "../components/Auth/Auth"
+import SignUp from "../components/SignUp/SignUp"
+
+const SignUpPage = () => {
+    return (
+        <main className="main">
+            <Auth>
+                <SignUp />
+            </Auth>
+        </main>
     )
 }
 

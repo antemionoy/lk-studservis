@@ -15,31 +15,75 @@ const Profile = () => {
                         name='email'
                         type='text'
                         placeholder='Введите адрес электронной почты'
-                        error='Введите корректный email'
-                        className='profile__section-field'
+                        className='profile-section__field'
                     />
                     <FormField
                         label='Пароль'
                         name='password'
                         type='password'
                         placeholder='Введите пароль'
-                        error='Не верный пароль'
-                        className='profile__section-field'
+                        className='profile-section__field'
                     />
                     <FormField
                         label='Пароль'
                         name='password'
                         type='password'
                         placeholder='Введите пароль'
-                        error='Не верный пароль'
-                        className='profile__section-field'
+                        className='profile-section__field'
                     />
                 </ProfileSection>
                 <ProfileSection className='profile__section' title='Контакты'>
-
+                    <FormField
+                        label='Email'
+                        name='email'
+                        type='text'
+                        placeholder='Введите адрес электронной почты'
+                        className='profile-section__field'
+                    />
+                    <FormField
+                        label='Пароль'
+                        name='password'
+                        type='password'
+                        placeholder='Введите пароль'
+                        className='profile-section__field'
+                    />
+                    <FormField
+                        label='Пароль'
+                        name='password'
+                        type='password'
+                        placeholder='Введите пароль'
+                        className='profile-section__field'
+                    />
+                    <FormField
+                        label='Сайт'
+                        name='password'
+                        type='password'
+                        placeholder='Введите пароль'
+                        className='profile-section__field'
+                    />
                 </ProfileSection>
                 <ProfileSection className='profile__section' title='Сменить пароль'>
-
+                    <FormField
+                        label='Email'
+                        name='email'
+                        type='text'
+                        placeholder='Введите адрес электронной почты'
+                        className='profile-section__field'
+                    />
+                    <FormField
+                        label='Пароль'
+                        name='password'
+                        type='password'
+                        placeholder='Введите пароль'
+                        className='profile-section__field'
+                    />
+                    <FormField
+                        label='Пароль'
+                        name='password'
+                        type='password'
+                        placeholder='Введите пароль'
+                        className='profile-section__field'
+                    />
                 </ProfileSection>
             </div>
         </section>
