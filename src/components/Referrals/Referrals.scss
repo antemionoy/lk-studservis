@@ -1,0 +1,62 @@
+.referrals {
+    margin: 24px 0px;
+    $field: ".form-field";
+    color: #3b4b64;
+
+    &__row {
+        grid-template-columns: 1fr 323px;
+        gap: 24px;
+    }
+
+    &__section {
+        padding: 21px 17px;
+        margin-bottom: 24px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+            padding: 0;
+        }
+    }
+
+    &__head {
+        align-items: center;
+    }
+
+    &__field {
+        width: 393px;
+
+        #{$field} {
+            &__element {
+                height: 31px;
+                border-radius: 4px 0px 0px 4px;
+            }
+        }
+    }
+
+    &__button {
+        border-radius: 0px 4px 4px 0px;
+    }
+
+    &__copy {
+        margin-left: 24px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    &__features {
+        margin: 28px 0px 0px;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    &__icon {
+        margin-right: 6px;
+    }
+
+    &__comment {
+        margin: 12px 0px 0px;
+        font-size: 10px;
+        line-height: 12px;
+    }
+}

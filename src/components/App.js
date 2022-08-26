@@ -7,6 +7,8 @@ import NewsPage from "../pages/NewsPage"
 import SupportPage from "../pages/SupportPage"
 import ProfilePage from "../pages/ProfilePage"
 import ArticlePage from "../pages/ArticlePage"
+import ReferralsPage from "../pages/ReferralsPage"
+
 
 const App = () => {
     return (
@@ -18,8 +20,10 @@ const App = () => {
                 <Route path='money' element={<WithdrawMoneyPage />}></Route>
                 <Route path='news' element={<NewsPage />}></Route>
                 <Route path='news/:detail' element={<ArticlePage />}></Route>
+                <Route path='article' element={<ArticlePage />}></Route>
                 <Route path='support' element={<SupportPage />}></Route>
                 <Route path='profile' element={<ProfilePage />}></Route>
+                <Route path='refs' element={<ReferralsPage />}></Route>
                 <Route path="*" element></Route>
             </Routes>
         </BrowserRouter>

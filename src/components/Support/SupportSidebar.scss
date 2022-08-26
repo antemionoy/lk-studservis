@@ -1,0 +1,30 @@
+.support-sidebar {
+    padding: 28px;
+    flex-direction: column;
+    align-items: center;
+    color: #303c54;
+
+    &__image {
+        width: 154px;
+        height: 154px;
+    }
+
+    &__name {
+        margin: 8px 0px 0px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    &__text {
+        margin: 8px 0px 0px;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    &__social {
+        margin: 8px 0px 0px;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+    }
+}

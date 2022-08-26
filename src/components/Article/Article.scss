@@ -1,0 +1,62 @@
+.article {
+    margin: 24px 0px 28px;
+
+    &__row{
+        grid-template-columns: 1fr 323px;
+        gap: 24px;
+    }
+
+    &__section {
+        background-color: #fff;
+        border: 0.5px solid #dfe4e6;
+        border-radius: 4px;
+    }
+
+    &__sidebar {
+        background-color: #fff;
+        border: 0.5px solid #dfe4e6;
+        border-radius: 4px;
+    }
+
+    &__section{
+        padding: 21px 17px;
+    }
+    
+    &__date{
+        margin: 6px 0px 0px;
+    }
+
+    &__image{
+        width: 100%;
+        object-fit: cover;
+        max-width: 1420px;
+    }
+
+    &__image{
+        margin: 28px 0px 0px;
+    }
+
+    &__content{
+        margin: 28px 0px 0px;
+        font-size: 16px;
+        line-height: 26px;
+
+        h2{
+            font-size: 32px;
+            line-height: inherit;
+        }
+
+        h3{
+            font-size: 20px;
+            line-height: inherit;
+        }
+
+        ul{
+            margin: 28px 0px 40px;
+        }
+
+        p{
+            margin: 0px 0px 30px;
+        }
+    }
+}
