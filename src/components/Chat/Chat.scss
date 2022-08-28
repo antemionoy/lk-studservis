@@ -17,9 +17,9 @@
         margin: 0px 8px 0px;
     }
 
-    &__main{
+    &__main {
         flex: 1 0 auto;
-        border-bottom: 1px solid #DFE4E6;
+        padding: 28px 17px;
     }
 
     &__message {
@@ -30,5 +30,26 @@
         border-radius: 8px;
         font-size: 12px;
         line-height: 18px;
+        max-width: 600px;
+    }
+
+    &__input {
+        border: none;
+        border-top: 1px solid #dfe4e6;
+        height: 101px;
+        padding: 30px 25px;
+        font-size: 12px;
+        line-height: 15px;
+        color: #9da5b1;
+    }
+
+    &__row {
+        margin-bottom: 34px;
+        display: flex;
+        flex-direction: column;
+
+        &_reverse {
+            align-items: flex-end;
+        }
     }
 }

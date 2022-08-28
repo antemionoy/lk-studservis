@@ -23,10 +23,33 @@ const Chat = ({ className, managerName, managerPhoto }) => {
                         Поздравляю вас с началом нашего сотрудничества)
                     </div>
                 </div>
+                <div className="chat__row chat__row_reverse">
+                    <div className="chat__head d-flex">
+                        <img src={managerPhoto} alt="" className="chat__avatar" />
+                        <p className="chat__name">{managerName}</p>
+                        <p className="chat__date">08.06.2022 17:42</p>
+                    </div>
+                    <div className="chat__message">
+                        Здравствуйте!
+                        Меня зовут Анастасия, и я ваш личный менеджер.
+                        Поздравляю вас с началом нашего сотрудничества)
+                    </div>
+                </div>
+                <div className="chat__row">
+                    <div className="chat__head d-flex">
+                        <img src={managerPhoto} alt="" className="chat__avatar" />
+                        <p className="chat__name">{managerName}</p>
+                        <p className="chat__date">08.06.2022 17:42</p>
+                    </div>
+                    <div className="chat__message">
+                        Здравствуйте!
+                        Меня зовут Анастасия, и я ваш личный менеджер.
+                        Поздравляю вас с началом нашего сотрудничества)
+                    </div>
+                </div>
             </div>
-            <div className="chat__input">
+            <input className="chat__input" placeholder='Введите сообщение'/>
 
-            </div>
         </div>
     )
 }

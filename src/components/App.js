@@ -8,6 +8,7 @@ import SupportPage from "../pages/SupportPage"
 import ProfilePage from "../pages/ProfilePage"
 import ArticlePage from "../pages/ArticlePage"
 import ReferralsPage from "../pages/ReferralsPage"
+import PromoPage from "../pages/PromoPage"
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
                 <Route path='support' element={<SupportPage />}></Route>
                 <Route path='profile' element={<ProfilePage />}></Route>
                 <Route path='refs' element={<ReferralsPage />}></Route>
+                <Route path='promo' element={<PromoPage />}></Route>
                 <Route path="*" element></Route>
             </Routes>
         </BrowserRouter>

@@ -17,22 +17,40 @@ a {
 }
 
 p:not([class]) {
-    margin: 0px 0px 10px;
+    margin: 0px 0px 30px;
+    line-height: 26px;
 }
 
 ul:not([class]) {
     list-style: none;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    margin-left: 20px;
+
+    li {
+        position: relative;
+        margin-bottom: 15px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 25%;
+            flex-shrink: 0;
+            left: -15px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: $color-dark;
+        }
+    }
 }
 
 ul,
 ol {
-    //margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
     padding: 0;
     margin: 0;
     list-style: none;
 }
+
 
 img.lazy[data-src] {
     filter: blur(10px);
@@ -78,7 +96,7 @@ select {
 body {
     font-family: $font-main;
     min-width: 320px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     background-color: #fff;
     scroll-behavior: smooth;
@@ -262,22 +280,22 @@ button {
     }
 }
 
-.h1 {
+h1 {
     font-size: 36px;
     line-height: 44px;
-    margin: 10px 0px 20px;
+    margin: 10px 0px 15px;
 }
 
-.h2 {
+h2 {
     font-size: 20px;
     line-height: calc(24 / 20);
-    margin: 10px 0px 20px;
+    margin: 10px 0px 15px;
 }
 
-.h3 {
+h3 {
     font-size: 18px;
     line-height: calc(38 / 32);
-    margin: 10px 0px 20px;
+    margin: 10px 0px 15px;
 }
 
 .txt {
@@ -296,15 +314,15 @@ button {
     margin: 0px;
 
     &_h1 {
-        @extend .h1;
+        @extend h1;
     }
 
     &_h2 {
-        @extend .h2;
+        @extend h2;
     }
 
     &_h3 {
-        @extend .h3;
+        @extend h3;
     }
 
     &_center {
