@@ -1,0 +1,32 @@
+.referrals-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    td,
+    th {
+        padding: 9px 17px;
+        border-top: 1px solid #DFE4E6;
+        border-bottom: 1px solid #DFE4E6;
+    }
+
+    tr{
+        &:nth-child(even){
+            background-color: #F8F9FA;
+        }
+    }
+
+
+    th {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 17px;
+        letter-spacing: 0.01em;
+    }
+
+    td {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #3b4b64;
+    }
+}

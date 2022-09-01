@@ -1,6 +1,7 @@
 import FormField from '../Form/FormField'
 import Button from '../Ui/Button'
 import Icon from '../Ui/Icon'
+import ReferralsSidebar from './ReferralsSidebar'
 import './Referrals.scss'
 import ReferralsTable from './ReferralsTable'
 
@@ -27,6 +28,52 @@ const Referrals = () => {
         },
     ]
 
+    const levels = [
+        {
+            level: 1,
+            reward: 3000,
+            total: 3000,
+            turnover: 60000,
+            color: '#321FDB'
+        },
+        {
+            level: 2,
+            reward: 4500,
+            total: 7500,
+            turnover: 150000,
+            color: '#3399FF'
+        },
+        {
+            level: 3,
+            reward: 7500,
+            total: 15000,
+            turnover: 300000,
+            color: '#F8B114'
+
+        },
+        {
+            level: 4,
+            reward: 22500,
+            total: 37500,
+            turnover: 750000,
+            color: '#2EB85C'
+
+        },
+        {
+            level: 5,
+            reward: 37500,
+            total: 75000,
+            turnover: 1500000,
+            color: '#451384'
+        },
+        {
+            level: 6,
+            reward: 75000,
+            total: 150000,
+            turnover: 3000000,
+            color: '#E45353'
+        },
+    ]
 
     return (
         <section className="referrals">
@@ -58,16 +105,14 @@ const Referrals = () => {
                             <p className="referrals__comment">* Вы можете разместить ссылку на своем сайте, в подписи на форуме, отправить сообщением или использовать любые другие методы, кроме спама и обмана</p>
                         </div>
 
-                        <div className="referrals__section section">
-                            <h2 className="referrals__title">Список рефералов</h2>
+                        <div className="referrals__section referrals__section_large section">
+                            <h2 className="referrals__title title">Список рефералов</h2>
                             <ReferralsTable className='referals__table' refs={refs} />
                         </div>
 
                     </div>
-                    <aside className='referral__sidebar referral-sidebar'>
-                        <h3 className="referral-sidebar__title">Заработайте до 150 000 руб. с каждого реферала!</h3>
-                        <p className="referral-sidebar__descr">Вы получите вознаграждение за каждого активного реферала в момент достижения им нового уровня. Мы не ограничиваем время учета, поэтому многие ваши рефералы достигнут шестого уровня, а вы заработаете по 150 000 руб. с каждого.</p>
-                    </aside>
+                    <ReferralsSidebar className='referral__sidebar' levels={levels} />
+
                 </div>
             </div>
         </section>

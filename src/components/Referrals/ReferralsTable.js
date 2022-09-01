@@ -9,22 +9,22 @@ const ReferralsTable = ({ className, refs }) => {
 
     return (
         <table className={TableClass}>
-            <tr>
-                <th>Регистрация</th>
-                <th>Имя</th>
-                <th>Ваш доход</th>
-                <th>Оборот реферала</th>
+            <tr className='referrals-table__row'>
+                <th align='left' className='referrals-table__th'>Регистрация</th>
+                <th align='left' className='referrals-table__th'>Имя</th>
+                <th align='left' className='referrals-table__th'>Ваш доход</th>
+                <th align='left' className='referrals-table__th'>Оборот реферала</th>
             </tr>
             {
                 (refs.length > 0) ? refs.map((el, i) => (
-                    <tr key={i}>
+                    <tr className='referrals-table__row' key={i}>
                         <td>{el.date}</td>
                         <td>{el.name}</td>
                         <td>{el.income}</td>
                         <td>{el.turnover}</td>
                     </tr>
                 )) :
-                    <tr>
+                    <tr className='referrals-table__row'>
                         <td colSpan={4}>
                             По вашей ссылке еще никто не зарегистрировался
                         </td>

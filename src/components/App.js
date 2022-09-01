@@ -9,6 +9,9 @@ import ProfilePage from "../pages/ProfilePage"
 import ArticlePage from "../pages/ArticlePage"
 import ReferralsPage from "../pages/ReferralsPage"
 import PromoPage from "../pages/PromoPage"
+import HistoryPage from "../pages/HistoryPage"
+import StatsOrdersPage from "../pages/StatsOrdersPage"
+import StatsPage from "../pages/StatsPage"
 
 
 const App = () => {
@@ -26,6 +29,9 @@ const App = () => {
                 <Route path='profile' element={<ProfilePage />}></Route>
                 <Route path='refs' element={<ReferralsPage />}></Route>
                 <Route path='promo' element={<PromoPage />}></Route>
+                <Route path='history' element={<HistoryPage />}></Route>
+                <Route path="stats-order" element={<StatsOrdersPage/>}></Route>
+                <Route path="stats" element={<StatsPage/>}></Route>
                 <Route path="*" element></Route>
             </Routes>
         </BrowserRouter>

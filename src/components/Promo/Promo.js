@@ -18,7 +18,8 @@ const Promo = () => {
     const tabs = [
         {
             id: 0,
-            name: 'Баннеры'
+            name: 'Баннеры',
+            content: ''
         },
         {
             id: 1,

@@ -2,56 +2,56 @@ export default [
     {
         name: 'Главная страницы',
         icon: 'home',
-        href: '/home/',
+        href: '/home',
     },
     {
         name: 'Финансы',
         icon: 'card',
-        href: '/finance/',
+        href: '/finance',
         subItems: [
             {
                 name: 'Вывести деньги',
-                href: '/money/'
+                href: '/money'
             },
             {
                 name: 'История транзакций',
-                href: '/finance/'
+                href: '/history'
             }
         ]
     },
     {
         name: 'Статистика',
         icon: 'stats',
-        href: '/stats/',
+        href: '/stats',
         subItems: [
             {
                 name: 'Общая статистика',
-                href: '/stats/'
+                href: '/stats'
             },
             {
                 name: 'Статистика заказов',
-                href: '/stats/'
+                href: '/stats-order'
             }
         ]
     },
     {
         name: 'Промоматериалы',
         icon: 'materials',
-        href: '/promo/',
+        href: '/promo',
     },
     {
         name: 'Новости и Блог',
         icon: 'news',
-        href: '/news/',
+        href: '/news',
     },
     {
         name: 'Техподдержка',
         icon: 'chat',
-        href: '/support/',
+        href: '/support',
     },
     {
         name: 'Рефералы',
         icon: 'refs',
-        href: '/refs/',
+        href: '/refs',
     },
 ]

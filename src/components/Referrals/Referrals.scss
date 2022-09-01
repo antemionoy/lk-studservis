@@ -16,6 +16,10 @@
             margin-bottom: 0;
             padding: 0;
         }
+
+        &_large{
+            min-height: 423px;
+        }
     }
 
     &__head {
@@ -58,5 +62,9 @@
         margin: 12px 0px 0px;
         font-size: 10px;
         line-height: 12px;
+    }
+
+    &__title{
+        padding: 21px 17px 28px;
     }
 }

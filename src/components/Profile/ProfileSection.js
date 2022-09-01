@@ -68,7 +68,7 @@ const ProfileSection = ({ children, className, title, main }) => {
                 {children}
             </div>
             <div className="profile-section__bottom d-flex">
-                <Button size='large'>Сохранить изменения</Button>
+                <Button size='large' bgcolor='blue' className='profile-section__button'>Сохранить изменения</Button>
                 {
                     main &&
                     <Switch
