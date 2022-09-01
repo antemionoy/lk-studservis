@@ -1,0 +1,6 @@
+.pay-list {
+    &__row {
+        grid-template-columns: 40px 270px 262px 262px;
+        gap: 30px;
+    }
+}

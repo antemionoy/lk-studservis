@@ -1,10 +1,10 @@
 import Content from "../components/Content/Content"
-import GetMoney from "../components/GetMoney/GetMoney"
+import Pay from "../components/Pay/Pay"
 
 const WithdrawMoneyPage = () => {
     return (
         <Content>
-            <GetMoney />
+            <Pay />
         </Content>
     )
 }

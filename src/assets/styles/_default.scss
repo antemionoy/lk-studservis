@@ -51,7 +51,6 @@ ol {
     list-style: none;
 }
 
-
 img.lazy[data-src] {
     filter: blur(10px);
 }
@@ -297,6 +296,12 @@ h3 {
     line-height: calc(38 / 32);
     margin: 10px 0px 15px;
 }
+
+// h1:not([class]),
+// h2:not([class]),
+// h3:not([class]) {
+//     margin: 10px 0px 15px;
+// }
 
 .txt {
     font-size: 16px;

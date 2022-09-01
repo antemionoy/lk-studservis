@@ -1,7 +1,13 @@
-.print-money{
+.pay{
     margin: 24px 0px;
+
+    &__title{
+        margin: 0px 0px 28px;
+    }
+
     &__section{
         padding: 17px 28px;
+        margin-bottom: 28px;
     }
 
     &__top{
