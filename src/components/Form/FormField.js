@@ -33,7 +33,7 @@ const FormField = ({ type, name, placeholder, className, label, error, options, 
                         type={type}
                         name={name}
                         placeholder={placeholder}
-                        value={value ?? ''}
+                        // value={value ?? ''}
                     />
                     :
                     <FormSelect
