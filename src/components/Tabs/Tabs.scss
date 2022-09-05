@@ -1,0 +1,30 @@
+.tabs {
+    &__nav{
+        overflow-y: hidden;
+    }
+    &__button {
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        color: #9da5b1;
+        padding: 21px 17px 18px;
+
+        &_active {
+            color: #3b4b64;
+
+            &::after {
+                content: "";
+                width: calc(100% + 10px);
+                height: 3px;
+                position: absolute;
+                top: auto;
+                bottom: 0px;
+                left: -5px;
+                right: 0;
+                background-color: #0d6efd;
+            }
+        }
+    }
+}

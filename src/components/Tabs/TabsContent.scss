@@ -1,0 +1,9 @@
+.tabs-content {
+    border-top: 1px solid #dfe4e6;
+    display: none;
+    padding: 28px 17px;
+
+    &_active {
+        display: block;
+    }
+}

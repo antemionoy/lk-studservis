@@ -1,63 +1,105 @@
-import cn from 'classnames'
-import { useState } from 'react'
 import './Promo.scss'
+import Tabs from '../Tabs/Tabs'
+import TabsContent from '../Tabs/TabsContent'
+import PromoCatalog from './PromoCatalog'
+import PromoPostback from './PromoPostback'
+import PromoLabels from './PromoLabels'
+import image from '@assets/images/promo-catalog__image.jpeg'
 
 const Promo = () => {
-    const [currentTab, setCurrentTab] = useState(0)
-
-    const activeClass = (index, className) => cn(
-        className,
-        currentTab == index ? `${className}_active` : ''
-    )
-
-    const handleClick = (e) => {
-        const id = e.target.id
-        currentTab !== id ? setCurrentTab(id) : 0
-    }
-
     const tabs = [
         {
-            id: 0,
+            id: 'banners',
             name: 'Баннеры',
-            content: ''
         },
         {
-            id: 1,
+            id: 'forms',
             name: 'Формы'
         },
         {
-            id: 2,
+            id: 'landings',
             name: 'Лендинги'
         },
         {
-            id: 3,
+            id: 'labels',
             name: 'Метки'
         },
         {
-            id: 4,
+            id: 'postback',
             name: 'Postback'
         },
+    ]
+
+    const categories = [
+        {
+            category: 'banners',
+            title: 'Баннеры',
+            items: [
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                }
+            ],
+            filter: true
+        },
+        {
+            category: 'forms',
+            title: 'Баннеры',
+        },
+        {
+            category: 'landings',
+            title: 'Баннеры',
+        },
+        {
+            category: 'labels',
+            title: 'Баннеры',
+        },
+        {
+            category: 'postback',
+            title: 'Баннеры',
+        }
     ]
 
     return (
         <section className="promo">
             <div className="promo__container container">
                 <div className="promo__section section">
-                    <div className="promo__head ">
-                        <ul className="promo__tabs d-flex">
-                            <li className="promo__tab">
-                                <button type="button" id='0' className={activeClass(0, 'promo__button')} onClick={handleClick}>Переписка</button>
-                            </li>
-                            <li className="promo__tab">
-                                <button type="button" id='1' className={activeClass(1, 'promo__button')} onClick={handleClick}>Правила и faq</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={activeClass(0, 'promo__content')}>
-                       
-                    </div>
-                    <div className={activeClass(1, 'promo__content')}>
-                    </div>
+                    <Tabs className='promo__tabs' nav={tabs} >
+                        {categories.map((element, index) => (
+                            <TabsContent className={'promo__content'} key={index} id={index}>
+                                <PromoCatalog
+                                    max='6'
+                                    items={element.items ?? []}
+                                    category={element.title} filter />
+                            </TabsContent>
+                        ))}
+                    </Tabs>
                 </div>
             </div>
         </section>
