@@ -10,8 +10,6 @@ const Popup = () => {
     const activePopup = useSelector((state) => state.popup.id)
     const titlePopup = useSelector((state) => state.popup.title)
 
-    console.log(activePopup)
-
     const popupClass = cn(
         'popup',
         activePopup && 'popup_show'

@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { TabsContext } from '../../context/TabsContext'
 
 const Tabs = ({ nav, children, className }) => {
-    const [currentTab, setCurrentTab] = useState(0)
+    const [currentTab, setCurrentTab] = useState(3)
 
     const tabClass = cn(
         'tabs',

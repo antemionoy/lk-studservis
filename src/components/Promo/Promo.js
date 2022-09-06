@@ -34,6 +34,7 @@ const Promo = () => {
         {
             category: 'banners',
             title: 'Баннеры',
+            grid: 3,
             items: [
                 {
                     name: 'test',
@@ -70,11 +71,79 @@ const Promo = () => {
         },
         {
             category: 'forms',
-            title: 'Баннеры',
+            title: 'Формы',
+            grid: 2,
+            items: [
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                }
+            ],
+            filter: true
         },
         {
             category: 'landings',
-            title: 'Баннеры',
+            title: 'Лендинг',
+            grid: 2,
+            items: [
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                },
+                {
+                    name: 'test',
+                    hint: '200x200 PNG',
+                    image: image
+                }
+            ],
+            filter: true
         },
         {
             category: 'labels',
@@ -96,6 +165,7 @@ const Promo = () => {
                                 {(element.category !== 'labels' || element.category !== 'postback') &&
                                     <PromoCatalog
                                         max='6'
+                                        grid={element.grid}
                                         items={element.items ?? []}
                                         category={element.title} filter
                                     />

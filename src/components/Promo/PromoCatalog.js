@@ -4,7 +4,7 @@ import Button from '../Ui/Button'
 import './PromoCatalog.scss'
 import { setPopup, deletePopup } from '../../slices/popupSlice';
 
-const PromoCatalog = ({ max, items, category }) => {
+const PromoCatalog = ({ max, items, category, grid }) => {
     const dispatch = useDispatch()
 
     const openPopup = (id, title) => {
@@ -24,7 +24,7 @@ const PromoCatalog = ({ max, items, category }) => {
             </div>
             <ul className="promo-catalog__list d-flex wrap">
                 {items.length > 0 && items.map((el, i) => (
-                    <li className="promo-catalog__col" key={i} >
+                    <li className={`promo-catalog__col promo-catalog__col_grid-${grid}`} key={i} >
                         <div className="promo-catalog__item d-flex">
                             <div className="promo-catalog__hint">
                                 {el.hint ?? category}
@@ -37,7 +37,9 @@ const PromoCatalog = ({ max, items, category }) => {
                     </li>
                 ))}
             </ul>
-            <Pagination className='promo-catalog__pagination' max={max} />
+            {items.length > 0 &&
+                <Pagination className='promo-catalog__pagination' max={max} />
+            }
         </div>
     )
 }

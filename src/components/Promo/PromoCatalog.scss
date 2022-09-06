@@ -10,6 +10,14 @@
         width: 33.33%;
         padding: 0px 4px;
         margin-bottom: 8px;
+        &_grid {
+            &-2 {
+                width: 50%;
+            }
+            &-3 {
+                width: 33.33%;
+            }
+        }
     }
     &__item {
         position: relative;
@@ -24,12 +32,12 @@
         justify-content: center;
     }
 
-    &__image{
+    &__image {
         max-width: 300px;
         margin: auto;
     }
 
-    &__button{
+    &__button {
         width: 130px;
     }
 
@@ -43,10 +51,10 @@
         text-transform: uppercase;
         padding: 5px;
         border-radius: 4px;
-        background-color: #EBEDEF;
+        background-color: #ebedef;
     }
 
-    &__pagination{
+    &__pagination {
         margin: 28px 0px 0px;
     }
 }

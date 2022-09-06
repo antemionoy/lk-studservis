@@ -9,10 +9,22 @@
     visibility: hidden;
     pointer-events: none;
 
-    &_show{
+    &_show {
         opacity: 1;
         visibility: visible;
         pointer-events: all;
+    }
+
+    &__head {
+        padding: 16px;
+        border-bottom: 1px solid #dee2e6;
+        align-items: center;
+    }
+
+    &__title{
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
     }
 
     &__shade {
@@ -35,27 +47,24 @@
     &__content {
         position: relative;
         background-color: #fff;
-        width: 414px;
+        width: 700px;
         max-width: 100%;
-        padding: 20px 20px 35px;
+        background: #ffffff;
+        border: 1px solid #ecedef;
+        border-radius: 4px;
 
         &_lg {
             width: 458px;
             padding: 31px 58px 35px;
-
         }
     }
 
-    &__close{
+    &__close {
         position: absolute;
         width: 40px;
         height: 40px;
         top: 5px;
         right: 10px;
-        // transform: translate(15px, -15px);
-        background-color: #000;
-        border-radius: 50%;
         z-index: 10;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
     }
 }

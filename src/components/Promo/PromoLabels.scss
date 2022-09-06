@@ -1,0 +1,46 @@
+.promo-labels {
+    $field: ".form-field";
+
+    &__grid {
+        grid-template-columns: 1fr 280px;
+        gap: 40px;
+    }
+
+    &__text {
+        font-size: 12px;
+        margin-right: 24px;
+    }
+
+    &__head {
+        align-items: center;
+    }
+
+    &__field {
+        width: 285px;
+
+        #{$field} {
+            &__element {
+                height: 31px;
+                border-radius: 4px 0px 0px 4px;
+            }
+        }
+    }
+
+    &__button {
+        border-radius: 0px 4px 4px 0px;
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    &__descr {
+        margin: 28px 0px 0px;
+        font-size: 12px;
+        line-height: 18px;
+        p {
+            margin-bottom: 8px;
+        }
+    }
+}

@@ -416,9 +416,9 @@ h3 {
     &::after {
         content: " ";
         position: absolute;
-        height: 15px;
-        width: 3px;
-        background-color: $color-dark;
+        height: 16px;
+        width: 2px;
+        background-color: #303C54;
     }
 
     &_color-white {
