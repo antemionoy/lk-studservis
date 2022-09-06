@@ -16,19 +16,20 @@ const Pagination = ({ className, max }) => {
 
     return (
         <div className={paginationClass}>
-            <button type="button">
+            <button type="button" className='pagination__button pagination__item'>
                 Назад
             </button>
             <ul className="pagination__list d-flex">
                 {elements.map((page, index) => (
                     <li
+                        className='pagination__item'
                         key={index}
                     >
-                        <button type="button" className="catalog-pagination__page">{page}</button>
+                        <button type="button" className="pagination__page">{page}</button>
                     </li>
                 ))}
             </ul>
-            <button type="button">
+            <button type="button" className='pagination__item pagination__button'>
                 Вперед
             </button>
         </div>

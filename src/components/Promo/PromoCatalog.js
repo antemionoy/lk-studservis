@@ -4,7 +4,7 @@ import './PromoCatalog.scss'
 
 const PromoCatalog = ({ max, items, category }) => {
     return (
-        <div className="promo-catalog">
+        <div className="promo-catalog d-flex">
             <div className="promo__filter promo-filter">
 
             </div>
@@ -23,7 +23,7 @@ const PromoCatalog = ({ max, items, category }) => {
                     </li>
                 ))}
             </ul>
-            <Pagination max={max} />
+            <Pagination className='promo-catalog__pagination' max={max} />
         </div>
     )
 }

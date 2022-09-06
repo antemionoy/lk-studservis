@@ -1,6 +1,10 @@
 .promo-catalog {
+    flex-direction: column;
+    align-items: flex-start;
+
     &__list {
         margin: 0px -4px;
+        width: 100%;
     }
     &__col {
         width: 33.33%;
@@ -40,5 +44,9 @@
         padding: 5px;
         border-radius: 4px;
         background-color: #EBEDEF;
+    }
+
+    &__pagination{
+        margin: 28px 0px 0px;
     }
 }

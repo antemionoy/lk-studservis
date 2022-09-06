@@ -1,0 +1,21 @@
+.pagination {
+    border: 1px solid #dfe2e6;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #0d6efd;
+
+    &__page {
+        color: inherit;
+        border: 1px solid #dfe2e6;
+        padding: 8px;
+    }
+
+    &__button {
+        color:inherit;
+        padding: 8px;
+    }
+
+    &__item{
+    }
+}
