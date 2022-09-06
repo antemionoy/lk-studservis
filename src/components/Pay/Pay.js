@@ -13,7 +13,15 @@ const Pay = () => {
         {
             name: 'phone',
             time: 'до 2 рабочих дней',
-            sum: '430,01'
+            sum: '430,01',
+            feeds: [
+                {
+                    label: 'Номер Qiwi кошелька',
+                    type: 'tel',
+                    name: 'pay-phone',
+                    error: false
+                }
+            ]
 
         },
         {

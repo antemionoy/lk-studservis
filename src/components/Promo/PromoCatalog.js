@@ -1,8 +1,22 @@
+import { useDispatch } from 'react-redux'
 import Pagination from '../Pagination/Pagination'
 import Button from '../Ui/Button'
 import './PromoCatalog.scss'
+import { setPopup, deletePopup } from '../../slices/popupSlice';
 
 const PromoCatalog = ({ max, items, category }) => {
+    const dispatch = useDispatch()
+
+    const openPopup = (id, title) => {
+        return () => {
+            let payload = {
+                id: id,
+                title: title
+            }
+            dispatch(setPopup(payload))
+        }
+    }
+
     return (
         <div className="promo-catalog d-flex">
             <div className="promo__filter promo-filter">
@@ -10,13 +24,13 @@ const PromoCatalog = ({ max, items, category }) => {
             </div>
             <ul className="promo-catalog__list d-flex wrap">
                 {items.length > 0 && items.map((el, i) => (
-                    <li className="promo-catalog__col" key={i}>
+                    <li className="promo-catalog__col" key={i} >
                         <div className="promo-catalog__item d-flex">
                             <div className="promo-catalog__hint">
                                 {el.hint ?? category}
                             </div>
-                            <img src={el.image} className='promo-catalog__image' alt={el.name} title={el.name} />
-                            <Button className='promo-catalog__button' bgcolor='blue' size='large'>
+                            <img src={el.image} className='promo-catalog__image' alt={el.name} title={el.name} onClick={openPopup('popup-promo', el.hint)} />
+                            <Button className='promo-catalog__button' bgcolor='blue' size='large'  >
                                 Получить код
                             </Button>
                         </div>

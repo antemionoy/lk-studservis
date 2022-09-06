@@ -1,6 +1,8 @@
 const PromoLabels = () =>{
     return(
-        <div className="promo-labels"></div>
+        <div className="promo-labels">
+            promo-labels
+        </div>
     )
 }
 

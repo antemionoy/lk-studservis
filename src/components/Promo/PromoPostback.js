@@ -1,6 +1,8 @@
 const PromoPostback = () => {
     return(
-        <div className="post-back"></div>
+        <div className="postback">
+            postback
+        </div>
     )
 }
 

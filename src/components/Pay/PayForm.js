@@ -9,6 +9,16 @@ const PayForm = ({ method }) => {
             {method === 'phone' &&
                 <FormField type='tel' label='Номер телефона' className='pay-form__field' />
             }
+            {method === 'phone' &&
+                <FormField type='tel' label='Номер телефона' className='pay-form__field' />
+            }
+            {method === 'phone' &&
+                <FormField type='tel' label='Номер телефона' className='pay-form__field' />
+            }
+            {method === 'phone' &&
+                <FormField type='tel' label='Номер телефона' className='pay-form__field' />
+            }
+
             <Switch className='pay-form__switch' policy />
             <Button className='pay-form__button' bgcolor='blue' size='large'>
                 Вывести

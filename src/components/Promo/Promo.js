@@ -93,10 +93,15 @@ const Promo = () => {
                     <Tabs className='promo__tabs' nav={tabs} >
                         {categories.map((element, index) => (
                             <TabsContent className={'promo__content'} key={index} id={index}>
-                                <PromoCatalog
-                                    max='6'
-                                    items={element.items ?? []}
-                                    category={element.title} filter />
+                                {(element.category !== 'labels' || element.category !== 'postback') &&
+                                    <PromoCatalog
+                                        max='6'
+                                        items={element.items ?? []}
+                                        category={element.title} filter
+                                    />
+                                }
+                                {element.category == 'labels' && <PromoLabels />}
+                                {element.category == 'postback' && <PromoPostback />}
                             </TabsContent>
                         ))}
                     </Tabs>
