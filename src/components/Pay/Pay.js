@@ -14,7 +14,20 @@ const Pay = () => {
             name: 'phone',
             time: 'до 2 рабочих дней',
             sum: '430,01',
-            feeds: [
+            fields: [
+                {
+                    label: 'Номер телефона',
+                    type: 'tel',
+                    name: 'pay-phone',
+                    error: false
+                }
+            ]
+        },
+        {
+            name: 'qiwi',
+            time: 'до 2 рабочих дней',
+            sum: '430,01',
+            fields: [
                 {
                     label: 'Номер Qiwi кошелька',
                     type: 'tel',
@@ -22,31 +35,57 @@ const Pay = () => {
                     error: false
                 }
             ]
-
-        },
-        {
-            name: 'qiwi',
-            time: 'до 2 рабочих дней',
-            sum: '430,01'
-
         },
         {
             name: 'bank-card',
             time: 'до 2 рабочих дней',
-            sum: '430,01'
-
+            sum: '430,01',
+            fields: [
+                {
+                    label: 'Номер карты',
+                    type: 'text',
+                    name: 'pay-phone',
+                    error: false
+                },
+                {
+                    label: 'Держатель карты',
+                    type: 'text',
+                    name: 'pay-phone',
+                    error: false
+                },
+                {
+                    label: 'Карта действительна до',
+                    type: 'text',
+                    name: 'pay-phone',
+                    error: false
+                }
+            ]
         },
         {
             name: 'you-money',
             time: 'до 2 рабочих дней',
-            sum: '430,01'
-
+            sum: '430,01',
+            fields: [
+                {
+                    label: 'Номер кошелька',
+                    type: 'tel',
+                    name: 'pay-phone',
+                    error: false
+                }
+            ]
         },
         {
             name: 'web-money',
             time: 'до 2 рабочих дней',
-            sum: '430213,01'
-
+            sum: '430213,01',
+            fields: [
+                {
+                    label: 'Номер WMZ кошелька',
+                    type: 'tel',
+                    name: 'pay-phone',
+                    error: false
+                }
+            ]
         },
     ]
 
@@ -76,7 +115,7 @@ const Pay = () => {
                             < p className="pay__descr pay__descr_color-red">Внимание! Вывод осуществляется на QIWI-кошельки Россия и Белоруссия.</p>
                         }
                     </div>
-                    <PayForm method={currentMethod} />
+                    <PayForm method={currentMethod} payMethods={payMethods} />
                 </div>
             </div>
         </section >

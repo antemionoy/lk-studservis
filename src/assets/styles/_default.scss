@@ -418,7 +418,7 @@ h3 {
         position: absolute;
         height: 16px;
         width: 2px;
-        background-color: #303C54;
+        background-color: #303c54;
     }
 
     &_color-white {
@@ -489,5 +489,36 @@ h3 {
 
     &__label {
         margin-right: 12px;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    td,
+    th {
+        padding: 9px 17px;
+        border-top: 1px solid #dfe4e6;
+        border-bottom: 1px solid #dfe4e6;
+    }
+
+    tr {
+        &:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+    }
+
+    th {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 17px;
+        letter-spacing: 0.01em;
+    }
+
+    td {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #3b4b64;
     }
 }

@@ -5,22 +5,19 @@ import Button from '../Ui/Button'
 const PromoLabels = () => {
     const labels = [
         {
-            date: '25.08.2022',
-            name: 'Екатерина Васильева',
-            income: 0,
-            turnover: 0
+            id: 14185,
+            name: 'Default',
+            link: 'https://studservis.ru/order/form/?partnerId=14185',
         },
         {
-            date: '25.08.2022',
-            name: 'Екатерина Васильева',
-            income: 0,
-            turnover: 0
+            id: 14185,
+            name: 'Default',
+            link: 'https://studservis.ru/order/form/?partnerId=14185',
         },
         {
-            date: '25.08.2022',
-            name: 'Екатерина Васильева',
-            income: 0,
-            turnover: 0
+            id: 14185,
+            name: 'Default',
+            link: 'https://studservis.ru/order/form/?partnerId=14185',
         },
     ]
 
@@ -41,20 +38,18 @@ const PromoLabels = () => {
                             Добавить
                         </Button>
                     </div>
-                    <table className=''>
+                    <table className='promo-labels__table'>
                         <tr className='referrals-table__row'>
-                            <th align='left' className='referrals-table__th'>Регистрация</th>
-                            <th align='left' className='referrals-table__th'>Имя</th>
-                            <th align='left' className='referrals-table__th'>Ваш доход</th>
-                            <th align='left' className='referrals-table__th'>Оборот реферала</th>
+                            <th align='left' className='referrals-table__th'>ID</th>
+                            <th align='left' className='referrals-table__th'>Название</th>
+                            <th align='left' className='referrals-table__th'>Ссылка</th>
                         </tr>
                         {
                             (labels.length > 0) ? labels.map((el, i) => (
                                 <tr className='referrals-table__row' key={i}>
-                                    <td>{el.date}</td>
+                                    <td>{el.id}</td>
                                     <td>{el.name}</td>
-                                    <td>{el.income}</td>
-                                    <td>{el.turnover}</td>
+                                    <td>{el.link}</td>
                                 </tr>
                             )) :
                                 <tr className='referrals-table__row'>
