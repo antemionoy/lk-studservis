@@ -8,6 +8,23 @@ const SignIn = () => {
     return (
         <div className="sign-in">
             <h1 className="sign-in__title title title_h2">Войти в личный кабинет партнера</h1>
+            <Form>
+                <FormField
+                    label='Email'
+                    name='email'
+                    type='text'
+                    placeholder='Введите адрес электронной почты'
+                    error='Введите корректный email'
+                />
+                <FormField
+                    label='Пароль'
+                    name='password'
+                    type='password'
+                    placeholder='Введите пароль'
+                    error='Не верный пароль'
+                />
+            </Form>
+            
             <form className="sign-in__form" action='' method=''>
                 <FormField
                     label='Email'

@@ -4,13 +4,13 @@ import Button from '../Ui/Button'
 import Switch from '../Ui/Switch'
 import './PayForm.scss'
 
-const PayForm = ({ method, payMethods }) => {
-    let fields = []
-    payMethods.forEach((el, i) => {
-        if(method == el.name){
-            el.fields && fields.push(...el.fields)
-        }
-    })
+const PayForm = ({ method, payMethods, fields }) => {
+    // let fields = []
+    // payMethods.forEach((el, i) => {
+    //     if(method == el.name){
+    //         el.fields && fields.push(...el.fields)
+    //     }
+    // })
     return (
         <form className="pay-form">
             {fields.length > 0 && fields.map((el, i) => (

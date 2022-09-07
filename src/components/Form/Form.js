@@ -14,7 +14,8 @@ const Form = ({ children, className, name, buttonText, method, description }) =>
 
     return (
         <form action="#" className={formClass} name={name} method={method ?? 'post'}>
-            {React.Children.map(children || null, (element, index) => (
+            {children}
+            {/* {React.Children.map(children || null, (element, index) => (
                 <div className="form__group">
                     {
                         !!element.props.label &&
@@ -34,7 +35,7 @@ const Form = ({ children, className, name, buttonText, method, description }) =>
                     <element.type {...element.props} key={index} />
                     {!!element.props.error && <FormError text={element.props.error} />}
                 </div>
-            ))}
+            ))} */}
             <Button type='submit' className='form__button' bgcolor='blue' size='medium'>
                 {buttonText}
             </Button>

@@ -3,92 +3,101 @@ import PayList from "./PayList"
 import PayAmount from "./PayAmount"
 import PayForm from './PayForm'
 import { useState } from 'react'
+import { useEffect } from 'react'
 
+const payMethods = [
+    {
+        name: 'phone',
+        time: 'до 2 рабочих дней',
+        sum: '430,01',
+        fields: [
+            {
+                label: 'Номер телефона',
+                type: 'tel',
+                name: 'pay-phone',
+                error: false
+            }
+        ]
+    },
+    {
+        name: 'qiwi',
+        time: 'до 2 рабочих дней',
+        sum: '430,01',
+        fields: [
+            {
+                label: 'Номер Qiwi кошелька',
+                type: 'tel',
+                name: 'pay-phone',
+                error: false
+            }
+        ]
+    },
+    {
+        name: 'bank-card',
+        time: 'до 2 рабочих дней',
+        sum: '430,01',
+        fields: [
+            {
+                label: 'Номер карты',
+                type: 'text',
+                name: 'pay-phone',
+                error: false
+            },
+            {
+                label: 'Держатель карты',
+                type: 'text',
+                name: 'pay-phone',
+                error: false
+            },
+            {
+                label: 'Карта действительна до',
+                type: 'text',
+                name: 'pay-phone',
+                error: false
+            }
+        ]
+    },
+    {
+        name: 'you-money',
+        time: 'до 2 рабочих дней',
+        sum: '430,01',
+        fields: [
+            {
+                label: 'Номер кошелька',
+                type: 'tel',
+                name: 'pay-phone',
+                error: false
+            }
+        ]
+    },
+    {
+        name: 'web-money',
+        time: 'до 2 рабочих дней',
+        sum: '430213,01',
+        fields: [
+            {
+                label: 'Номер WMZ кошелька',
+                type: 'tel',
+                name: 'pay-phone',
+                error: false
+            }
+        ]
+    },
+]
+
+function getFields(method) {
+    return payMethods.find(item => item.name === method).fields
+}
 
 const Pay = () => {
     let [currentAmount, setCurrenAmount] = useState(420)
     let [currentMethod, setCurrenMethod] = useState('phone')
+    const [activeFields, setActiveFields] = useState(getFields(currentMethod))
 
-    const payMethods = [
-        {
-            name: 'phone',
-            time: 'до 2 рабочих дней',
-            sum: '430,01',
-            fields: [
-                {
-                    label: 'Номер телефона',
-                    type: 'tel',
-                    name: 'pay-phone',
-                    error: false
-                }
-            ]
-        },
-        {
-            name: 'qiwi',
-            time: 'до 2 рабочих дней',
-            sum: '430,01',
-            fields: [
-                {
-                    label: 'Номер Qiwi кошелька',
-                    type: 'tel',
-                    name: 'pay-phone',
-                    error: false
-                }
-            ]
-        },
-        {
-            name: 'bank-card',
-            time: 'до 2 рабочих дней',
-            sum: '430,01',
-            fields: [
-                {
-                    label: 'Номер карты',
-                    type: 'text',
-                    name: 'pay-phone',
-                    error: false
-                },
-                {
-                    label: 'Держатель карты',
-                    type: 'text',
-                    name: 'pay-phone',
-                    error: false
-                },
-                {
-                    label: 'Карта действительна до',
-                    type: 'text',
-                    name: 'pay-phone',
-                    error: false
-                }
-            ]
-        },
-        {
-            name: 'you-money',
-            time: 'до 2 рабочих дней',
-            sum: '430,01',
-            fields: [
-                {
-                    label: 'Номер кошелька',
-                    type: 'tel',
-                    name: 'pay-phone',
-                    error: false
-                }
-            ]
-        },
-        {
-            name: 'web-money',
-            time: 'до 2 рабочих дней',
-            sum: '430213,01',
-            fields: [
-                {
-                    label: 'Номер WMZ кошелька',
-                    type: 'tel',
-                    name: 'pay-phone',
-                    error: false
-                }
-            ]
-        },
-    ]
-
+    useEffect(() => {
+        setActiveFields(getFields(currentMethod))
+    }, [currentMethod])
+    
     return (
         <section className="pay">
             <div className="pay__container container">
@@ -115,7 +124,7 @@ const Pay = () => {
                             < p className="pay__descr pay__descr_color-red">Внимание! Вывод осуществляется на QIWI-кошельки Россия и Белоруссия.</p>
                         }
                     </div>
-                    <PayForm method={currentMethod} payMethods={payMethods} />
+                    <PayForm method={currentMethod} payMethods={payMethods} fields={activeFields} />
                 </div>
             </div>
         </section >
