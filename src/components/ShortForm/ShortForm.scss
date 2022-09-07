@@ -1,3 +1,25 @@
-.short-form{
-    
+.short-form {
+    &__button {
+        align-items: center;
+        justify-content: center;
+        padding: 4px 8px;
+        border-radius: 0px 4px 4px 0px;
+        height: 31px;
+    }
+
+    &__input {
+        border-radius: 4px 0px 0px 4px;
+        padding: 4px 8px;
+        width: 193px;
+        height: 31px;
+        border: 1px solid #ced4da;
+        font-size: 14px;
+        color: #9da5b1;
+    }
+
+    &__icon {
+        margin: 0px 4px;
+        width: 16px;
+        height: 16px;
+    }
 }

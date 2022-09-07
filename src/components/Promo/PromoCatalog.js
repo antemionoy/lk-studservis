@@ -30,7 +30,7 @@ const PromoCatalog = ({ max, items, category, grid }) => {
                                 {el.hint ?? category}
                             </div>
                             <img src={el.image} className='promo-catalog__image' alt={el.name} title={el.name} />
-                            <Button className='promo-catalog__button' bgcolor='blue' size='large' onClick={openPopup('popup-promo', el.hint)}>
+                            <Button className='promo-catalog__button' bgcolor='blue' size='large' handler={openPopup('popup-promo', el.hint)}>
                                 Получить код
                             </Button>
                         </div>

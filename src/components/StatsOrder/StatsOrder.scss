@@ -1,0 +1,15 @@
+.stats-order {
+    margin: 24px 0px 0px;
+
+    &__section {
+        padding: 21px 17px 52px;
+    }
+
+    &__head {
+        justify-content: space-between;
+    }
+
+    &__select{
+        margin: 0px 24px;
+    }
+}
