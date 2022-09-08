@@ -19,6 +19,7 @@
     }
 
     &__item{
+        border-collapse: collapse;
         &:hover{
             background-color: #0d6efd;
             color: #fff;

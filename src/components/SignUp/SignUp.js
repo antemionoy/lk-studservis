@@ -12,13 +12,21 @@ const SignUp = () => {
 
     const stepClass = (index) => cn(
         'sign-up__step',
-        {'sign-up__step_active': currentStep === index}
+        { 'sign-up__step_active': currentStep === index }
     )
 
     const options = [
         {
             name: 'Cайты',
             value: 'sites'
+        },
+        {
+            name: 'Контекстная реклама',
+            value: 'Контекстная реклама'
+        },
+        {
+            name: 'Контекстная реклама',
+            value: 'Контекстная реклама'
         },
         {
             name: 'Контекстная реклама',

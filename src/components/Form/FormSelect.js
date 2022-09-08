@@ -27,7 +27,6 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
 
     const deleteSource = (e) => {
         e.stopPropagation()
-        console.log(e.target)
     }
 
     const toggleSelect = (e) => {
