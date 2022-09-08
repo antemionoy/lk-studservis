@@ -8,103 +8,76 @@ import './StatsOrder.scss'
 
 const orders = [
     [
-        { content: 'Дата', align: 'left' },
-        { content: 'Город', align: 'left' },
-        { content: {text: 'ID заказа'}, align: 'right' },
-        { content: {title: 'Тип работы', options: ['']}, align: 'left', filter: [''] },
-        { content: 'Стоимость', align: 'left',  },
-        { content: 'Статус заказа', align: 'left' },
-        { content: 'Вознаграждение', align: 'left' },
-        { content: 'Метка', align: 'left' }
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: 'Воронеж' }, align: 'left' },
+        { content: { title: '281205' }, align: 'right' },
+        { content: { title: 'Контрольная работа' }, align: 'left' },
+        { content: { title: '1575' }, align: 'left', },
+        { content: { title: 'Выполняется автором' }, align: 'left' },
+        { content: { title: '472,5' }, align: 'left' },
+        { content: { title: 'default' }, align: 'left' }
     ],
-    {
-        id: '25.08.2022',
-        items: ['25.08.2022', 'Воронеж', '281205'],
-        city: 'Воронеж',
-        id: 281205,
-        type: 'Контрольная работа',
-        price: 1575,
-        status: 'Выполняется автором',
-        reward: '472,5',
-        label: 'default'
-    },
-    {
-        date: '25.08.2022',
-        city: 'Воронеж',
-        id: 281205,
-        type: 'Контрольная работа',
-        price: 1575,
-        status: 'Выполняется автором',
-        reward: '472,5',
-        label: 'default'
-    },
-    {
-        date: '25.08.2022',
-        city: 'Воронеж',
-        id: 281205,
-        type: 'Контрольная работа',
-        price: 1575,
-        status: 'Выполняется автором',
-        reward: '472,5',
-        label: 'default'
-    },
-    {
-        date: '25.08.2022',
-        city: 'Воронеж',
-        id: 281205,
-        type: 'Контрольная работа',
-        price: 1575,
-        status: 'Выполняется автором',
-        reward: '472,5',
-        label: 'default'
-    },
-    {
-        date: '25.08.2022',
-        city: 'Воронеж',
-        id: 281205,
-        type: 'Контрольная работа',
-        price: 1575,
-        status: 'Выполняется автором',
-        reward: '472,5',
-        label: 'default'
-    },
+    [
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: 'Воронеж' }, align: 'left' },
+        { content: { title: '281205' }, align: 'right' },
+        { content: { title: 'Контрольная работа', filter: 'type'}, align: 'left' },
+        { content: { title: '1575' }, align: 'left', },
+        { content: { title: 'Выполняется автором' }, align: 'left' },
+        { content: { title: '472,5' }, align: 'left' },
+        { content: { title: 'default' }, align: 'left' }
+    ],
+    [
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: 'Воронеж' }, align: 'left' },
+        { content: { title: '281205' }, align: 'right' },
+        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
+        { content: { title: '1575' }, align: 'left', },
+        { content: { title: 'Выполняется автором' }, align: 'left' },
+        { content: { title: '472,5' }, align: 'left' },
+        { content: { title: 'default' }, align: 'left' }
+    ],
+    [
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: 'Воронеж' }, align: 'left' },
+        { content: { title: '281205' }, align: 'right' },
+        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
+        { content: { title: '1575' }, align: 'left', },
+        { content: { title: 'Выполняется автором' }, align: 'left' },
+        { content: { title: '472,5' }, align: 'left' },
+        { content: { title: 'default' }, align: 'left' }
+    ],
 ]
 
 const StatsOrder = () => {
     const columns = useMemo(() => [
-        {
-            name: 'Дата',
-            align: 'left'
-        },
-        {
-            name: 'Город',
-            align: 'left'
-        },
-        {
-            name: 'ID Заказа',
-            align: 'right'
-        },
-        {
-            name: 'Тип работы',
-            align: 'left'
-        },
-        {
-            name: 'Стоимость, руб.',
-            align: 'right'
-        },
-        {
-            name: 'Статус заказа',
-            align: 'left'
-        },
-        {
-            name: 'Вознаграждение, руб.',
-            align: 'right'
-        },
-        {
-            name: 'Метка',
-            align: 'right'
-        }
+        { content: { title: 'Дата' }, align: 'left' },
+        { content: { title: 'Город' }, align: 'left' },
+        { content: { title: 'ID заказа' }, align: 'right' },
+        { content: { title: 'Тип работы', options: [''] }, align: 'left' },
+        { content: { title: 'Стоимость' }, align: 'left', },
+        { content: { title: 'Статус заказа' }, align: 'left' },
+        { content: { title: 'Вознаграждение' }, align: 'left' },
+        { content: { title: 'Метка' }, align: 'left' }
     ], [])
+
+    const typeTooltip = [
+        {
+            name: 'Контрольная работа',
+            value: 'Контрольная работа',
+            tag: 'kontrolnay'
+        },
+        {
+            name: 'Курсовая работа',
+            value: 'Курсовая работа',
+            tag: 'kursovay'
+        },
+        {
+            name: 'Отчет по практике',
+            value: 'Отчет по практике',
+            tag: 'otchet'
+        },
+    ]
 
     const options = [
         {
