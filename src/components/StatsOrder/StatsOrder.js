@@ -7,8 +7,19 @@ import Table from '../Ui/Table'
 import './StatsOrder.scss'
 
 const orders = [
+    [
+        { content: 'Дата', align: 'left' },
+        { content: 'Город', align: 'left' },
+        { content: {text: 'ID заказа'}, align: 'right' },
+        { content: {title: 'Тип работы', options: ['']}, align: 'left', filter: [''] },
+        { content: 'Стоимость', align: 'left',  },
+        { content: 'Статус заказа', align: 'left' },
+        { content: 'Вознаграждение', align: 'left' },
+        { content: 'Метка', align: 'left' }
+    ],
     {
-        date1: '25.08.2022',
+        id: '25.08.2022',
+        items: ['25.08.2022', 'Воронеж', '281205'],
         city: 'Воронеж',
         id: 281205,
         type: 'Контрольная работа',
@@ -131,7 +142,7 @@ const StatsOrder = () => {
                             placeholder='Номер заказа (6 цифр)'
                         />
                     </div>
-                    <Table className='stats-order__table' columns={columns} data={orders}/>
+                    <Table className='stats-order__table' columns={columns} data={orders} />
                     <Pagination className='stats-order__pagination' max={2} />
                 </div>
             </div>
