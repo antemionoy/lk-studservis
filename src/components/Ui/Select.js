@@ -10,7 +10,8 @@ const Select = ({ type, name, description, className, options, currentSelect, mu
     const selectClass = cn(
         className,
         'select',
-        !!showSelect && 'select_show'
+        !!showSelect && 'select_show',
+        !multiple && 'select-short'
     )
 
     const dropdownClass = cn(
@@ -19,11 +20,11 @@ const Select = ({ type, name, description, className, options, currentSelect, mu
     )
 
     const changeSelect = (value, e) => {
-        if(!multiple){
+        if (!multiple) {
             setActiveOption(value)
             return
         }
-        
+
         let arraySources = [...dataSelect, value]
         if (!e.target.checked) {
             arraySources = arraySources.filter(el => {

@@ -1,4 +1,5 @@
 import cn from "classnames"
+import Dropdown from "./Dropdown"
 
 const Table = ({ className, columns, data, }) => {
     const tableClass = cn(
@@ -10,7 +11,10 @@ const Table = ({ className, columns, data, }) => {
         <table className={tableClass}>
             <tr className='table__row'>
                 {columns.map((el, i) => (
-                    <th align={el.align} className='table__th' key={i}>{el.content.title}</th>
+                    <th align={el.align} className='table__th' key={i}>
+                        <span className="table__title">{el.content.title}</span>
+                        {columns?.options.length > 0 && <Dropdown className='table__dropdown' options={columns.options} />}
+                    </th>
                 ))}
             </tr>
             {(data.length > 0)

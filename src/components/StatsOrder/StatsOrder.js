@@ -14,6 +14,16 @@ const orders = [
         { content: { title: 'Контрольная работа' }, align: 'left' },
         { content: { title: '1575' }, align: 'left', },
         { content: { title: 'Выполняется автором' }, align: 'left' },
+        { content: { title: '472,5', icon: 'check' }, align: 'left' },
+        { content: { title: 'default' }, align: 'left' }
+    ],
+    [
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: 'Воронеж' }, align: 'left' },
+        { content: { title: '281205' }, align: 'right' },
+        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
+        { content: { title: '1575' }, align: 'left', },
+        { content: { title: 'Выполняется автором' }, align: 'left' },
         { content: { title: '472,5' }, align: 'left' },
         { content: { title: 'default' }, align: 'left' }
     ],
@@ -21,7 +31,7 @@ const orders = [
         { content: { title: '25.08.2022' }, align: 'left' },
         { content: { title: 'Воронеж' }, align: 'left' },
         { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа', filter: 'type'}, align: 'left' },
+        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
         { content: { title: '1575' }, align: 'left', },
         { content: { title: 'Выполняется автором' }, align: 'left' },
         { content: { title: '472,5' }, align: 'left' },
@@ -47,52 +57,66 @@ const orders = [
         { content: { title: '472,5' }, align: 'left' },
         { content: { title: 'default' }, align: 'left' }
     ],
+    [
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: 'Воронеж' }, align: 'left' },
+        { content: { title: '281205' }, align: 'right' },
+        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
+        { content: { title: '1575' }, align: 'left', },
+        { content: { title: 'Выполняется автором' }, align: 'left' },
+        { content: { title: '472,5' }, align: 'left' },
+        { content: { title: 'default' }, align: 'left' }
+    ]
 ]
 
+const typeTooltip = [
+    {
+        name: 'Контрольная работа',
+        value: 'Контрольная работа',
+        tag: 'kontrolnay'
+    },
+    {
+        name: 'Курсовая работа',
+        value: 'Курсовая работа',
+        tag: 'kursovay'
+    },
+    {
+        name: 'Отчет по практике',
+        value: 'Отчет по практике',
+        tag: 'otchet'
+    },
+]
+
+const options = [
+    {
+        name: 'За все время',
+        value: 'За все время'
+    },
+    {
+        name: 'За неделю',
+        value: 'За неделю'
+    },
+    {
+        name: 'За месяц',
+        value: 'За месяц'
+    },
+    {
+        name: 'За год',
+        value: 'За год'
+    },
+]
 const StatsOrder = () => {
     const columns = useMemo(() => [
         { content: { title: 'Дата' }, align: 'left' },
         { content: { title: 'Город' }, align: 'left' },
         { content: { title: 'ID заказа' }, align: 'right' },
-        { content: { title: 'Тип работы', options: [''] }, align: 'left' },
+        { content: { title: 'Тип работы', options: typeTooltip }, align: 'left' },
         { content: { title: 'Стоимость' }, align: 'left', },
         { content: { title: 'Статус заказа' }, align: 'left' },
         { content: { title: 'Вознаграждение' }, align: 'left' },
         { content: { title: 'Метка' }, align: 'left' }
     ], [])
 
-    const typeTooltip = [
-        {
-            name: 'Контрольная работа',
-            value: 'Контрольная работа',
-            tag: 'kontrolnay'
-        },
-        {
-            name: 'Курсовая работа',
-            value: 'Курсовая работа',
-            tag: 'kursovay'
-        },
-        {
-            name: 'Отчет по практике',
-            value: 'Отчет по практике',
-            tag: 'otchet'
-        },
-    ]
-
-    const options = [
-        {
-            name: 'За все время',
-            value: 'За все время'
-        },
-        {
-            name: 'За все время 2',
-            value: 'За все время 2'
-        },
-        {
-            name: 'За все время 3',
-            value: 'За все время 3'
-        }
-    ]
     return (
         <section className='stats-order'>
             <div className="stats-order__container container">

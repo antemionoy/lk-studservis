@@ -5,8 +5,13 @@
         padding: 21px 17px 52px;
     }
 
+    &__main{
+        align-items: center;
+    }
+
     &__head {
         justify-content: space-between;
+        align-items: center;
     }
 
     &__select{

@@ -497,7 +497,7 @@ table {
     border-collapse: collapse;
     td,
     th {
-        padding: 10px 17px;
+        padding: 11px 17px;
         border-top: 1px solid #dfe4e6;
         border-bottom: 1px solid #dfe4e6;
     }
@@ -524,13 +524,31 @@ table {
 }
 
 // select
-.select{
+.select {
     $parent: &;
+    $select-short: ".select-short";
     cursor: pointer;
     position: relative;
 
-    &_show {
-        #{$parent} {
+    &#{$select-short} {
+        font-size: 12px;
+        line-height: 15px;
+        
+        #{$parent}__current {
+            color: #0d6efd;
+        }
+        #{$parent}__box {
+            border: none;
+
+            &::after {
+                position: static;
+                margin-left: 10px;
+            }
+        }
+
+        #{$parent}__value {
+            margin-left: 0;
+            font-size: 11px;
         }
     }
 
@@ -576,7 +594,7 @@ table {
         z-index: 10;
         display: none;
 
-        &_show{
+        &_show {
             display: block;
         }
     }
