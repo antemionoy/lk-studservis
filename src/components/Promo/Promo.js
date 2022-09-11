@@ -167,7 +167,8 @@ const Promo = () => {
                                         max='6'
                                         grid={element.grid}
                                         items={element.items ?? []}
-                                        category={element.title} filter
+                                        category={element.title}
+                                        filter={element.filter}
                                     />
                                 }
                                 {element.category == 'labels' && <PromoLabels />}

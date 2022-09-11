@@ -34,7 +34,7 @@
 
     &__bottom {
         display: flex;
-        margin: 32px 0px 0px;
+        margin: 16px 0px 0px;
         justify-content: center;
     }
 
@@ -52,6 +52,12 @@
         }
     }
 
+    &__separator{
+        margin: 18px 0px 9px;
+        display: flex;
+        justify-content: center;
+    }
+
     &__message {
         margin: 32px 0px 0px;
         background-color: #f8f9fa;
@@ -59,5 +65,8 @@
         border-radius: 4px;
         padding: 16px;
         line-height: 22px;
+    }
+    &__back{
+        width: 100%;
     }
 }

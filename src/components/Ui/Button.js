@@ -6,6 +6,7 @@ const Button = ({ bgcolor, bordered, size, type, className, children, handler })
         className,
         'button',
         { ['button_bordered']: bordered },
+        { [`button_bordered-${bordered}`]: bordered },
         { [`button_size-${size}`]: size },
         { [`button_bgcolor-${bgcolor}`]: bgcolor }
     )

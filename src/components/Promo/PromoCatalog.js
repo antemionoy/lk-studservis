@@ -3,8 +3,10 @@ import Pagination from '../Pagination/Pagination'
 import Button from '../Ui/Button'
 import './PromoCatalog.scss'
 import { setPopup, deletePopup } from '../../slices/popupSlice';
+import FormField from '../Form/FormField';
+import Filter from '../Ui/Filter';
 
-const PromoCatalog = ({ max, items, category, grid }) => {
+const PromoCatalog = ({ max, items, category, grid, filter }) => {
     const dispatch = useDispatch()
 
     const openPopup = (id, title) => {
@@ -17,11 +19,49 @@ const PromoCatalog = ({ max, items, category, grid }) => {
         }
     }
 
+    const options = [
+        {
+            name: 'Cайты',
+            value: 'sites'
+        },
+        {
+            name: 'Контекстная реклама',
+            value: 'Контекстная реклама'
+        },
+        {
+            name: 'Контекстная реклама',
+            value: 'Контекстная реклама'
+        },
+        {
+            name: 'Контекстная реклама',
+            value: 'Контекстная реклама'
+        },
+    ]
+
     return (
         <div className="promo-catalog d-flex">
-            <div className="promo__filter promo-filter">
-
-            </div>
+            {!!filter &&
+                <Filter className='promo__filter'>
+                    <FormField
+                        type='select'
+                        className='filter__field'
+                        options={options}
+                        currentSelect='Выберите категорию'
+                    />
+                    <FormField
+                        type='select'
+                        className='filter__field'
+                        options={options}
+                        currentSelect='Выберите размер'
+                    />
+                    <FormField
+                        type='select'
+                        className='filter__field'
+                        options={options}
+                        currentSelect='Default'
+                    />
+                </Filter>
+            }
             <ul className="promo-catalog__list d-flex wrap">
                 {items.length > 0 && items.map((el, i) => (
                     <li className={`promo-catalog__col promo-catalog__col_grid-${grid}`} key={i} >

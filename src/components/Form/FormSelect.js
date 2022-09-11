@@ -39,7 +39,6 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
 
     useEffect(() => {
         const handlerClick = (e) => {
-            console.log(wrapperRef.current.contains(e.target))
             wrapperRef.current.contains(e.target) || setShowSelect(false)
         };
         document.addEventListener('click', handlerClick);
@@ -75,10 +74,9 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
                         <label
                             className='form-select__element d-flex'
                             key={index}
-                            htmlFor={index}
                         >
 
-                            <input type="checkbox" id={index} value={el.value ?? el.name} onChange={(e) => addSource(el.name, e)} className="form-select__checkbox" />
+                            <input type="checkbox" value={el.value ?? el.name} onChange={(e) => addSource(el.name, e)} className="form-select__checkbox" />
                             <span className='form-select__value'>{el.name}</span>
                         </label>
                     ))

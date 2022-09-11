@@ -3,7 +3,7 @@ import cn from 'classnames'
 import React, { useState } from 'react'
 import { TabsContext } from '../../context/TabsContext'
 
-const Tabs = ({ nav, children, className }) => {
+const Tabs = ({ nav, children, className, info }) => {
     const [currentTab, setCurrentTab] = useState(0)
 
     const tabClass = cn(
@@ -24,13 +24,25 @@ const Tabs = ({ nav, children, className }) => {
     return (
         <TabsContext.Provider value={[currentTab, setCurrentTab]}>
             <div className={tabClass}>
-                <ul className="tabs__nav d-flex">
-                    {nav.map((el, i) => (
-                        <li className="tabs__tab" key={i}>
-                            <button type="button" id={i} className={activeClass(i, 'tabs__button')} onClick={handleClick}>{el.name}</button>
-                        </li>
-                    ))}
-                </ul>
+                <div className="tabs__head d-flex">
+                    <ul className="tabs__nav d-flex">
+                        {nav.map((el, i) => (
+                            <li className="tabs__tab" key={i}>
+                                <button type="button" id={i} className={activeClass(i, 'tabs__button')} onClick={handleClick}>{el.name}</button>
+                            </li>
+                        ))}
+                    </ul>
+                    {info.length > 0 &&
+                        <div className="tabs__info d-flex">
+                            {info.map(({ name, value }, i) => (
+                                <div className="tabs__info-el">
+                                    <div>{name}</div>
+                                    <div>{value}</div>
+                                </div>
+                            ))}
+                        </div>
+                    }
+                </div>
                 {children}
             </div>
         </TabsContext.Provider>

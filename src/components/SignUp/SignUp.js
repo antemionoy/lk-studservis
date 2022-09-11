@@ -35,11 +35,12 @@ const SignUp = () => {
     ]
 
     const handlerNext = (e) => {
-        console.log(e)
+        console.log(e.target)
         setCurrentStep(++currentStep)
     }
 
     const handlerPrev = (e) => {
+        console.log(e)
         setCurrentStep(--currentStep)
     }
 
@@ -101,7 +102,7 @@ const SignUp = () => {
                                 placeholder='Номер телефона'
                                 error='Введите корректный телефон'
                             />
-                            <p>Или</p>
+                            <p className='sign-up__separator'>Или</p>
                             <FormField
                                 name='telegram'
                                 type='text'
@@ -119,7 +120,14 @@ const SignUp = () => {
                             </Button>
 
                             <div className='sign-up__bottom'>
-                                <button type='button' className="sign-up__back" onClick={handlerPrev}>вернуться назад</button>
+                                <Button
+                                    size='large'
+                                    handler={handlerPrev}
+                                    className='sign-up__back'
+                                    bordered='blue'
+                                >
+                                    Назад
+                                </Button>
                             </div>
                         </div>
                         <div className={stepClass(2)}>
@@ -152,7 +160,14 @@ const SignUp = () => {
                             </div>
 
                             <div className='sign-up__bottom'>
-                                <button type='button' className="sign-up__back" onClick={handlerPrev}>вернуться назад</button>
+                                <Button
+                                    size='large'
+                                    handler={handlerPrev}
+                                    className='sign-up__back'
+                                    bordered='blue'
+                                >
+                                    Назад
+                                </Button>
                             </div>
                         </div>
                     </div>

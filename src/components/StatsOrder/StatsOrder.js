@@ -24,7 +24,7 @@ const orders = [
         { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
         { content: { title: '1575' }, align: 'left', },
         { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left' },
+        { content: { title: '472,5' }, align: 'left', status: 'important' },
         { content: { title: 'default' }, align: 'left' }
     ],
     [
@@ -44,7 +44,7 @@ const orders = [
         { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
         { content: { title: '1575' }, align: 'left', },
         { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left' },
+        { content: { title: '472,5' }, align: 'left', status: 'success' },
         { content: { title: 'default' }, align: 'left' }
     ],
     [
@@ -69,23 +69,7 @@ const orders = [
     ]
 ]
 
-const typeTooltip = [
-    {
-        name: 'Контрольная работа',
-        value: 'Контрольная работа',
-        tag: 'kontrolnay'
-    },
-    {
-        name: 'Курсовая работа',
-        value: 'Курсовая работа',
-        tag: 'kursovay'
-    },
-    {
-        name: 'Отчет по практике',
-        value: 'Отчет по практике',
-        tag: 'otchet'
-    },
-]
+
 
 const options = [
     {
@@ -106,6 +90,23 @@ const options = [
     },
 ]
 const StatsOrder = () => {
+    const typeTooltip = [
+        {
+            name: 'Контрольная работа',
+            value: 'Контрольная работа',
+            tag: 'kontrolnay'
+        },
+        {
+            name: 'Курсовая работа',
+            value: 'Курсовая работа',
+            tag: 'kursovay'
+        },
+        {
+            name: 'Отчет по практике',
+            value: 'Отчет по практике',
+            tag: 'otchet'
+        },
+    ]
     const columns = useMemo(() => [
         { content: { title: 'Дата' }, align: 'left' },
         { content: { title: 'Город' }, align: 'left' },
