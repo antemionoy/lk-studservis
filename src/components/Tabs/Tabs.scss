@@ -1,6 +1,6 @@
 .tabs {
-    &__nav{
-        overflow-y: hidden;
+    &__nav {
+        overflow-x: hidden;
     }
     &__button {
         position: relative;
@@ -28,9 +28,28 @@
         }
     }
 
-    &__head{
+    &__head {
         justify-content: space-between;
         align-items: center;
         padding-right: 21px;
+    }
+
+    &__info {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 54px;
+
+        &-name {
+            font-size: 11px;
+            line-height: 13px;
+            color: #9da5b1;
+        }
+
+        &-value {
+            font-size: 16px;
+            line-height: 19px;
+            color: #3b4b64;
+            font-weight: 700;
+            margin: 6px 0px 0px;
+        }
     }
 }

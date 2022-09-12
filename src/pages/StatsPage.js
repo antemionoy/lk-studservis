@@ -1,10 +1,10 @@
 import Content from "../components/Content/Content"
-import Table from "../components/Ui/Table"
+import StatsMain from "../components/StatsMain/StatsMain"
 
 const StatsPage = () => {
     return (
         <Content>
-            <Table/>
+            <StatsMain/>
         </Content>
     )
 }

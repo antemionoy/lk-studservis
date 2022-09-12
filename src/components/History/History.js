@@ -4,6 +4,7 @@ import ShortForm from '../ShortForm/ShortForm'
 import Tabs from '../Tabs/Tabs'
 import TabsContent from '../Tabs/TabsContent'
 import Button from '../Ui/Button'
+import Calendar from '../Ui/Calendar'
 import Select from '../Ui/Select'
 import Table from '../Ui/Table'
 import './History.scss'
@@ -11,63 +12,39 @@ import './History.scss'
 const orders = [
     [
         { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5', icon: 'check' }, align: 'left' },
-        { content: { title: 'default' }, align: 'left' }
+        { content: { title: '-4800' }, align: 'left' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
     ],
     [
         { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left', status: 'important' },
-        { content: { title: 'default' }, align: 'left' }
+        { content: { title: '4800' }, align: 'left', status: 'enrollment' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
     ],
     [
         { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left' },
-        { content: { title: 'default' }, align: 'left' }
+        { content: { title: '4800' }, align: 'left', status: 'enrollment' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
     ],
     [
         { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left', status: 'success' },
-        { content: { title: 'default' }, align: 'left' }
+        { content: { title: '-4800' }, align: 'left', status: 'сonclusion' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
     ],
     [
         { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left' },
-        { content: { title: 'default' }, align: 'left' }
+        { content: { title: '-4800' }, align: 'left' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
     ],
     [
         { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left' },
-        { content: { title: 'default' }, align: 'left' }
+        { content: { title: '-4800' }, align: 'left' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
     ]
 ]
 
@@ -124,67 +101,69 @@ const History = () => {
 
     const typeTooltip = [
         {
-            name: 'Контрольная работа',
-            value: 'Контрольная работа',
-            tag: 'kontrolnay'
+            name: 'Зачисление',
+            value: 'Зачисление',
+            tag: 'zachislenie'
         },
         {
-            name: 'Курсовая работа',
-            value: 'Курсовая работа',
-            tag: 'kursovay'
+            name: 'Вывод',
+            value: 'Вывод',
+            tag: 'vivod'
         },
         {
-            name: 'Отчет по практике',
-            value: 'Отчет по практике',
-            tag: 'otchet'
+            name: 'Списание',
+            value: 'Списание',
+            tag: 'spicaniye'
         },
     ]
 
     const columns = useMemo(() => [
         { content: { title: 'Дата' }, align: 'left' },
-        { content: { title: 'Город' }, align: 'left' },
-        { content: { title: 'ID заказа' }, align: 'right' },
-        { content: { title: 'Тип работы', options: typeTooltip }, align: 'left' },
-        { content: { title: 'Стоимость' }, align: 'left', },
-        { content: { title: 'Статус заказа' }, align: 'left' },
-        { content: { title: 'Вознаграждение' }, align: 'left' },
-        { content: { title: 'Метка' }, align: 'left' }
+        { content: { title: 'Сумма' }, align: 'left', },
+        { content: { title: 'Тип', options: typeTooltip }, align: 'left' },
+        { content: { title: 'Описание' }, align: 'left' }
     ], [])
+
+    const head = (
+        <div className="history__head d-flex">
+            <div className="history__main d-flex">
+                <Calendar />
+                <Select
+                    className='history__select'
+                    options={options}
+                    name='time'
+                />
+                <Button className='history__button' bgcolor='blue' size='medium'>
+                    Выгрузить excel
+                </Button>
+            </div>
+            <ShortForm
+                className='history__search'
+                icon='search'
+                placeholder='Номер заказа (6 цифр)'
+            />
+        </div>
+    )
 
     return (
         <section className="history">
             <div className="history__container container">
                 <div className="history__section section">
                     <Tabs className='history__tabs' nav={tabs} info={info} >
-                        <div className="stats-order__head d-flex">
-                            <div className="stats-order__main d-flex">
-                                <input type="date" className="stats-order__calendar" />
-                                <Select
-                                    className='stats-order__select'
-                                    options={options}
-                                    name='time'
-                                />
-                                <Button className='stats-order__button' bgcolor='blue' size='medium'>
-                                    Выгрузить excel
-                                </Button>
-                            </div>
-                            <ShortForm
-                                className='stats-order__search'
-                                icon='search'
-                                placeholder='Номер заказа (6 цифр)'
-                            />
-                        </div>
                         <TabsContent className='history__content' id={0}>
-                            <Table className='stats-order__table' columns={columns} data={orders} />
+                            {head}
+                            <Table className='history__table' columns={columns} data={orders} />
                         </TabsContent>
                         <TabsContent className='history__content' id={1}>
-
+                            {head}
+                            <Table className='history__table' columns={columns} data={orders} />
                         </TabsContent>
                         <TabsContent className='history__content' id={2}>
-
+                            {head}
+                            <Table className='history__table' columns={columns} data={orders} />
                         </TabsContent>
                     </Tabs>
-                    <Pagination className='stats-order__pagination' max={2} />
+                    <Pagination className='history__pagination' max={2} />
                 </div>
             </div>
         </section>

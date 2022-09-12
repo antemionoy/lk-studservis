@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import Pagination from '../Pagination/Pagination'
 import ShortForm from '../ShortForm/ShortForm'
 import Button from '../Ui/Button'
+import Calendar from '../Ui/Calendar'
 import Select from '../Ui/Select'
 import Table from '../Ui/Table'
 import './StatsOrder.scss'
@@ -124,7 +125,7 @@ const StatsOrder = () => {
                 <div className="stats-order__section section">
                     <div className="stats-order__head d-flex">
                         <div className="stats-order__main d-flex">
-                            <input type="date" className="stats-order__calendar" />
+                            <Calendar/>
                             <Select
                                 className='stats-order__select'
                                 options={options}

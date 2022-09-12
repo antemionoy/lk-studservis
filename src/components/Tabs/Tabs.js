@@ -32,12 +32,12 @@ const Tabs = ({ nav, children, className, info }) => {
                             </li>
                         ))}
                     </ul>
-                    {info.length > 0 &&
-                        <div className="tabs__info d-flex">
+                    {info?.length > 0 &&
+                        <div className="tabs__info d-grid">
                             {info.map(({ name, value }, i) => (
-                                <div className="tabs__info-el">
-                                    <div>{name}</div>
-                                    <div>{value}</div>
+                                <div className="tabs__info-el" key={i}>
+                                    <p className='tabs__info-name'>{name}</p>
+                                    <p className='tabs__info-value'>{value}</p>
                                 </div>
                             ))}
                         </div>

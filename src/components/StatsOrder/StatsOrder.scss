@@ -2,7 +2,7 @@
     margin: 24px 0px 0px;
 
     &__section {
-        padding: 21px 17px 52px;
+        padding: 21px 17px 21px;
     }
 
     &__main{
@@ -19,6 +19,7 @@
     }
 
     &__table{
-        margin: 52px 0px 0px;
+        margin: 52px -17px 0px;
+        width: calc(100% + 34px);
     }
 }

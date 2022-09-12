@@ -3,6 +3,10 @@
     width: 256px;
     flex-direction: column;
     color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
 
     &__top {
         height: 63px;

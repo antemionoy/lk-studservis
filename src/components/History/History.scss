@@ -1,3 +1,29 @@
-.history{
+.history {
     margin: 28px 0px;
+
+    &__section {
+        padding: 0px 0px 21px;
+    }
+
+    &__table {
+        margin: 28px -17px 0px;
+        width: calc(100% + 34px);
+    }
+
+    &__pagination {
+        margin: 0px 17px;
+    }
+
+    &__head{
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__main{
+        align-items: center;
+    }
+
+    &__select{
+        margin: 0px 24px;
+    }
 }
