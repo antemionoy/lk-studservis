@@ -5,17 +5,20 @@ import { useState } from 'react';
 
 
 const Calendar = () => {
-    const [state, setState] = useState({})
+    const [state, setState] = useState({
+        startDate: null,
+        endDate: null
+    })
 
     return (
         <div>
             <DateRangePicker
-                startDate={null} // momentPropTypes.momentObj or null,
+                startDate={state.startDate} // momentPropTypes.momentObj or null,
                 startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-                endDate={null} // momentPropTypes.momentObj or null,
+                endDate={state.endDate} // momentPropTypes.momentObj or null,
                 endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
                 onDatesChange={({ startDate, endDate }) => setState({ startDate, endDate })} // PropTypes.func.isRequired,
-                focusedInput={null} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                focusedInput={state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                 onFocusChange={focusedInput => setState({ focusedInput })} // PropTypes.func.isRequired,
             />
         </div>
