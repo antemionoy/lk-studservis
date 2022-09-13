@@ -15,7 +15,7 @@ module.exports = {
             },
             {
                 test: /\.(s[ac]|c)ss$/i,
-                exclude: /node_modules/,
+                // exclude: /node_modules/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
