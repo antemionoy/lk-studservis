@@ -23,7 +23,7 @@ module.exports = {
                     {
                         loader: "sass-loader",
                         options: {
-                            // additionalData: "@import ./assets/styles/index.scss",
+                            additionalData: '@import "./src/assets/styles/_variables.scss";',
                         },
                     },
                 ],
@@ -41,6 +41,11 @@ module.exports = {
                         name: '[path][name].[ext]',
                     },
                 },
+            },
+            {
+                test: /\.svg$/,
+                include: path.resolve(__dirname, 'src/assets/svg'),
+                use: 'file-loader'
             },
             {
                 test: /\.svg$/,

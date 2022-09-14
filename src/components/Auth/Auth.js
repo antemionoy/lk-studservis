@@ -1,6 +1,7 @@
 import './Auth.scss'
 import Icon from "../Ui/Icon"
 import Logo from "@/assets/images/logo.png"
+import LogoSvg from "@/assets/svg/logo.svg"
 import Promo from "@/assets/images/promo.png"
 import SignIn from '../SignIn/SignIn'
 import SignUp from '../SignUp/SignUp'
@@ -12,7 +13,7 @@ const Auth = ({ children }) => {
                 <div className="auth__sidebar d-flex">
                     <div className="auth__inner">
                         <div className="auth__header d-flex">
-                            <img src={Logo} alt="" className="auth__logo" />
+                            <img src={LogoSvg} alt="" className="auth__logo" />
                             <p className="auth__desc">партнерская<br /> программа</p>
                         </div>
                         <img src={Promo} alt="" className="auth__picture" />

@@ -45,6 +45,8 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
         return () => document.removeEventListener('click', handlerClick);
     }, [])
 
+    
+
     return (
         <div className={selectClass} ref={wrapperRef}>
             <select className="form-select__hidden" name={name} value={currentSelect} defaultValue>
