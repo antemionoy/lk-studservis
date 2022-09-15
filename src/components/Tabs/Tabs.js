@@ -1,7 +1,7 @@
 import './Tabs.scss'
 import cn from 'classnames'
 import React, { useState } from 'react'
-import { TabsContext } from '../../context/TabsContext'
+import { TabsContext } from '../../contexts/TabsContext'
 
 const Tabs = ({ nav, children, className, info }) => {
     const [currentTab, setCurrentTab] = useState(0)

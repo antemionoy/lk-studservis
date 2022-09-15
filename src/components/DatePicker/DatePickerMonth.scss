@@ -1,0 +1,6 @@
+.datepicker-month{
+    display: grid;
+    margin: 32px 0 0;
+    grid-template-columns: repeat(2, 300px);
+    gap: 0px 64px;
+}

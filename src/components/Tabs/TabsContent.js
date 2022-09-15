@@ -1,7 +1,7 @@
 import './TabsContent.scss'
 import cn from 'classnames'
 import { useContext } from 'react';
-import { TabsContext } from '../../context/TabsContext'
+import { TabsContext } from '../../contexts/TabsContext'
 
 const TabsContent = ({ id, children, className}) => {
     const [context, setContext] = useContext(TabsContext);

@@ -36,6 +36,8 @@
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
+    "@datepicker-react/hooks": "^2.8.4",
+    "@emotion/core": "^11.0.0",
     "@reduxjs/toolkit": "^1.8.3",
     "autoprefixer": "10.4.5",
     "eslint": "^8.17.0",
