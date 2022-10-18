@@ -4,6 +4,8 @@ import { useDatepicker, START_DATE } from "@datepicker-react/hooks";
 import DatepickerContext from '../../contexts/DatePickerContext'
 import Icon from '../Ui/Icon';
 import DatePickerMonth from './DatePickerMonth';
+import {es as locale} from 'date-fns/locale'
+import {format} from 'date-fns'
 
 const DatePicker = () => {
 
@@ -31,7 +33,7 @@ const DatePicker = () => {
         startDate: state.startDate,
         endDate: state.endDate,
         focusedInput: state.focusedInput,
-        onDatesChange: handleDateChange
+        onDatesChange: handleDateChange,
     });
 
     function handleDateChange(data) {
@@ -41,9 +43,6 @@ const DatePicker = () => {
             setState(data);
         }
     }
-
-    console.log(activeMonths)
-
 
     return (
         <DatepickerContext.Provider
