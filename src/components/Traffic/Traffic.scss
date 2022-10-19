@@ -1,8 +1,18 @@
 .traffic {
     margin: 28px 0px;
+
+    &__content{
+    }
+
     &__top {
         background-color: #fff;
+        padding: 21px 17px 50px;
+    }
+
+    &__middle{
+        background-color: #fff;
         min-height: 420px;
+        padding: 0px 17px 19px;
     }
 
     &__bottom {

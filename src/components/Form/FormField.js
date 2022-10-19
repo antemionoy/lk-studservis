@@ -1,8 +1,15 @@
 import './FormField.scss'
 import cn from "classnames"
 import FormSelect from './FormSelect'
+import usePhoneMask from '../../hooks/usePhoneMask'
+import { useState } from 'react'
 
 const FormField = ({ type, name, placeholder, className, label, error, options, currentSelect, description, value, handler }) => {
+    const [phone, setPhone] = useState(null)
+    const phoneMask = usePhoneMask(phone)
+
+    console.log(phoneMask)
+
     const formFieldClass = cn(
         className,
         'form-field'
@@ -34,7 +41,8 @@ const FormField = ({ type, name, placeholder, className, label, error, options, 
                         name={name}
                         placeholder={placeholder}
                         onChange={handler}
-                        // value={value ?? ''}
+                        // onChange={(e) => setPhone(e.target.value)}
+                        // value={phoneMask}
                     />
                     :
                     <FormSelect
