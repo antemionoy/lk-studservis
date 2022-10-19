@@ -4,7 +4,7 @@ import Button from '../Ui/Button'
 import Switch from '../Ui/Switch'
 import './PayForm.scss'
 
-const PayForm = ({ method, payMethods, fields }) => {
+const PayForm = ({ method, payMethods, fields, error }) => {
     // let fields = []
     // payMethods.forEach((el, i) => {
     //     if(method == el.name){
@@ -22,7 +22,12 @@ const PayForm = ({ method, payMethods, fields }) => {
                 />
             ))}
             <Switch className='pay-form__switch' policy />
-            <Button className='pay-form__button' bgcolor='blue' size='large'>
+            <Button
+                className='pay-form__button'
+                bgcolor='blue'
+                size='large'
+                isDisabled={error.status}
+            >
                 Вывести
             </Button>
         </form>

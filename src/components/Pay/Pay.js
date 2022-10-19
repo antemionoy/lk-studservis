@@ -92,12 +92,35 @@ function getFields(method) {
 const Pay = () => {
     let [currentAmount, setCurrenAmount] = useState(420)
     let [currentMethod, setCurrenMethod] = useState('phone')
+    let [minAmount, setMinAmount] = useState(100)
+    let [isError, setIsError] = useState({
+        status: false,
+        value: 0
+    })
     const [activeFields, setActiveFields] = useState(getFields(currentMethod))
 
     useEffect(() => {
         setActiveFields(getFields(currentMethod))
     }, [currentMethod])
-    
+
+    const changeHandler = (e) => {
+        const value = e.target.value;
+        if ((value < minAmount || value > currentAmount) && value != '') {
+            setIsError({
+                ...isError,
+                status: true,
+                value: value
+            })
+        }
+        else {
+            setIsError({
+                ...isError,
+                status: false,
+                value: value
+            })
+        }
+    }
+
     return (
         <section className="pay">
             <div className="pay__container container">
@@ -105,7 +128,12 @@ const Pay = () => {
                     <div className="pay__head d-flex">
                         <h2 className="pay__title title">Укажите сумму вывода, руб.</h2>
                     </div>
-                    <PayAmount amount={currentAmount} />
+                    <PayAmount
+                        amount={currentAmount}
+                        minAmount={minAmount}
+                        handler={changeHandler}
+                        error={isError}
+                    />
                 </div>
                 <div className="pay__section section">
                     <div className="pay__head d-flex">
@@ -124,7 +152,12 @@ const Pay = () => {
                             < p className="pay__descr pay__descr_color-red">Внимание! Вывод осуществляется на QIWI-кошельки Россия и Белоруссия.</p>
                         }
                     </div>
-                    <PayForm method={currentMethod} payMethods={payMethods} fields={activeFields} />
+                    <PayForm
+                        method={currentMethod}
+                        payMethods={payMethods}
+                        fields={activeFields}
+                        error={isError}
+                    />
                 </div>
             </div>
         </section >

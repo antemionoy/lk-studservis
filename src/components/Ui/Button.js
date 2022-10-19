@@ -1,6 +1,6 @@
 import cn from "classnames"
 
-const Button = ({ bgcolor, bordered, size, type, className, children, handler }) => {
+const Button = ({ bgcolor, bordered, size, type, className, children, isDisabled, handler }) => {
 
     const buttonClass = cn(
         className,
@@ -8,7 +8,8 @@ const Button = ({ bgcolor, bordered, size, type, className, children, handler })
         { ['button_bordered']: bordered },
         { [`button_bordered-${bordered}`]: bordered },
         { [`button_size-${size}`]: size },
-        { [`button_bgcolor-${bgcolor}`]: bgcolor }
+        { [`button_bgcolor-${bgcolor}`]: bgcolor },
+        { [`button_disabled`]: isDisabled }
     )
 
     return (

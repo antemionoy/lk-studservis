@@ -410,6 +410,11 @@ h3 {
             background-color: $color-grey;
         }
     }
+
+    &_disabled{
+        pointer-events: none;
+        background-color: #eee;
+    }
 }
 
 .close {

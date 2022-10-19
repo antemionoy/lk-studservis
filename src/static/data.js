@@ -99,3 +99,25 @@ const history = [
         align: 'string', // left or right
     }
 ]
+
+// url /money/
+// method /get/
+// массив объектов
+const money = {
+    main: {
+        amount: 'number',
+    },
+    methods:{
+        name: 'string', // методы вывода phone, qiwi, visa 
+        time: 'string',
+        sum: 'number',
+        fields: [
+            {
+                label: 'string',
+                type: 'string',
+                name: 'string',
+                error: 'bool'
+            }
+        ]
+    },
+}

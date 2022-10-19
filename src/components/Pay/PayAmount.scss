@@ -7,14 +7,32 @@
         #{$field} {
             &__element {
                 height: 55px;
-                color: #303C54;
+                color: #303c54;
                 font-size: 24px;
             }
+        }
+
+        &_error{
+            box-shadow: 0px 0px 0px 4px rgba(228, 83, 83, 0.5);
+            border-radius: 4px;
         }
     }
 
     &__main {
+        position: relative;
         align-items: center;
+    }
+
+    &__error {
+        position: absolute;
+        top: -20px;
+        font-size: 12px;
+        line-height: 15px;
+        color: #e45353;
+    }
+
+    &__icon{
+        margin-right: 6px;
     }
 
     &__info {
@@ -44,7 +62,7 @@
         font-size: 12px;
         line-height: 15px;
 
-        &-link{
+        &-link {
             text-decoration: underline;
         }
 

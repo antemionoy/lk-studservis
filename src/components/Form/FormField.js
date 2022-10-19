@@ -2,7 +2,7 @@ import './FormField.scss'
 import cn from "classnames"
 import FormSelect from './FormSelect'
 
-const FormField = ({ type, name, placeholder, className, label, error, options, currentSelect, description, value }) => {
+const FormField = ({ type, name, placeholder, className, label, error, options, currentSelect, description, value, handler }) => {
     const formFieldClass = cn(
         className,
         'form-field'
@@ -33,6 +33,7 @@ const FormField = ({ type, name, placeholder, className, label, error, options, 
                         type={type}
                         name={name}
                         placeholder={placeholder}
+                        onChange={handler}
                         // value={value ?? ''}
                     />
                     :

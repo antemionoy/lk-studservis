@@ -2,20 +2,41 @@ import './PayAmount.scss'
 import FormField from "../Form/FormField"
 import Icon from "../Ui/Icon"
 import { Link } from "react-router-dom"
+import cn from 'classnames'
 
-const PayAmount = ({ amount }) => {
+const PayAmount = ({ amount, minAmount, handler, error }) => {
+    const classField = cn(
+        'pay-amount__field',
+        {['pay-amount__field_error']: error.status },
+    )
+    
     return (
         <>
             <div className="pay-amount__main d-flex">
-                <FormField type='text' placeholder={amount} className='pay-amount__field' />
+                {error.status &&
+                    <div className="pay-amount__error d-flex">
+                        <Icon name='warning' className='pay-amount__icon' width='13' height='13' />
+                        {error.value < minAmount ?
+                            <span>Сумма не должна быть менее {minAmount} руб.</span>
+                            :
+                            <span>Сумма больше доступной для вывода!</span>
+                        }
+                    </div>
+                }
+                <FormField
+                    type='number'
+                    placeholder={amount}
+                    className={classField}
+                    handler={handler}
+                />
                 <div className="pay-amount__info">
                     <div className="pay-amount__info-row d-flex">
                         <p className="pay-amount__info-prop">Минимальная сумма вывода:</p>
-                        <p className="pay-amount__info-value">100 р</p>
+                        <p className="pay-amount__info-value">{minAmount} р</p>
                     </div>
                     <div className="pay-amount__info-row d-flex">
                         <p className="pay-amount__info-prop">Для вывода доступно:</p>
-                        <p className="pay-amount__info-value">0 р</p>
+                        <p className="pay-amount__info-value">{amount} р</p>
                     </div>
                 </div>
             </div>

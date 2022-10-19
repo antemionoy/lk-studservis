@@ -2,8 +2,12 @@
     margin: 24px 0px;
 
     &__head {
-        margin: 0px 0px 28px;
+        margin: 0px 0px 49px;
         align-items: center;
+    }
+
+    &__main{
+        position: relative;
     }
 
     &__descr {
