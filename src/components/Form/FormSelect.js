@@ -26,6 +26,7 @@ const FormSelect = ({ type, name, description, className, options, currentSelect
     }
 
     const deleteSource = (e) => {
+        console.log(e.target)
         e.stopPropagation()
     }
 
