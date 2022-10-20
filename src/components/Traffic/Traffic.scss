@@ -1,21 +1,73 @@
 .traffic {
     margin: 28px 0px;
 
-    &__content{
+    &__content {
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 24px;
+        color: #303c54;
+    }
+
+    &__range {
+        font-size: 12px;
+        line-height: 15px;
+        color: #9da5b1;
+        margin: 4px 0px 0px;
+    }
+
+    &__filter {
+        align-items: center;
+        border-radius: 4px;
+
+        &-item{
+            &:first-of-type{
+                border-radius: 4px 0px 0px 4px;
+            }
+
+            &:last-of-type{
+                border-radius: 0px 4px 4px 0px;
+            }
+        }
+      
+        &-button {
+            padding: 11px 12px;
+            border: 1px solid #9da5b1;
+            height: 100%;
+            border-right: 1px solid #9da5b1;
+            border-radius: inherit;
+            font-size: 13px;
+            line-height: 16px;
+            letter-spacing: -0.32px;
+            color: #9da5b1;
+
+            &:hover {
+                background-color: #9da5b1;
+                color: #fff;
+            }
+
+            &_active {
+                background-color: #9da5b1;
+                color: #fff;
+            }
+        }
     }
 
     &__top {
         background-color: #fff;
         padding: 21px 17px 50px;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    &__middle{
+    &__chart {
         background-color: #fff;
         min-height: 420px;
         padding: 0px 17px 19px;
     }
 
-    &__bottom {
+    &__switches {
         background-color: #f8f9fa;
         min-height: 85px;
     }

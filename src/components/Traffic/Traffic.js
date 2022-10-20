@@ -12,6 +12,7 @@ import {
 } from 'chart.js';
 import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
+import TrafficSwitches from './TrafficSwitches';
 
 const filter = [
     {
@@ -32,28 +33,70 @@ const filter = [
     },
 ]
 
-
 const Traffic = () => {
     // ChartJS.register(CategoryScale);/
 
     const data = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        labels: ["15 Июня", "16 Июня", "17 Июня", "18 Июня", "19 Июня", "20 Июня", "21 Июня"],
         datasets: [
             {
-                label: "First dataset",
-                data: [33, 53, 85, 41, 44, 65],
+                label: 'Заявки',
+                data: [0, 5, 10, 15, 20, 30, 40, 60, 80],
                 fill: true,
-                backgroundColor: "rgba(75,192,192,0.2)",
-                borderColor: "rgba(75,192,192,1)"
+                backgroundColor: "rgba(50, 31, 219, 0.2)",
+                borderColor: "#321FDB",
+                tension: 0.4
             },
             {
-                label: "Second dataset",
-                data: [33, 25, 35, 51, 54, 76],
-                fill: false,
-                borderColor: "#742774"
+                label: 'Заказы',
+                data: [12, 15, 20, 40, 14, 40, 4],
+                fill: true,
+                backgroundColor: "rgba(50, 31, 219, 0.2)",
+                borderColor: "#F8B114",
+                tension: 0.4
             }
         ]
-    };
+    }
+
+    const options = {
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        // layout: {
+        //     padding:
+        //     {
+        //         bottom: 100
+        //     }
+        // },
+    }
+
+    const trafficSwitches = [
+        {
+            name: 'Заявки',
+            count: 80,
+            total: 20,
+            color: '#321FDB',
+        },
+        {
+            name: 'Заказы',
+            count: 80,
+            total: +20,
+            color: '#F8B114',
+        },
+        {
+            name: 'Доход',
+            count: 80,
+            total: 20,
+            color: '#E45353',
+        },
+        {
+            name: 'Конверсия',
+            count: 80,
+            total: 80,
+            color: '#2EB85C',
+        },
+    ]
+
+
     return (
         <section className="traffic">
             <div className="traffic__container container">
@@ -63,14 +106,20 @@ const Traffic = () => {
                             <h2 className='traffic__title title title_h2'>Активность</h2>
                             <p className='traffic__range'>15 Июня - 21 Июня </p>
                         </div>
-                        <ul className="traffic__filter">
-
+                        <ul className="traffic__filter d-flex">
+                            {filter.map((el, i) => (
+                                <li className="traffic__filter-item" key={i}>
+                                    <button type='button' className="traffic__filter-button">
+                                        {el.name}
+                                    </button>
+                                </li>
+                            ))}
                         </ul>
                     </div>
-                    <div className="traffic__middle">
-                        <Line data={data} />
+                    <div className="traffic__chart">
+                        <Line data={data} options={options} height='420' />
                     </div>
-                    <div className="traffic__bottom"></div>
+                    <TrafficSwitches switches={trafficSwitches} className='traffic__switches' />
                 </div>
             </div>
         </section>
