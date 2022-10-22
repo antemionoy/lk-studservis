@@ -1,7 +1,7 @@
 import Icon from "./Icon";
 import cn from "classnames";
 
-const SwithcIcons = ({ className, icons }) => {
+const SwithcIcons = ({ className, handler }) => {
     const switchClass = cn(
         className,
         'switch-icons',
@@ -10,10 +10,10 @@ const SwithcIcons = ({ className, icons }) => {
     return (
         <div className={switchClass}>
             <label className='switch-icons__label'>
-                <input type="checkbox" className="switch-icons__input" hidden />
+                <input type="checkbox" className="switch-icons__input" onChange={(e) => handler(e.target.checked)} hidden />
                 <div className="switch-icons__inner d-grid">
-                    <Icon name='table' className='switch-icons__icon' width='15' height='15' />
                     <Icon name='chart' className='switch-icons__icon' width='15' height='15' />
+                    <Icon name='table' className='switch-icons__icon' width='15' height='15' />
                 </div>
             </label>
         </div>

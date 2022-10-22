@@ -505,6 +505,8 @@ h3 {
 }
 
 .switch-icons {
+    $parent: &;
+
     &__inner {
         position: relative;
         background: #9da5b1;
@@ -535,6 +537,7 @@ h3 {
     }
 
     &__icon {
+        transition: 0.3 ease fill;
         &:first-of-type {
             fill: $color-title;
         }
@@ -547,7 +550,11 @@ h3 {
     }
 
     &__input:checked + &__inner{
-
+        #{$parent}{
+            &__icon:last-of-type{
+                fill: $color-title;
+            }
+        }
     }
 }
 

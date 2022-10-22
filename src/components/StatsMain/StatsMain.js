@@ -17,6 +17,8 @@ import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
 import Options from '../Ui/Options';
 import SwithcIcons from '../Ui/SwitchIcons';
+import { useMemo, useState } from 'react';
+import Table from '../Ui/Table';
 
 const options = [
     {
@@ -37,9 +39,72 @@ const options = [
     },
 ]
 
+const typeTooltip = [
+    {
+        name: 'Зачисление',
+        value: 'Зачисление',
+        tag: 'zachislenie'
+    },
+    {
+        name: 'Вывод',
+        value: 'Вывод',
+        tag: 'vivod'
+    },
+    {
+        name: 'Списание',
+        value: 'Списание',
+        tag: 'spicaniye'
+    },
+]
 
+const orders = [
+    [
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: '-4800' }, align: 'left' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+    ],
+    [
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: '4800' }, align: 'left', status: 'enrollment' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+    ],
+    [
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: '4800' }, align: 'left', status: 'enrollment' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+    ],
+    [
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: '-4800' }, align: 'left', status: 'сonclusion' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+    ],
+    [
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: '-4800' }, align: 'left' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+    ],
+    [
+        { content: { title: '25.08.2022' }, align: 'left' },
+        { content: { title: '-4800' }, align: 'left' },
+        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+    ]
+]
 
 const StatsMain = () => {
+    const [viewChecked, setViewChecked] = useState(false)
+    const columns = useMemo(() => [
+        { content: { title: 'Дата' }, align: 'left' },
+        { content: { title: 'Сумма' }, align: 'left', },
+        { content: { title: 'Тип', options: typeTooltip }, align: 'left' },
+        { content: { title: 'Описание' }, align: 'left' }
+    ], [])
+
     const data = {
         labels: ["15 Июня", "16 Июня", "17 Июня", "18 Июня", "19 Июня", "20 Июня", "21 Июня"],
         datasets: [
@@ -102,7 +167,6 @@ const StatsMain = () => {
         },
     ]
 
-
     return (
         <section className="stats-main">
             <div className="stats-main__container container">
@@ -132,17 +196,25 @@ const StatsMain = () => {
                         </div>
 
                         <div className="stats-main__right d-flex">
-                            <SwithcIcons className='stats-main__switch'/>
+                            <SwithcIcons
+                                className='stats-main__switch'
+                                handler={setViewChecked}
+                            />
                             <Options
                                 className='stats-main__options'
                                 options={statsOptions}
                             />
                         </div>
-
                     </div>
-                    <div className="stats-main__chart" style={{ height: '360px' }}>
-                        <Line data={data} options={optionsChart} height='360' />
-                    </div>
+                    {!!viewChecked ?
+                        <>
+                            <Table className='stats-main__table' columns={columns} data={orders} />
+                        </>
+                        :
+                        <div className="stats-main__chart" style={{ height: '360px' }}>
+                            <Line data={data} options={optionsChart} height='360' />
+                        </div>
+                    }
                 </div>
             </div>
         </section>
