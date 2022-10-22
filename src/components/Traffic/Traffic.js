@@ -34,8 +34,6 @@ const filter = [
 ]
 
 const Traffic = () => {
-    // ChartJS.register(CategoryScale);/
-
     const data = {
         labels: ["15 Июня", "16 Июня", "17 Июня", "18 Июня", "19 Июня", "20 Июня", "21 Июня"],
         datasets: [
@@ -61,12 +59,6 @@ const Traffic = () => {
     const options = {
         maintainAspectRatio: false,
         plugins: { legend: { display: false } },
-        // layout: {
-        //     padding:
-        //     {
-        //         bottom: 100
-        //     }
-        // },
     }
 
     const trafficSwitches = [

@@ -8,11 +8,16 @@
     left: 0;
     bottom: 0;
 
+    &__logo{
+        min-width: 122px;
+    }
+
     &__top {
         height: 63px;
         align-items: center;
         padding: 0px 34px;
         background-color: #303c54;
+        flex-shrink: 0;
     }
 
     &__descr {

@@ -15,6 +15,8 @@ import {
 } from 'chart.js';
 import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
+import Options from '../Ui/Options';
+import SwithcIcons from '../Ui/SwitchIcons';
 
 const options = [
     {
@@ -38,7 +40,6 @@ const options = [
 
 
 const StatsMain = () => {
-
     const data = {
         labels: ["15 Июня", "16 Июня", "17 Июня", "18 Июня", "19 Июня", "20 Июня", "21 Июня"],
         datasets: [
@@ -49,14 +50,6 @@ const StatsMain = () => {
                 backgroundColor: "rgba(50, 31, 219, 0.2)",
                 borderColor: "#321FDB",
                 tension: 0.4
-            },
-            {
-                label: 'Заказы',
-                data: [12, 15, 20, 40, 14, 40, 4],
-                fill: true,
-                backgroundColor: "rgba(50, 31, 219, 0.2)",
-                borderColor: "#F8B114",
-                tension: 0.4
             }
         ]
     }
@@ -64,20 +57,60 @@ const StatsMain = () => {
     const optionsChart = {
         maintainAspectRatio: false,
         plugins: { legend: { display: false } },
-        // layout: {
-        //     padding:
-        //     {
-        //         bottom: 100
-        //     }
-        // },
     }
+
+    const statsOptions = [
+        {
+            name: 'Заказы',
+            value: 'orders'
+        },
+        {
+            name: 'Ребилы',
+            value: 'rebilly'
+        },
+        {
+            name: 'Переходы',
+            value: 'transitions'
+        },
+        {
+            name: 'Заявки',
+            value: 'applications'
+        },
+        {
+            name: 'Спам',
+            value: 'spam'
+        },
+        {
+            name: 'CR',
+            value: 'cr'
+        },
+        {
+            name: 'EPC',
+            value: 'epc'
+        },
+        {
+            name: 'Доход',
+            value: 'income'
+        },
+        {
+            name: 'Заморожено',
+            value: 'frozen'
+        },
+        {
+            name: 'Возврат',
+            value: 'return'
+        },
+    ]
+
+
     return (
         <section className="stats-main">
             <div className="stats-main__container container">
                 <div className="stats-main__section section">
                     <div className="stats-main__head d-flex">
                         <div className="stats-main__main d-flex">
-                            <Calendar />
+                            {/* <Calendar /> */}
+
                             <Select
                                 className='stats-main__select'
                                 options={options}
@@ -97,11 +130,18 @@ const StatsMain = () => {
                                 Выгрузить excel
                             </Button>
                         </div>
-                        <div className="stats-main__second">
+
+                        <div className="stats-main__right d-flex">
+                            <SwithcIcons className='stats-main__switch'/>
+                            <Options
+                                className='stats-main__options'
+                                options={statsOptions}
+                            />
                         </div>
+
                     </div>
-                    <div className="stats-main__chart" style={{height: '260px'}}>
-                        <Line data={data} options={optionsChart} height='260' />
+                    <div className="stats-main__chart" style={{ height: '360px' }}>
+                        <Line data={data} options={optionsChart} height='360' />
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ const HeaderUser = ({ avatar }) => {
             </div>
             <Link to='/profile'>
                 {avatar ?
-                    <img src="" alt="" className="header-user__avatar" />
+                    <img src={avatar} alt="" className="header-user__avatar" />
                     : <div className="header-user__circle"></div>
                 }
             </Link>

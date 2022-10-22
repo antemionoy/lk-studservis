@@ -1,5 +1,5 @@
 import './Sidebar.scss'
-import Logo from '@assets/images/logo.png'
+import Logo from '@assets/svg/logo.svg'
 import Icon from '../Ui/Icon'
 import Menu from '../Menu/Menu'
 import { Link } from 'react-router-dom'

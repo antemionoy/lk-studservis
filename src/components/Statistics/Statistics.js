@@ -36,7 +36,7 @@ const Statistics = () => {
                             title={el.title}
                             count={el.count}
                             percent={el.percent}
-                            color={color}
+                            color={el.color}
                         />
                     ))}
                 </ul>

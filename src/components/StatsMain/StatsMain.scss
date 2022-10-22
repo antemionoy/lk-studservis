@@ -5,8 +5,19 @@
     }
     &__main {
         align-items: center;
+        // flex-shrink: 0;
     }
     &__select {
         margin: 0px 20px;
+    }
+    &__chart{
+        margin: 50px 0px 0px;
+    }
+    &__options{
+        margin-left: 24px;
+    }
+    &__right{
+        flex-shrink: 0;
+        align-items: center;
     }
 }
