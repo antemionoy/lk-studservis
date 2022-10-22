@@ -7,17 +7,20 @@ const Statistics = () => {
         {
             title: 'Заявки',
             count: 10,
-            percent: -12.6
+            percent: -12.6,
+            color: 'rgb(50, 31, 219, 1)'
         },
         {
             title: 'Заказы',
             count: 3976098,
-            percent: -27
+            percent: -27,
+            color: 'rgb(248, 177, 20)',
         },
         {
             title: 'Доходы',
             count: 119875,
-            сurrency: 'rub'
+            сurrency: 'rub',
+            color: 'rgb(228, 83, 83)'
         },
     ]
 
@@ -33,6 +36,7 @@ const Statistics = () => {
                             title={el.title}
                             count={el.count}
                             percent={el.percent}
+                            color={color}
                         />
                     ))}
                 </ul>
