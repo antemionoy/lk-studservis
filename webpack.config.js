@@ -45,7 +45,15 @@ module.exports = {
             {
                 test: /\.svg$/,
                 include: path.resolve(__dirname, 'src/assets/svg'),
-                use: 'file-loader'
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            extract: true,
+                            outputPath: './src/assets/svg/'
+                        }
+                    },
+                ]
             },
             {
                 test: /\.svg$/,
