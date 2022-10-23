@@ -19,6 +19,7 @@ import Options from '../Ui/Options';
 import SwithcIcons from '../Ui/SwitchIcons';
 import { useMemo, useState } from 'react';
 import Table from '../Ui/Table';
+import DatePicker from '../DatePicker/DatePicker'
 
 const options = [
     {
@@ -173,7 +174,7 @@ const StatsMain = () => {
                 <div className="stats-main__section section">
                     <div className="stats-main__head d-flex">
                         <div className="stats-main__main d-flex">
-                            {/* <Calendar /> */}
+                            <DatePicker/>
 
                             <Select
                                 className='stats-main__select'

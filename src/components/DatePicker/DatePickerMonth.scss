@@ -1,6 +1,54 @@
-.datepicker-month{
-    display: grid;
-    margin: 32px 0 0;
-    grid-template-columns: repeat(2, 300px);
-    gap: 0px 64px;
+.datepicker-month {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: $color-title;
+
+    &__top {
+        padding: 0px 9px 0px;
+        justify-content: space-between;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    &__body {
+        padding: 8px 12px 11px;
+    }
+
+    &__button {
+        position: relative;
+        align-items: center;
+        padding: 0px 4px;
+        color: #ebedef;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            left: 0;
+            bottom: -2px;
+            background-color: #fff;
+        }
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+
+    &__icon {
+        fill: currentColor;
+        &_rotate {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &__label {
+        flex: 1;
+        text-align: center;
+        padding: 10px 0px 8px;
+    }
+
+    &__week {
+        margin-bottom: 6px;
+    }
 }

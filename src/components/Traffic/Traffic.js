@@ -39,7 +39,7 @@ const Traffic = () => {
         datasets: [
             {
                 label: 'Заявки',
-                data: [0, 5, 10, 15, 20, 30, 40, 60, 80],
+                data: [0, 5, 10, 15, 20, 30, 40],
                 fill: true,
                 backgroundColor: "rgba(50, 31, 219, 0.2)",
                 borderColor: "#321FDB",

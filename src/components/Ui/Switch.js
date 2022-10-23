@@ -1,7 +1,7 @@
 import cn from "classnames"
 import { Link } from "react-router-dom"
 
-const Switch = ({ className, text, policy, color }) => {
+const Switch = ({ className, text, policy, color, id }) => {
     const switchClass = cn(
         className,
         'switch',

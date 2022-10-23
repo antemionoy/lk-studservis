@@ -1,8 +1,33 @@
 import React, { useRef, useContext } from "react";
 import { useDay } from "@datepicker-react/hooks";
 import DatepickerContext from '../../contexts/DatePickerContext'
-import {es as locale} from 'date-fns/locale'
-import {format} from 'date-fns'
+
+function getColor(
+  isSelected,
+  isSelectedStartOrEnd,
+  isWithinHoverRange,
+  isDisabled
+) {
+  return ({
+    selectedFirstOrLastColor,
+    normalColor,
+    selectedColor,
+    rangeHoverColor,
+    disabledColor
+  }) => {
+    if (isSelectedStartOrEnd) {
+      return selectedFirstOrLastColor;
+    } else if (isSelected) {
+      return selectedColor;
+    } else if (isWithinHoverRange) {
+      return rangeHoverColor;
+    } else if (isDisabled) {
+      return disabledColor;
+    } else {
+      return normalColor;
+    }
+  };
+}
 
 function DataPickerDay({ day, date }) {
   const dayRef = useRef(null);
@@ -20,6 +45,8 @@ function DataPickerDay({ day, date }) {
   const {
     isSelected,
     isSelectedStartOrEnd,
+    isWithinHoverRange,
+    disabledDate,
     onClick,
     onKeyDown,
     onMouseEnter,
@@ -42,6 +69,13 @@ function DataPickerDay({ day, date }) {
     return <div />;
   }
 
+  const getColorFn = getColor(
+    isSelected,
+    isSelectedStartOrEnd,
+    isWithinHoverRange,
+    disabledDate
+  );
+
   return (
     <button
       onClick={onClick}
@@ -51,8 +85,22 @@ function DataPickerDay({ day, date }) {
       type="button"
       ref={dayRef}
       style={{
-        color: isSelected || isSelectedStartOrEnd ? "white" : "black",
-        background: isSelected || isSelectedStartOrEnd ? "blue" : "white"
+        padding: "8px 10px",
+        border: 0,
+        color: getColorFn({
+          selectedFirstOrLastColor: "#FFFFFF",
+          normalColor: "#001217",
+          selectedColor: "#000",
+          rangeHoverColor: "#FFFFFF",
+          disabledColor: "#808285"
+        }),
+        background: getColorFn({
+          selectedFirstOrLastColor: "#0D6EFD",
+          normalColor: "#FFFFFF",
+          selectedColor: "#EBEDEF",
+          rangeHoverColor: "#EBEDEF",
+          disabledColor: "#FFFFFF"
+        })
       }}
     >
       {day}

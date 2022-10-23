@@ -1,41 +1,61 @@
 import './DatePickerMonth.scss'
 import { useMonth } from "@datepicker-react/hooks";
 import DataPickerDay from './DatePickerDay';
-import { format, parse } from 'date-fns'
-import { ru } from 'date-fns/locale'
+import DatepickerContext from '../../contexts/DatePickerContext'
+import Icon from '../Ui/Icon';
 
-const DatePickerMonth = ({ year, month, firstDayOfWeek }) => {
+const DatePickerMonth = ({ year, month, firstDayOfWeek, prevMonth, nextMonth, prevYear, nextYear }) => {
     const { days, weekdayLabels, monthLabel } = useMonth({
         year,
         month,
         firstDayOfWeek
     });
 
-    const activeMonth = new Date(monthLabel)
-    // const options = { month: 'long'};
-    // console.log(new Intl.DateTimeFormat('ru-RU', options).format(Xmas95));
+    const monthsRu = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+    const date = new Date(monthLabel)
+    let activeMonth = monthsRu[date.getMonth()];
+    let daysRu = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
-    console.log(activeMonth)
+    const handlerChange = (e, changeCb) => {
+        e.stopPropagation()
+        changeCb(1) // one for change years
+    }
 
     return (
-        <div className="datapicker-hidden" style={{ display: 'flex' }}>
-            <div className="datepicker-month">
+        <div className="datepicker-month">
+            <div className="datepicker-month__top d-flex">
+                <div className="datepicker-month__side d-flex">
+                    <button type='button' className="datepicker-month__button d-flex" onClick={(e) => handlerChange(e, prevYear)}>
+                        <Icon name='prev-icon' className='datepicker-month__icon' width='7' height='11' />
+                        <Icon name='prev-icon' className='datepicker-month__icon' width='7' height='11' />
+                    </button>
+                    <button type='button' className="datepicker-month__button datepicker-month__control" onClick={(e) => handlerChange(e, prevMonth)}>
+                        <Icon name='prev-icon' className='datepicker-month__icon' width='7' height='11' />
+                    </button>
+                </div>
                 <p className="datepicker-month__label">
-                    <strong>
-                    {format(parse('06.08.2020', 'dd.MM.yyyy', new Date(), {locale: ru}), 'do MMMM', {locale: ru})}
-
-                        {/* {format(monthLabel, 'MMMM yyyy', {locale})} */}
-                        {monthLabel}
-                    </strong>
+                    {`${activeMonth} ${year}`}
                 </p>
+                <div className="datepicker-month__side d-flex">
+                    <button type='button' className="datepicker-month__button datepicker-month__control" onClick={(e) => handlerChange(e, nextMonth)}>
+                        <Icon name='prev-icon' className='datepicker-month__icon datepicker-month__icon_rotate' width='7' height='11' />
+                    </button>
+                    <button type='button' className="datepicker-month__button d-flex" onClick={(e) => handlerChange(e, nextYear)}>
+                        <Icon name='prev-icon' className='datepicker-month__icon datepicker-month__icon_rotate' width='7' height='11' />
+                        <Icon name='prev-icon' className='datepicker-month__icon datepicker-month__icon_rotate' width='7' height='11' />
+                    </button>
+                </div>
+            </div>
+            <div className="datepicker-month__body">
                 <div
+                    className='datepicker-month__week'
                     style={{
                         display: "grid",
                         gridTemplateColumns: "repeat(7, 1fr)",
                         justifyContent: "center"
                     }}
                 >
-                    {weekdayLabels.map(dayLabel => (
+                    {daysRu.map(dayLabel => (
                         <div style={{ textAlign: "center" }} key={dayLabel}>
                             {dayLabel}
                         </div>

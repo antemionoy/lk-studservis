@@ -3,16 +3,16 @@ import cn from "classnames"
 import Button from "../Ui/Button"
 import ProfileFeatures from "./ProfileFeatures"
 import Icon from '../Ui/Icon'
-import { useRef } from 'react'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Avatar from '@/assets/images/avatar.png'
 import Switch from '../Ui/Switch'
 
 const ProfileSection = ({ children, className, title, main }) => {
     const fileRef = useRef(null)
-    const [attach, setAttach] = useState({
-        name: null,
-        size: null
+    let [attach, setAttach] = useState({
+        name: '',
+        size: 0,
+        src: ''
     })
 
     const ProfileSectionClass = cn(
@@ -22,11 +22,17 @@ const ProfileSection = ({ children, className, title, main }) => {
     )
 
     const attachFile = (e) => {
-        const [file] = e.targe.files
+        const [file] = e.target.files
         let { name, size } = file
         let correctSize = size >= 5242880 ? 'error' : size
 
-        setAttach({ name, size: correctSize })
+        setAttach({
+            name: name,
+            size: correctSize,
+            src: URL.createObjectURL(file)
+        })
+
+        console.log(attach)
     }
 
     const openFinder = () => {
@@ -50,7 +56,7 @@ const ProfileSection = ({ children, className, title, main }) => {
                             name='file'
                             hidden
                         />
-                        <img src={Avatar} alt="" className="profile-section__avatar-picture" />
+                        <img src={attach.src || Avatar} alt="" className="profile-section__avatar-picture" />
                         <button type='button' className="profile-section__avatar-button">
                             <Icon name='camera' width='10' height='11' className='profile-section__avatar-icon' />
                         </button>

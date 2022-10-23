@@ -549,9 +549,9 @@ h3 {
         transform: translateX(-100%);
     }
 
-    &__input:checked + &__inner{
-        #{$parent}{
-            &__icon:last-of-type{
+    &__input:checked + &__inner {
+        #{$parent} {
+            &__icon:last-of-type {
                 fill: $color-title;
             }
         }
@@ -617,7 +617,7 @@ table {
 
             &::after {
                 position: static;
-                margin-top: -5px;
+                margin-top: -2px;
             }
         }
 
@@ -827,5 +827,31 @@ table {
     &__value {
         margin-left: 10px;
         cursor: pointer;
+    }
+}
+
+.input {
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    color: #9da5b1;
+    border-radius: 4px;
+    padding: 7px 13px 8px;
+    min-height: 35px;
+    outline: none;
+}
+
+.radio {
+    font-size: 12px;
+    line-height: 15px;
+    color: $color-title;
+
+    &__label{
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__text{
+        margin-left: 23px;
     }
 }

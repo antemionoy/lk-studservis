@@ -22,6 +22,7 @@ const Select = ({ type, name, description, className, options, currentSelect, mu
     const changeSelect = (value, e) => {
         if (!multiple) {
             setActiveOption(value)
+            setShowSelect(false)
             return
         }
 

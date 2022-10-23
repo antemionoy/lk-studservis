@@ -8,8 +8,6 @@ const FormField = ({ type, name, placeholder, className, label, error, options, 
     const [phone, setPhone] = useState(null)
     const phoneMask = usePhoneMask(phone)
 
-    console.log(phoneMask)
-
     const formFieldClass = cn(
         className,
         'form-field'

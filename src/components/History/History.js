@@ -8,6 +8,7 @@ import Calendar from '../Ui/Calendar'
 import Select from '../Ui/Select'
 import Table from '../Ui/Table'
 import './History.scss'
+import DatePicker from '../DatePicker/DatePicker'
 
 const orders = [
     [
@@ -127,7 +128,7 @@ const History = () => {
     const head = (
         <div className="history__head d-flex">
             <div className="history__main d-flex">
-                <Calendar />
+                <DatePicker />
                 <Select
                     className='history__select'
                     options={options}
