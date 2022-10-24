@@ -1,27 +1,11 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import useFetchApi from '../../hooks/useFetchApi'
+import { api } from '../../shared/api'
 import './News.scss'
 
 const News = () => {
-    const news = [
-        {
-            date: '20.05.2022, 15:22',
-            name: 'Переадресация лидов на лендинг',
-            code: '1',
-            description: 'Информируем вас о том, что теперь с ваших промо пользователей будет редиректить прямо на ваш локальный лендинг.'
-        },
-        {
-            date: '20.05.2022, 15:22',
-            code: '2',
-            name: 'Переадресация лидов на лендинг',
-            description: 'Информируем вас о том, что теперь с ваших промо пользователей будет редиректить прямо на ваш локальный лендинг.'
-        },
-        {
-            date: '20.05.2022, 15:22',
-            code: '3',
-            name: 'Переадресация лидов на лендинг',
-            description: 'Информируем вас о том, что теперь с ваших промо пользователей будет редиректить прямо на ваш локальный лендинг.'
-        },
-    ]
+    const {data: news} = useFetchApi(api.links.news.link)
 
     return (
         <section className="news">
@@ -29,7 +13,7 @@ const News = () => {
                 <div className="news__section section">
                     <h1 className="news__title title title_h2">Новости и блог</h1>
                     <ul className="news__list">
-                        {news.map((el, i) => (
+                        {news?.length > 0 && news.map((el, i) => (
                             <li className="news__item" key={i}>
                                 <p className="news__date">{el.date}</p>
                                 <Link className="news__name" to={el.code}>{el.name}</Link>

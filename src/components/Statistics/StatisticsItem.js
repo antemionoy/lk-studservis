@@ -15,7 +15,6 @@ import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
 
 const StatisticsItem = ({ title, count, percent, className, color }) => {
-
     const classItem = cn(
         className,
         'statistics-item'

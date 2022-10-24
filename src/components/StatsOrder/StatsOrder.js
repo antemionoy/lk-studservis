@@ -70,6 +70,7 @@ const orders = [
     ]
 ]
 
+console.log(JSON.stringify(orders[0]))
 
 
 const options = [

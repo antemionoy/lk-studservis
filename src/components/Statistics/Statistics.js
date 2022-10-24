@@ -2,25 +2,32 @@ import './Statistics.scss'
 import StatisticsItem from './StatisticsItem'
 
 const Statistics = () => {
+    const StatsColors = ['rgb(50, 31, 219, 1)', 'rgb(248, 177, 20)', 'rgb(228, 83, 83)']
 
     const items = [
         {
             title: 'Заявки',
             count: 10,
             percent: -12.6,
-            color: 'rgb(50, 31, 219, 1)'
+            color: 'rgb(50, 31, 219, 1)',
+            data: [],
+            labels: []
         },
         {
             title: 'Заказы',
             count: 3976098,
             percent: -27,
             color: 'rgb(248, 177, 20)',
+            data: [],
+            labels: []
         },
         {
             title: 'Доходы',
             count: 119875,
             сurrency: 'rub',
-            color: 'rgb(228, 83, 83)'
+            color: 'rgb(228, 83, 83)',
+            data: [],
+            labels: []
         },
     ]
 
