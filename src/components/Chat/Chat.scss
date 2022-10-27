@@ -36,11 +36,34 @@
     &__input {
         border: none;
         border-top: 1px solid #dfe4e6;
-        height: 101px;
-        padding: 30px 25px;
+        border-bottom: 1px solid #dfe4e6;
+        height: 88px;
+        padding: 10px 55px 10px 25px;
         font-size: 12px;
         line-height: 15px;
         color: #9da5b1;
+        width: 100%;
+        resize: none;
+    }
+
+    &__box{
+        position: relative;
+        width: 100%;
+    }
+
+    &__attach{
+        position: absolute;
+        right: 26px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__bottom{
+        padding: 13px 17px 38px;
+    }
+
+    &__button{
+        width: 106px;
     }
 
     &__row {

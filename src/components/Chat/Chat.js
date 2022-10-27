@@ -2,6 +2,7 @@ import cn from 'classnames'
 import { useState, useRef, useEffect } from 'react'
 import { useParams } from 'react-router'
 import Button from '../Ui/Button'
+import Icon from '../Ui/Icon'
 import './Chat.scss'
 
 const Chat = ({ className, managerName, managerPhoto }) => {
@@ -94,22 +95,31 @@ const Chat = ({ className, managerName, managerPhoto }) => {
                     </div>
                 </div>
             </div>
-            <input
-                type='text'
-                className="chat__input"
-                placeholder='Введите сообщение'
-                value={requestBody}
-                onChange={(e) => setRequestBody(e.target.value)}
-            />
-            <Button
-                size='large'
-                bgcolor='blue'
-                className='chat__button'
-                disabled={!isConnectOpen}
-                onClick={send}
-            >
-                Отправить
-            </Button>
+            <div className="chat__box">
+                <textarea
+                    align='top'
+                    type='text'
+                    className="chat__input"
+                    placeholder='Введите сообщение...'
+                    value={requestBody}
+                    onChange={(e) => setRequestBody(e.target.value)}
+                ></textarea>
+                <div className="chat__attach">
+                    <Icon name='attach' className='chat__attach-icon' width='12' height='18'></Icon>
+                    <input type="hidden" className="chat__attach-input" />
+                </div>
+            </div>
+            <div className="chat__bottom">
+                <Button
+                    size='large'
+                    bgcolor='blue'
+                    className='chat__button'
+                    disabled={!isConnectOpen}
+                    onClick={send}
+                >
+                    Отправить
+                </Button>
+            </div>
         </div>
     )
 }

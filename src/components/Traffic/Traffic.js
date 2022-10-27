@@ -13,6 +13,10 @@ import {
 import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
 import TrafficSwitches from './TrafficSwitches';
+import useFetchApi from '../../hooks/useFetchApi';
+import { api } from '../../shared/api'
+import { useState } from 'react';
+import cn from 'classnames';
 
 const filter = [
     {
@@ -33,7 +37,20 @@ const filter = [
     },
 ]
 
+const options = {
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+}
+
 const Traffic = () => {
+    const [state, setState] = useState()
+    const [activePeriod, setActivePeriod] = useState(0)
+    const { data: items, loading, error } = useFetchApi(api.links.activity.link)
+
+    const datasets = [
+        
+    ]
+
     const data = {
         labels: ["15 Июня", "16 Июня", "17 Июня", "18 Июня", "19 Июня", "20 Июня", "21 Июня"],
         datasets: [
@@ -56,38 +73,32 @@ const Traffic = () => {
         ]
     }
 
-    const options = {
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
+    const colors = ['#321FDB', '#F8B114', '#E45353', '#2EB85C']
+    let trafficSwitches = []
+    let i = 0
+    for (let { title, count, percent } of items) {
+        trafficSwitches.push(
+            {
+                title,
+                count,
+                percent,
+                total: +20,
+                color: colors[i]
+            }
+        )
+        i++
     }
 
-    const trafficSwitches = [
-        {
-            name: 'Заявки',
-            count: 80,
-            total: 20,
-            color: '#321FDB',
-        },
-        {
-            name: 'Заказы',
-            count: 80,
-            total: +20,
-            color: '#F8B114',
-        },
-        {
-            name: 'Доход',
-            count: 80,
-            total: 20,
-            color: '#E45353',
-        },
-        {
-            name: 'Конверсия',
-            count: 80,
-            total: 80,
-            color: '#2EB85C',
-        },
-    ]
-
+    let filterButtonClass
+    const changePeriodHandler = (index) => {
+        filterButtonClass = cn(
+            'traffic__filter-button',
+            index === activePeriod ? 'traffic__filter-button_active' : ''
+        )
+        return () => {
+            setActivePeriod(activePeriod === index ? null : index)
+        }
+    }
 
     return (
         <section className="traffic">
@@ -100,8 +111,8 @@ const Traffic = () => {
                         </div>
                         <ul className="traffic__filter d-flex">
                             {filter.map((el, i) => (
-                                <li className="traffic__filter-item" key={i}>
-                                    <button type='button' className="traffic__filter-button">
+                                <li className='traffic__filter-item' onClick={changePeriodHandler(i)} key={i}>
+                                    <button type='button' className={filterButtonClass}>
                                         {el.name}
                                     </button>
                                 </li>
@@ -109,9 +120,16 @@ const Traffic = () => {
                         </ul>
                     </div>
                     <div className="traffic__chart">
-                        <Line data={data} options={options} height='420' />
+                        <Line
+                            data={data}
+                            options={options}
+                            height='420'
+                        />
                     </div>
-                    <TrafficSwitches switches={trafficSwitches} className='traffic__switches' />
+                    <TrafficSwitches
+                        switches={trafficSwitches}
+                        className='traffic__switches'
+                    />
                 </div>
             </div>
         </section>

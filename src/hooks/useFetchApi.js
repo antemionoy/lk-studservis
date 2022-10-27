@@ -8,8 +8,6 @@ const useFetchApi = (url) => {
 
     useEffect(() => {
         setLoading('Загрузка...')
-        setData(null)
-        setError(null)
 
         fetch(`${api.url}/${url}`)
             .then((resp) => {
@@ -22,9 +20,9 @@ const useFetchApi = (url) => {
                 setData(data)
             }).catch((error) => {
                 setLoading(false)
-                console.log(erorr + " bad request");
+                console.log(error + " bad request");
             })
-    }, [url])
+    }, [])
 
 
     return { data, loading, error }

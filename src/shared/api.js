@@ -6,6 +6,10 @@ export const api = {
         },
         refs:{
             link: 'refs'
+        },
+        activity:{
+            link: 'activity',
+            params: 'limit=3'
         }
     }
 }

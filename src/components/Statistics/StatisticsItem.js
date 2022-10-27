@@ -14,20 +14,19 @@ import {
 import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
 
-const StatisticsItem = ({ title, count, percent, className, color }) => {
+const StatisticsItem = ({ title, count, percent, className, color, dataPoints, dataLabels }) => {
     const classItem = cn(
         className,
         'statistics-item'
     )
 
     const data = {
-        labels: ["15 Июня", "16 Июня", "17 Июня", "18 Июня", "19 Июня", "20 Июня", "21 Июня"],
+        labels: dataLabels,
         datasets: [
             {
                 label: title,
-                data: [0, 30, 8, 2, 20, 30, 40],
+                data: dataPoints,
                 fill: false,
-                // backgroundColor: "trasnparent",
                 borderColor: "#fff",
                 borderWidth: 1,
                 pointBorderColor: "#fff",

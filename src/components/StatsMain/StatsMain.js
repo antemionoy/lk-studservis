@@ -60,42 +60,44 @@ const typeTooltip = [
 
 const orders = [
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '-4800' }, align: 'left' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' } },
+        { content: { title: '-4800' } },
+        { content: { title: 'Зачисление', filter: 'type' }, },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '4800' }, align: 'left', status: 'enrollment' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' }, },
+        { content: { title: '4800' }, status: 'enrollment' },
+        { content: { title: 'Зачисление', filter: 'type' }, },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '4800' }, align: 'left', status: 'enrollment' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' }, },
+        { content: { title: '4800' }, status: 'enrollment' },
+        { content: { title: 'Зачисление', filter: 'type' }, },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '-4800' }, align: 'left', status: 'сonclusion' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' }, },
+        { content: { title: '-4800' }, status: 'сonclusion' },
+        { content: { title: 'Зачисление', filter: 'type' }, },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '-4800' }, align: 'left' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' }, },
+        { content: { title: '-4800' } },
+        { content: { title: 'Зачисление', filter: 'type' }, },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '-4800' }, align: 'left' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' }, },
+        { content: { title: '-4800' }, },
+        { content: { title: 'Зачисление', filter: 'type' }, },
+        { content: { title: 'Выплата партнёру по заказу 526316' }, }
     ]
 ]
+
+console.log(JSON.stringify(orders))
 
 const StatsMain = () => {
     const [viewChecked, setViewChecked] = useState(false)
@@ -174,7 +176,7 @@ const StatsMain = () => {
                 <div className="stats-main__section section">
                     <div className="stats-main__head d-flex">
                         <div className="stats-main__main d-flex">
-                            <DatePicker/>
+                            <DatePicker />
 
                             <Select
                                 className='stats-main__select'

@@ -12,42 +12,44 @@ import DatePicker from '../DatePicker/DatePicker'
 
 const orders = [
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '-4800' }, align: 'left' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' } },
+        { content: { title: '-4800' } },
+        { content: { title: 'Зачисление', filter: 'type' } },
+        { content: { title: 'Выплата партнёру по заказу 526316' } }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '4800' }, align: 'left', status: 'enrollment' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' } },
+        { content: { title: '4800' }, status: 'enrollment' },
+        { content: { title: 'Зачисление', filter: 'type' } },
+        { content: { title: 'Выплата партнёру по заказу 526316' } }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '4800' }, align: 'left', status: 'enrollment' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' } },
+        { content: { title: '4800' }, status: 'enrollment' },
+        { content: { title: 'Зачисление', filter: 'type' } },
+        { content: { title: 'Выплата партнёру по заказу 526316' } }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '-4800' }, align: 'left', status: 'сonclusion' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' } },
+        { content: { title: '-4800' }, status: 'сonclusion' },
+        { content: { title: 'Зачисление', filter: 'type' } },
+        { content: { title: 'Выплата партнёру по заказу 526316' } }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '-4800' }, align: 'left' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' } },
+        { content: { title: '-4800' } },
+        { content: { title: 'Зачисление', filter: 'type' } },
+        { content: { title: 'Выплата партнёру по заказу 526316' } }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: '-4800' }, align: 'left' },
-        { content: { title: 'Зачисление', filter: 'type' }, align: 'left' },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, align: 'left' }
+        { content: { title: '25.08.2022' } },
+        { content: { title: '-4800' } },
+        { content: { title: 'Зачисление', filter: 'type' } },
+        { content: { title: 'Выплата партнёру по заказу 526316' } }
     ]
 ]
+
+console.log(JSON.stringify(orders))
 
 const History = () => {
     const tabs = [
