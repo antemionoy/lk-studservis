@@ -1,57 +1,113 @@
 import Button from '../Ui/Button'
 import './Orders.scss'
 import '../Referrals/ReferralsTable.scss'
+import { useMemo } from 'react'
+import Table from '../Ui/Table'
+import useFetchApi from '../../hooks/useFetchApi'
+import { api } from '../../shared/api'
 
 const Orders = () => {
+    const {data, loading, error} = useFetchApi(api.links.orders.link)
 
-    
-    const orders = [
-        {
-            date: '25.08.2022',
-            city: 'Воронеж',
-            id: 281205,
-            type: 'Контрольная работа',
-            price: 1575,
-            status: 'Выполняется автором',
-            reward: '472,5',
-        },
-        {
-            date: '25.08.2022',
-            city: 'Воронеж',
-            id: 281205,
-            type: 'Контрольная работа',
-            price: 1575,
-            status: 'Выполняется автором',
-            reward: '472,5',
-        },
-        {
-            date: '25.08.2022',
-            city: 'Воронеж',
-            id: 281205,
-            type: 'Контрольная работа',
-            price: 1575,
-            status: 'Выполняется автором',
-            reward: '472,5',
-        },
-        {
-            date: '25.08.2022',
-            city: 'Воронеж',
-            id: 281205,
-            type: 'Контрольная работа',
-            price: 1575,
-            status: 'Выполняется автором',
-            reward: '472,5',
-        },
-        {
-            date: '25.08.2022',
-            city: 'Воронеж',
-            id: 281205,
-            type: 'Контрольная работа',
-            price: 1575,
-            status: 'Выполняется автором',
-            reward: '472,5',
-        },
-    ]
+    // const orders = [
+    //     [
+    //         { content: { title: '25.08.2022' } },
+    //         { content: { title: 'Воронеж' } },
+    //         { content: { title: '281205',} },
+    //         { content: { title: 'Контрольная работа'}},
+    //         { content: { title: '1575' }, },
+    //         { content: { title: 'Выполняется автором' },  },
+    //         { content: { title: '472,5'}, status: 'success' },
+    //     ],
+    //     [
+    //         { content: { title: '25.08.2022' } },
+    //         { content: { title: 'Воронеж' } },
+    //         { content: { title: '281205',} },
+    //         { content: { title: 'Контрольная работа'}},
+    //         { content: { title: '1575' }, },
+    //         { content: { title: 'Выполняется автором' },  },
+    //         { content: { title: '472,5'}, },
+    //     ],
+    //     [
+    //         { content: { title: '25.08.2022' } },
+    //         { content: { title: 'Воронеж' } },
+    //         { content: { title: '281205',} },
+    //         { content: { title: 'Контрольная работа'}},
+    //         { content: { title: '1575' }, },
+    //         { content: { title: 'Выполняется автором' },  },
+    //         { content: { title: '472,5'},  status: 'success' },
+    //     ],
+    //     [
+    //         { content: { title: '25.08.2022' } },
+    //         { content: { title: 'Воронеж' } },
+    //         { content: { title: '281205',} },
+    //         { content: { title: 'Контрольная работа'}},
+    //         { content: { title: '1575' }, },
+    //         { content: { title: 'Выполняется автором' },  },
+    //         { content: { title: '472,5'}, status: 'success' },
+    //     ],
+    // ]
+
+    // console.log(JSON.stringify(orders))
+
+    // const orders = [
+    //     {
+    //         date: '25.08.2022',
+    //         city: 'Воронеж',
+    //         id: 281205,
+    //         type: 'Контрольная работа',
+    //         price: 1575,
+    //         status: 'Выполняется автором',
+    //         reward: '472,5',
+    //     },
+    //     {
+    //         date: '25.08.2022',
+    //         city: 'Воронеж',
+    //         id: 281205,
+    //         type: 'Контрольная работа',
+    //         price: 1575,
+    //         status: 'Выполняется автором',
+    //         reward: '472,5',
+    //     },
+    //     {
+    //         date: '25.08.2022',
+    //         city: 'Воронеж',
+    //         id: 281205,
+    //         type: 'Контрольная работа',
+    //         price: 1575,
+    //         status: 'Выполняется автором',
+    //         reward: '472,5',
+    //     },
+    //     {
+    //         date: '25.08.2022',
+    //         city: 'Воронеж',
+    //         id: 281205,
+    //         type: 'Контрольная работа',
+    //         price: 1575,
+    //         status: 'Выполняется автором',
+    //         reward: '472,5',
+    //     },
+    //     {
+    //         date: '25.08.2022',
+    //         city: 'Воронеж',
+    //         id: 281205,
+    //         type: 'Контрольная работа',
+    //         price: 1575,
+    //         status: 'Выполняется автором',
+    //         reward: '472,5',
+    //     },
+
+    // ]
+    const columns = useMemo(() => [
+        { content: { title: 'Дата' }, align: 'left' },
+        { content: { title: 'Город' }, align: 'left', },
+        { content: { title: 'ID Заказа' }, align: 'left', },
+        { content: { title: 'Тип' }, align: 'left', },
+        { content: { title: 'Стоимость', align: 'left' } },
+        { content: { title: 'Статус', align: 'left' } },
+        { content: { title: 'Описание' }, align: 'left' },
+        { content: { title: 'Метка' }, align: 'left' }
+    ], [])
 
     return (
         <section className="orders">
@@ -63,7 +119,8 @@ const Orders = () => {
                             Все заказы
                         </Button>
                     </div>
-                    <table className='referrals-table'>
+                    <Table className='orders__table' columns={columns} data={data} />
+                    {/* <table className='referrals-table'>
                         <tr className='referrals-table__row'>
                             <th align='left' className='referrals-table__th'>Дата</th>
                             <th align='left' className='referrals-table__th'>Город</th>
@@ -92,7 +149,7 @@ const Orders = () => {
                                 </tr>
                         }
 
-                    </table>
+                    </table> */}
                 </div>
             </div>
         </section>

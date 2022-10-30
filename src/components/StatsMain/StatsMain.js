@@ -97,20 +97,34 @@ const orders = [
     ]
 ]
 
-console.log(JSON.stringify(orders))
-
 const StatsMain = () => {
     const [viewChecked, setViewChecked] = useState(false)
     const columns = useMemo(() => [
-        { content: { title: 'Дата' }, align: 'left' },
-        { content: { title: 'Сумма' }, align: 'left', },
-        { content: { title: 'Тип', options: typeTooltip }, align: 'left' },
-        { content: { title: 'Описание' }, align: 'left' }
+        { content: { title: 'Дата', name: 'date' }, align: 'left' },
+        { content: { title: 'Сумма', name: 'date' }, align: 'left', },
+        { content: { title: 'Тип', name: 'date' }, options: typeTooltip, align: 'left' },
+        { content: { title: 'Описание', name: 'date' }, align: 'left' }
     ], [])
 
     const data = {
         labels: ["15 Июня", "16 Июня", "17 Июня", "18 Июня", "19 Июня", "20 Июня", "21 Июня"],
         datasets: [
+            {
+                label: 'Заявки',
+                data: [0, 5, 10, 15, 20, 30, 40, 60, 80],
+                fill: true,
+                backgroundColor: "rgba(50, 31, 219, 0.2)",
+                borderColor: "#321FDB",
+                tension: 0.4
+            },
+            {
+                label: 'Заявки',
+                data: [0, 5, 10, 15, 20, 30, 40, 60, 80],
+                fill: true,
+                backgroundColor: "rgba(50, 31, 219, 0.2)",
+                borderColor: "#321FDB",
+                tension: 0.4
+            },
             {
                 label: 'Заявки',
                 data: [0, 5, 10, 15, 20, 30, 40, 60, 80],

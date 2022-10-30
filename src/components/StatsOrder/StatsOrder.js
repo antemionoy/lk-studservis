@@ -9,69 +9,58 @@ import './StatsOrder.scss'
 
 const orders = [
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5', icon: 'check' }, align: 'left' },
-        { content: { title: 'default' }, align: 'left' }
+        { content: { title: '25.08.2022' }, name: 'date' },
+        { content: { title: 'Воронеж' }, name: 'city' },
+        { content: { title: '281205' }, name: 'id' },
+        { content: { title: 'Контрольная работа', name: 'type' }, filter: ['works'] },
+        { content: { title: '1575' }, name: 'price' },
+        { content: { title: 'Выполняется автором', name: 'status' }, filter: ['status'] },
+        { content: { title: '472,5', name: 'description' }, status: 'success' },
+        { content: { title: 'default', name: 'label' }, filter: ['default'] }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left', status: 'important' },
-        { content: { title: 'default' }, align: 'left' }
+        { content: { title: '25.08.2022' }, name: 'date' },
+        { content: { title: 'Воронеж' }, name: 'city' },
+        { content: { title: '281205' }, name: 'id' },
+        { content: { title: 'Контрольная работа', name: 'type' }, filter: ['works'] },
+        { content: { title: '1575' }, name: 'price' },
+        { content: { title: 'Выполняется автором', name: 'status' }, filter: ['status'] },
+        { content: { title: '472,5', name: 'description' }, status: 'success' },
+        { content: { title: 'default', name: 'label' }, filter: ['default'] }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left' },
-        { content: { title: 'default' }, align: 'left' }
+        { content: { title: '25.08.2022' }, name: 'date' },
+        { content: { title: 'Воронеж' }, name: 'city' },
+        { content: { title: '281205' }, name: 'id' },
+        { content: { title: 'Контрольная работа', name: 'type' }, filter: ['works'] },
+        { content: { title: '1575' }, name: 'price' },
+        { content: { title: 'Выполняется автором', name: 'status' }, filter: ['status'] },
+        { content: { title: '472,5', name: 'description' }, status: 'success' },
+        { content: { title: 'default', name: 'label' }, filter: ['default'] }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left', status: 'success' },
-        { content: { title: 'default' }, align: 'left' }
+        { content: { title: '25.08.2022' }, name: 'date' },
+        { content: { title: 'Воронеж' }, name: 'city' },
+        { content: { title: '281205' }, name: 'id' },
+        { content: { title: 'Контрольная работа', name: 'type' }, filter: ['works'] },
+        { content: { title: '1575' }, name: 'price' },
+        { content: { title: 'Выполняется автором', name: 'status' }, filter: ['status'] },
+        { content: { title: '472,5', name: 'description' }, status: 'success' },
+        { content: { title: 'default', name: 'label' }, filter: ['default'] }
     ],
     [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left' },
-        { content: { title: 'default' }, align: 'left' }
+        { content: { title: '25.08.2022' }, name: 'date' },
+        { content: { title: 'Воронеж' }, name: 'city' },
+        { content: { title: '281205' }, name: 'id' },
+        { content: { title: 'Контрольная работа', name: 'type' }, filter: ['works'] },
+        { content: { title: '1575' }, name: 'price' },
+        { content: { title: 'Выполняется автором', name: 'status' }, filter: ['status'] },
+        { content: { title: '472,5', name: 'description' }, status: 'success' },
+        { content: { title: 'default', name: 'label' }, filter: ['default'] }
     ],
-    [
-        { content: { title: '25.08.2022' }, align: 'left' },
-        { content: { title: 'Воронеж' }, align: 'left' },
-        { content: { title: '281205' }, align: 'right' },
-        { content: { title: 'Контрольная работа', filter: 'type' }, align: 'left' },
-        { content: { title: '1575' }, align: 'left', },
-        { content: { title: 'Выполняется автором' }, align: 'left' },
-        { content: { title: '472,5' }, align: 'left' },
-        { content: { title: 'default' }, align: 'left' }
-    ]
 ]
 
-console.log(JSON.stringify(orders[0]))
-
+console.log(JSON.stringify(orders))
 
 const options = [
     {
@@ -126,7 +115,7 @@ const StatsOrder = () => {
                 <div className="stats-order__section section">
                     <div className="stats-order__head d-flex">
                         <div className="stats-order__main d-flex">
-                            <DatePicker/>
+                            <DatePicker />
                             <Select
                                 className='stats-order__select'
                                 options={options}

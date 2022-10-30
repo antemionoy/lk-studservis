@@ -10,6 +10,12 @@ export const api = {
         activity:{
             link: 'activity',
             params: 'limit=3'
+        },
+        history: {
+            link: 'history',
+        },
+        orders:{
+            link: 'orders',
         }
     }
 }

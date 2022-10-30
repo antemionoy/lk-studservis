@@ -4,54 +4,59 @@ import ShortForm from '../ShortForm/ShortForm'
 import Tabs from '../Tabs/Tabs'
 import TabsContent from '../Tabs/TabsContent'
 import Button from '../Ui/Button'
-import Calendar from '../Ui/Calendar'
 import Select from '../Ui/Select'
 import Table from '../Ui/Table'
 import './History.scss'
 import DatePicker from '../DatePicker/DatePicker'
+import useFetchApi from '../../hooks/useFetchApi'
+import { api } from '../../shared/api'
 
 const orders = [
     [
-        { content: { title: '25.08.2022' } },
-        { content: { title: '-4800' } },
-        { content: { title: 'Зачисление', filter: 'type' } },
-        { content: { title: 'Выплата партнёру по заказу 526316' } }
+        { content: { title: '25.08.2022', name: 'date' } },
+        { content: { title: '-4800', name: 'price' } },
+        { content: { title: 'Зачисление', name: 'type' }, filter: ['enrollment, сonclusion, writtenoff'] },
+        { content: { title: 'Выплата партнёру по заказу 526316', name: 'description' } }
     ],
     [
-        { content: { title: '25.08.2022' } },
-        { content: { title: '4800' }, status: 'enrollment' },
-        { content: { title: 'Зачисление', filter: 'type' } },
-        { content: { title: 'Выплата партнёру по заказу 526316' } }
+        { content: { title: '25.08.2022', name: 'date' } },
+        { content: { title: '-4800', name: 'price' } },
+        { content: { title: 'Зачисление', name: 'type' }, filter: ['enrollment, сonclusion, writtenoff'] },
+        { content: { title: 'Выплата партнёру по заказу 526316', name: 'description' } }
     ],
     [
-        { content: { title: '25.08.2022' } },
-        { content: { title: '4800' }, status: 'enrollment' },
-        { content: { title: 'Зачисление', filter: 'type' } },
-        { content: { title: 'Выплата партнёру по заказу 526316' } }
+        { content: { title: '25.08.2022', name: 'date' } },
+        { content: { title: '-4800', name: 'price' } },
+        { content: { title: 'Зачисление', name: 'type' }, filter: ['enrollment, сonclusion, writtenoff'] },
+        { content: { title: 'Выплата партнёру по заказу 526316', name: 'description' } }
     ],
     [
-        { content: { title: '25.08.2022' } },
-        { content: { title: '-4800' }, status: 'сonclusion' },
-        { content: { title: 'Зачисление', filter: 'type' } },
-        { content: { title: 'Выплата партнёру по заказу 526316' } }
+        { content: { title: '25.08.2022', name: 'date' } },
+        { content: { title: '-4800', name: 'price' } },
+        { content: { title: 'Зачисление', name: 'type' }, filter: ['enrollment, сonclusion, writtenoff'] },
+        { content: { title: 'Выплата партнёру по заказу 526316', name: 'description' } }
     ],
     [
-        { content: { title: '25.08.2022' } },
-        { content: { title: '-4800' } },
-        { content: { title: 'Зачисление', filter: 'type' } },
-        { content: { title: 'Выплата партнёру по заказу 526316' } }
+        { content: { title: '25.08.2022', name: 'date' } },
+        { content: { title: '-4800', name: 'price' } },
+        { content: { title: 'Зачисление', name: 'type' }, filter: ['enrollment, сonclusion, writtenoff'] },
+        { content: { title: 'Выплата партнёру по заказу 526316', name: 'description' } }
     ],
     [
-        { content: { title: '25.08.2022' } },
-        { content: { title: '-4800' } },
-        { content: { title: 'Зачисление', filter: 'type' } },
-        { content: { title: 'Выплата партнёру по заказу 526316' } }
-    ]
+        { content: { title: '25.08.2022', name: 'date' } },
+        { content: { title: '-4800', name: 'price' } },
+        { content: { title: 'Зачисление', name: 'type' }, filter: ['enrollment, сonclusion, writtenoff'] },
+        { content: { title: 'Выплата партнёру по заказу 526316', name: 'description' } }
+    ],
 ]
+
+// params 
 
 console.log(JSON.stringify(orders))
 
 const History = () => {
+    const { data, loading, error } = useFetchApi(api.links.history.link)
+
     const tabs = [
         {
             id: 'all',
@@ -155,15 +160,15 @@ const History = () => {
                     <Tabs className='history__tabs' nav={tabs} info={info} >
                         <TabsContent className='history__content' id={0}>
                             {head}
-                            <Table className='history__table' columns={columns} data={orders} />
+                            <Table className='history__table' columns={columns} data={data} />
                         </TabsContent>
                         <TabsContent className='history__content' id={1}>
                             {head}
-                            <Table className='history__table' columns={columns} data={orders} />
+                            <Table className='history__table' columns={columns} data={data} />
                         </TabsContent>
                         <TabsContent className='history__content' id={2}>
                             {head}
-                            <Table className='history__table' columns={columns} data={orders} />
+                            <Table className='history__table' columns={columns} data={data} />
                         </TabsContent>
                     </Tabs>
                     <Pagination className='history__pagination' max={2} />
