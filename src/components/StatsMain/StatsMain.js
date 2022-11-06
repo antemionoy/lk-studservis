@@ -20,6 +20,8 @@ import SwithcIcons from '../Ui/SwitchIcons';
 import { useMemo, useState } from 'react';
 import Table from '../Ui/Table';
 import DatePicker from '../DatePicker/DatePicker'
+import useFetchApi from '../../hooks/useFetchApi'
+import { api } from '../../shared/api'
 
 const options = [
     {
@@ -60,79 +62,83 @@ const typeTooltip = [
 
 const orders = [
     [
-        { content: { title: '25.08.2022' } },
-        { content: { title: '-4800' } },
-        { content: { title: 'Зачисление', filter: 'type' }, },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, }
+        { content: { title: '25.08.2022' }, name: 'date' },
+        { content: { title: 'Воронеж' }, name: 'city' },
+        { content: { title: '281205' }, name: 'id' },
+        { content: { title: 'Контрольная работа', name: 'type' }, filter: ['works'] },
+        { content: { title: '1575' }, name: 'price' },
+        { content: { title: 'Выполняется автором', name: 'status' }, filter: ['status'] },
+        { content: { title: '472,5', name: 'description' }, status: 'success' },
+        { content: { title: 'default', name: 'label' }, filter: ['default'] }
     ],
     [
-        { content: { title: '25.08.2022' }, },
-        { content: { title: '4800' }, status: 'enrollment' },
-        { content: { title: 'Зачисление', filter: 'type' }, },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, }
+        { content: { title: '25.08.2022' }, name: 'date' },
+        { content: { title: 'Воронеж' }, name: 'city' },
+        { content: { title: '281205' }, name: 'id' },
+        { content: { title: 'Контрольная работа', name: 'type' }, filter: ['works'] },
+        { content: { title: '1575' }, name: 'price' },
+        { content: { title: 'Выполняется автором', name: 'status' }, filter: ['status'] },
+        { content: { title: '472,5', name: 'description' }, status: 'success' },
+        { content: { title: 'default', name: 'label' }, filter: ['default'] }
     ],
     [
-        { content: { title: '25.08.2022' }, },
-        { content: { title: '4800' }, status: 'enrollment' },
-        { content: { title: 'Зачисление', filter: 'type' }, },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, }
+        { content: { title: '25.08.2022' }, name: 'date' },
+        { content: { title: 'Воронеж' }, name: 'city' },
+        { content: { title: '281205' }, name: 'id' },
+        { content: { title: 'Контрольная работа', name: 'type' }, filter: ['works'] },
+        { content: { title: '1575' }, name: 'price' },
+        { content: { title: 'Выполняется автором', name: 'status' }, filter: ['status'] },
+        { content: { title: '472,5', name: 'description' }, status: 'success' },
+        { content: { title: 'default', name: 'label' }, filter: ['default'] }
     ],
     [
-        { content: { title: '25.08.2022' }, },
-        { content: { title: '-4800' }, status: 'сonclusion' },
-        { content: { title: 'Зачисление', filter: 'type' }, },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, }
+        { content: { title: '25.08.2022' }, name: 'date' },
+        { content: { title: 'Воронеж' }, name: 'city' },
+        { content: { title: '281205' }, name: 'id' },
+        { content: { title: 'Контрольная работа', name: 'type' }, filter: ['works'] },
+        { content: { title: '1575' }, name: 'price' },
+        { content: { title: 'Выполняется автором', name: 'status' }, filter: ['status'] },
+        { content: { title: '472,5', name: 'description' }, status: 'success' },
+        { content: { title: 'default', name: 'label' }, filter: ['default'] }
     ],
     [
-        { content: { title: '25.08.2022' }, },
-        { content: { title: '-4800' } },
-        { content: { title: 'Зачисление', filter: 'type' }, },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, }
+        { content: { title: '25.08.2022' }, name: 'date' },
+        { content: { title: 'Воронеж' }, name: 'city' },
+        { content: { title: '281205' }, name: 'id' },
+        { content: { title: 'Контрольная работа', name: 'type' }, filter: ['works'] },
+        { content: { title: '1575' }, name: 'price' },
+        { content: { title: 'Выполняется автором', name: 'status' }, filter: ['status'] },
+        { content: { title: '472,5', name: 'description' }, status: 'success' },
+        { content: { title: 'default', name: 'label' }, filter: ['default'] }
     ],
-    [
-        { content: { title: '25.08.2022' }, },
-        { content: { title: '-4800' }, },
-        { content: { title: 'Зачисление', filter: 'type' }, },
-        { content: { title: 'Выплата партнёру по заказу 526316' }, }
-    ]
 ]
 
 const StatsMain = () => {
+    const {data, loading, error} = useFetchApi(api.links.orders.link)
     const [viewChecked, setViewChecked] = useState(false)
+
     const columns = useMemo(() => [
-        { content: { title: 'Дата', name: 'date' }, align: 'left' },
-        { content: { title: 'Сумма', name: 'date' }, align: 'left', },
-        { content: { title: 'Тип', name: 'date' }, options: typeTooltip, align: 'left' },
-        { content: { title: 'Описание', name: 'date' }, align: 'left' }
+        { content: { title: 'Дата' }, align: 'center' },
+        { content: { title: 'Город' }, align: 'center' },
+        { content: { title: 'ID заказа' }, align: 'right' },
+        { content: { title: 'Тип работы', options: typeTooltip }, align: 'center' },
+        { content: { title: 'Стоимость' }, align: 'center', },
+        { content: { title: 'Статус заказа' }, align: 'center' },
+        { content: { title: 'Вознаграждение' }, align: 'center' },
+        { content: { title: 'Метка' }, align: 'center' }
     ], [])
 
-    const data = {
+    const dataChart = {
         labels: ["15 Июня", "16 Июня", "17 Июня", "18 Июня", "19 Июня", "20 Июня", "21 Июня"],
         datasets: [
             {
                 label: 'Заявки',
-                data: [0, 5, 10, 15, 20, 30, 40, 60, 80],
+                data: [100, 5, 10, 15, 20, 30, 40, 60, 80],
                 fill: true,
                 backgroundColor: "rgba(50, 31, 219, 0.2)",
                 borderColor: "#321FDB",
                 tension: 0.4
             },
-            {
-                label: 'Заявки',
-                data: [0, 5, 10, 15, 20, 30, 40, 60, 80],
-                fill: true,
-                backgroundColor: "rgba(50, 31, 219, 0.2)",
-                borderColor: "#321FDB",
-                tension: 0.4
-            },
-            {
-                label: 'Заявки',
-                data: [0, 5, 10, 15, 20, 30, 40, 60, 80],
-                fill: true,
-                backgroundColor: "rgba(50, 31, 219, 0.2)",
-                borderColor: "#321FDB",
-                tension: 0.4
-            }
         ]
     }
 
@@ -225,11 +231,11 @@ const StatsMain = () => {
                     </div>
                     {!!viewChecked ?
                         <>
-                            <Table className='stats-main__table' columns={columns} data={orders} />
+                            <Table className='stats-main__table' columns={columns} data={data} />
                         </>
                         :
                         <div className="stats-main__chart" style={{ height: '360px' }}>
-                            <Line data={data} options={optionsChart} height='360' />
+                            <Line data={dataChart} options={optionsChart} height='360' />
                         </div>
                     }
                 </div>

@@ -28,12 +28,12 @@ const Table = ({ className, columns, data }) => {
                 {(data.length > 0)
                     ? data.map((el, i) => (
                         <tr className='table__row' key={i}>
-                            {el.map((inner, innerKey) => (
-                                <td align={inner.align} key={innerKey} valign='middle'>
-                                    {inner.content?.title}
-                                    {inner.status === 'success' && <Icon className='table__icon' name='success' width='13' height='13' />}
-                                    {inner.status === 'сonclusion' && <Icon className='table__icon' name='сonclusion' width='16' height='16' />}
-                                    {inner.status === 'enrollment' && <Icon className='table__icon' name='enrollment' width='16' height='16' />}
+                            {el?.entries.map((entrie, entrieKey) => (
+                                <td key={entrieKey} align='center' valign='middle'>
+                                    {entrie.value}
+                                    {entrie.status === 'success' && <Icon className='table__icon' name='success' width='13' height='13' />}
+                                    {entrie.status === 'сonclusion' && <Icon className='table__icon' name='сonclusion' width='16' height='16' />}
+                                    {entrie.status === 'enrollment' && <Icon className='table__icon' name='enrollment' width='16' height='16' />}
                                 </td>
                             ))}
                         </tr>

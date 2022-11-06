@@ -105,7 +105,7 @@ const Orders = () => {
         { content: { title: 'Тип' }, align: 'left', },
         { content: { title: 'Стоимость', align: 'left' } },
         { content: { title: 'Статус', align: 'left' } },
-        { content: { title: 'Описание' }, align: 'left' },
+        { content: { title: 'Вознаграждение' }, align: 'left' },
         { content: { title: 'Метка' }, align: 'left' }
     ], [])
 

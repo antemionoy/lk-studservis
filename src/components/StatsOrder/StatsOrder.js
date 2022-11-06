@@ -6,6 +6,9 @@ import Button from '../Ui/Button'
 import Select from '../Ui/Select'
 import Table from '../Ui/Table'
 import './StatsOrder.scss'
+import typeTooltip from '../../static/typesWokrs'
+import useFetchApi from '../../hooks/useFetchApi'
+import { api } from '../../shared/api'
 
 const orders = [
     [
@@ -60,7 +63,7 @@ const orders = [
     ],
 ]
 
-console.log(JSON.stringify(orders))
+// console.log(JSON.stringify(orders))
 
 const options = [
     {
@@ -81,23 +84,8 @@ const options = [
     },
 ]
 const StatsOrder = () => {
-    const typeTooltip = [
-        {
-            name: 'Контрольная работа',
-            value: 'Контрольная работа',
-            tag: 'kontrolnay'
-        },
-        {
-            name: 'Курсовая работа',
-            value: 'Курсовая работа',
-            tag: 'kursovay'
-        },
-        {
-            name: 'Отчет по практике',
-            value: 'Отчет по практике',
-            tag: 'otchet'
-        },
-    ]
+    const {data, loading, error} = useFetchApi(api.links.orders.link)
+
     const columns = useMemo(() => [
         { content: { title: 'Дата' }, align: 'left' },
         { content: { title: 'Город' }, align: 'left' },
@@ -131,7 +119,7 @@ const StatsOrder = () => {
                             placeholder='Номер заказа (6 цифр)'
                         />
                     </div>
-                    <Table className='stats-order__table' columns={columns} data={orders} />
+                    <Table className='stats-order__table' columns={columns} data={data} />
                     <Pagination className='stats-order__pagination' max={2} />
                 </div>
             </div>

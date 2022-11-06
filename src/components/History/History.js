@@ -50,9 +50,119 @@ const orders = [
     ],
 ]
 
+
+
+const dataCustom =
+[
+    {
+        id: 0,
+        entries: [
+            {
+                value: '25.08.2022',
+                code: 'date',
+                rowId: 0
+            },
+            {
+                value: '1575',
+                code: 'price',
+                rowId: 0,
+            },
+            {
+                value: 'Зачисление',
+                code: 'type',
+                rowId: 0,
+                filter: ''
+            },
+            {
+                value: 'В работе',
+                code: 'description',
+                rowId: 0,
+            },
+        ]
+    },
+    {
+        id: 1,
+        entries: [
+            {
+                value: '25.08.2022',
+                code: 'date',
+                rowId: 1
+            },
+            {
+                value: '1575',
+                code: 'price',
+                rowId: 1,
+            },
+            {
+                value: 'Зачисление',
+                code: 'type',
+                rowId: 1,
+                filter: ''
+            },
+            {
+                value: 'В работе',
+                code: 'description',
+                rowId: 1,
+            },
+        ]
+    },
+    {
+        id: 2,
+        entries: [
+            {
+                value: '25.08.2022',
+                code: 'date',
+                rowId: 2
+            },
+            {
+                value: '1575',
+                code: 'price',
+                rowId: 2,
+            },
+            {
+                value: 'Зачисление',
+                code: 'type',
+                rowId: 2,
+                filter: ''
+            },
+            {
+                value: 'В работе',
+                code: 'description',
+                rowId: 2,
+            },
+        ]
+    },
+    {
+        id: 3,
+        entries: [
+            {
+                value: '25.08.2022',
+                code: 'date',
+                rowId: 3
+            },
+            {
+                value: '1575',
+                code: 'price',
+                rowId: 3,
+            },
+            {
+                value: 'Зачисление',
+                code: 'type',
+                rowId: 3,
+                filter: ''
+            },
+            {
+                value: 'В работе',
+                code: 'description',
+                rowId: 3,
+            },
+        ]
+    },
+]
+
 // params 
 
-console.log(JSON.stringify(orders))
+// console.log(JSON.stringify(dataCustom))
 
 const History = () => {
     const { data, loading, error } = useFetchApi(api.links.history.link)
@@ -126,10 +236,10 @@ const History = () => {
     ]
 
     const columns = useMemo(() => [
-        { content: { title: 'Дата' }, align: 'left' },
-        { content: { title: 'Сумма' }, align: 'left', },
-        { content: { title: 'Тип', options: typeTooltip }, align: 'left' },
-        { content: { title: 'Описание' }, align: 'left' }
+        { content: { title: 'Дата' }, align: 'сenter' },
+        { content: { title: 'Сумма' }, align: 'сenter', },
+        { content: { title: 'Тип', options: typeTooltip }, align: 'сenter' },
+        { content: { title: 'Описание' }, align: 'сenter' }
     ], [])
 
     const head = (

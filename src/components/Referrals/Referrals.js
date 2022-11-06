@@ -7,9 +7,18 @@ import ReferralsTable from './ReferralsTable'
 import { api } from '../../shared/api'
 import levels from '../../static/levels'
 import useFetchApi from '../../hooks/useFetchApi'
+import Table from '../Ui/Table'
+import { useMemo } from 'react'
 
 const Referrals = () => {
     const { data: refs, loading, error } = useFetchApi(api.links.refs.link)
+
+    const columns = useMemo(() => [
+        { content: { title: 'Регистрация' }, align: 'center' },
+        { content: { title: 'Имя' }, align: 'center' },
+        { content: { title: 'Ваш доход' }, align: 'center' },
+        { content: { title: 'Оборот реферала'}, align: 'center' },
+    ], [])
 
     return (
         <section className="referrals">
@@ -43,7 +52,7 @@ const Referrals = () => {
 
                         <div className="referrals__section referrals__section_large section">
                             <h2 className="referrals__title title">Список рефералов</h2>
-                            <ReferralsTable className='referals__table' refs={!!refs && refs} />
+                            <Table className='referals__table' data={!!refs && refs} columns={columns} />
                         </div>
 
                     </div>

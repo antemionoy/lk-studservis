@@ -22,15 +22,23 @@ const SignUp = () => {
         },
         {
             name: 'Контекстная реклама',
-            value: 'Контекстная реклама'
+            value: 'contextual-advertising'
         },
         {
-            name: 'Контекстная реклама',
-            value: 'Контекстная реклама'
+            name: 'Таргетинговая реклама',
+            value: 'targeted_advertising'
         },
         {
-            name: 'Контекстная реклама',
-            value: 'Контекстная реклама'
+            name: 'Тизерные/баннерные сети',
+            value: 'Teaser/banner_networks'
+        },
+        {
+            name: 'Тизерные/баннерные сети',
+            value: 'Teaser/banner_networks'
+        },
+        {
+            name: 'Email рассылки',
+            value: 'Email_newsletters'
         },
     ]
 
