@@ -1,0 +1,17 @@
+.popup-feedback{
+    font-size: 16px;
+    line-height: normal;
+   
+    &__inner{
+        padding: 16px 17px 28px;
+    }
+
+    &__field{
+        margin: 20px 0px 20px;
+    }
+
+    &__bottom{
+        border-top: 1px solid #eee;
+        padding: 12px 17px 12px;
+    }
+}

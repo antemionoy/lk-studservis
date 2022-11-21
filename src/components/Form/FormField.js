@@ -2,11 +2,14 @@ import './FormField.scss'
 import cn from "classnames"
 import FormSelect from './FormSelect'
 import usePhoneMask from '../../hooks/usePhoneMask'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const FormField = ({ type, name, placeholder, className, label, error, options, currentSelect, description, value, handler }) => {
-    const [phone, setPhone] = useState(null)
-    const phoneMask = usePhoneMask(phone)
+    const phoneRef = useRef(null)
+
+    useEffect(() => {
+        usePhoneMask(phoneRef?.current)
+    }, [])
 
     const formFieldClass = cn(
         className,
@@ -32,25 +35,23 @@ const FormField = ({ type, name, placeholder, className, label, error, options, 
                 </p>
             }
             {
-                type != 'select' ?
-                    <input
-                        className='form-field__element'
-                        type={type}
-                        name={name}
-                        placeholder={placeholder}
-                        onChange={handler}
-                        // onChange={(e) => setPhone(e.target.value)}
-                        // value={phoneMask}
-                    />
-                    :
+                type === 'select' ?
                     <FormSelect
                         className='form-field__element'
                         options={options}
                         currentSelect={currentSelect}
                         description={description}
                     />
+                    :
+                    <input
+                        className='form-field__element'
+                        ref={type === 'tel' ? phoneRef : null}
+                        type={type}
+                        name={name}
+                        onChange={handler}
+                        placeholder={placeholder}
+                    />
             }
-
         </div>
     )
 }

@@ -4,4 +4,9 @@
   font-size: 12px;
   line-height: 15px;
   color: #303c54;
+
+  &__inner{
+    align-items: center;
+    justify-content: space-between;
+  }
 }

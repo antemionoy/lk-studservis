@@ -1,4 +1,6 @@
 .popup {
+    $parent: &;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -8,6 +10,14 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+
+    &_small{
+        #{$parent}{
+            &__content{
+                width: 500px;
+            }
+        }
+    }
 
     &_show {
         opacity: 1;

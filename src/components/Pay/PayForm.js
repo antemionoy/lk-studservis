@@ -17,6 +17,7 @@ const PayForm = ({ method, payMethods, fields, error }) => {
                 <FormField
                     className='pay-form__field'
                     label={el.label}
+                    placeholder={el.placeholder}
                     key={i}
                     type={el.type}
                 />

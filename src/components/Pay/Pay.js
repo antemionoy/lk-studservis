@@ -14,6 +14,7 @@ const payMethods = [
             {
                 label: 'Номер телефона',
                 type: 'tel',
+                placeholder: '8(999)999-99-99',
                 name: 'pay-phone',
                 error: false
             }

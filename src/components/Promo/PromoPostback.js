@@ -105,7 +105,7 @@ const PromoPostback = () => {
                     <p className="postback__text">
                         В момент перехода переменные будут заменены на значения автоматически.
                     </p>
-                    <Table className='postback__table' columns={columns} data={data} />
+                    {/* <Table className='postback__table' columns={columns} data={data} /> */}
                 </div>
             </div>
         </div>
