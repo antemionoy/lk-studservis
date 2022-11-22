@@ -95,7 +95,7 @@ const Pay = () => {
     let [currentMethod, setCurrenMethod] = useState('phone')
     let [minAmount, setMinAmount] = useState(100)
     let [isError, setIsError] = useState({
-        status: false,
+        status: true,
         value: 0
     })
     const [activeFields, setActiveFields] = useState(getFields(currentMethod))

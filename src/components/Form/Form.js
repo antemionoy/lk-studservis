@@ -4,7 +4,7 @@ import Button from '../Ui/Button'
 import './Form.scss'
 import FormError from './FormError'
 
-const Form = ({ children, className, name, buttonText, method, description }) => {
+const Form = ({ children, className, name, method }) => {
     const [submit, setSubmit] = useState(false)
 
     const formClass = cn(

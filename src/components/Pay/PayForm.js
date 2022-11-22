@@ -1,18 +1,13 @@
 import React from 'react'
+import Form from '../Form/Form'
 import FormField from '../Form/FormField'
 import Button from '../Ui/Button'
 import Switch from '../Ui/Switch'
 import './PayForm.scss'
 
 const PayForm = ({ method, payMethods, fields, error }) => {
-    // let fields = []
-    // payMethods.forEach((el, i) => {
-    //     if(method == el.name){
-    //         el.fields && fields.push(...el.fields)
-    //     }
-    // })
     return (
-        <form className="pay-form">
+        <Form className='pay-form' name='pay'>
             {fields.length > 0 && fields.map((el, i) => (
                 <FormField
                     className='pay-form__field'
@@ -22,16 +17,18 @@ const PayForm = ({ method, payMethods, fields, error }) => {
                     type={el.type}
                 />
             ))}
-            <Switch className='pay-form__switch' policy />
+            <Switch
+                className='pay-form__switch'
+                policy
+            />
             <Button
                 className='pay-form__button'
                 bgcolor='blue'
                 size='large'
-                isDisabled={error.status}
-            >
+                isDisabled={error.status}>
                 Вывести
             </Button>
-        </form>
+        </Form>
     )
 }
 

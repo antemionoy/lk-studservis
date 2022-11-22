@@ -1,7 +1,6 @@
 import cn from "classnames"
 
 const Button = ({ bgcolor, bordered, size, type, className, children, isDisabled, handler }) => {
-
     const buttonClass = cn(
         className,
         'button',
