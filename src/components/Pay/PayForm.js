@@ -25,7 +25,8 @@ const PayForm = ({ method, payMethods, fields, error }) => {
                 className='pay-form__button'
                 bgcolor='blue'
                 size='large'
-                isDisabled={error.status}>
+                isDisabled={error.status}
+            >
                 Вывести
             </Button>
         </Form>
