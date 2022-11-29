@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import popupReducer from './popupSlice'
+import userReduscer from './userSlice'
 
-
-export default configureStore({
+export const store =  configureStore({
     reducer: {
-        user: null,
+        user: userReduscer,
         popup: popupReducer
     }
 })

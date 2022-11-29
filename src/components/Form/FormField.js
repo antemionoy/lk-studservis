@@ -2,10 +2,14 @@ import './FormField.scss'
 import cn from "classnames"
 import FormSelect from './FormSelect'
 import usePhoneMask from '../../hooks/usePhoneMask'
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
+import FormContext from '../../contexts/FormContext'
 
 const FormField = ({ type, name, placeholder, className, label, error, options, currentSelect, description, value, handler }) => {
     const phoneRef = useRef(null)
+    const formContext = useContext(FormContext);
+    
+    const { form, handleFormChange } = formContext;
 
     useEffect(() => {
         usePhoneMask(phoneRef?.current)

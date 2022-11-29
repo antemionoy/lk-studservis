@@ -1,25 +1,13 @@
 import cn from 'classnames'
 import React, { useState } from 'react'
-import Button from '../Ui/Button'
+import FormProvider from '../../contexts/FormProvider'
 import './Form.scss'
-import FormError from './FormError'
-import FormContext from '../../contexts/FormContext'
 
 const Form = ({ children, className, name, method }) => {
-    const [submit, setSubmit] = useState(false)
-
     const formClass = cn(
         'form',
         className
     )
-
-    const sendForm = () => {
-
-    }
-
-    const FormProvider = ({ children }) => {
-        { children }
-    };
 
     return (
         <FormProvider>
