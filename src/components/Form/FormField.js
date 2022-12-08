@@ -5,11 +5,8 @@ import usePhoneMask from '../../hooks/usePhoneMask'
 import { useContext, useEffect, useRef, useState } from 'react'
 import FormContext from '../../contexts/FormContext'
 
-const FormField = ({ type, name, placeholder, className, label, error, options, currentSelect, description, value, handler }) => {
+const FormField = ({ type, name, placeholder, className, label, error, options, currentSelect, description, value, onChange }) => {
     const phoneRef = useRef(null)
-    const formContext = useContext(FormContext);
-    
-    const { form, handleFormChange } = formContext;
 
     useEffect(() => {
         usePhoneMask(phoneRef?.current)
@@ -19,6 +16,9 @@ const FormField = ({ type, name, placeholder, className, label, error, options, 
         className,
         'form-field'
     )
+
+    const formContext = useContext(FormContext);
+    const { form, handleFormChange } = formContext;
 
     return (
         <div className={formFieldClass}>
@@ -52,8 +52,9 @@ const FormField = ({ type, name, placeholder, className, label, error, options, 
                         ref={type === 'tel' ? phoneRef : null}
                         type={type}
                         name={name}
-                        onChange={handler}
                         placeholder={placeholder}
+                        value={form[name]}
+                        onChange={handleFormChange}
                     />
             }
         </div>
