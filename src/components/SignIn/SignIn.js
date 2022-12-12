@@ -27,7 +27,7 @@ const SignIn = () => {
                     placeholder='Введите пароль'
                     error='Неверный пароль'
                 />
-                <Button bgcolor='blue' size='large' className='sign-in__button'>
+                <Button type='submit' bgcolor='blue' size='large' className='sign-in__button'>
                     Войти
                 </Button>
             </Form>

@@ -1,12 +1,14 @@
+import './Form.scss'
 import cn from 'classnames'
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import FormContext from '../../contexts/FormContext'
-import FormProvider from '../../contexts/FormProvider'
-import './Form.scss'
+import { setUser } from '../../slices/userSlice'
 
-const Form = ({ children, className, name, method, initialValues }) => {
+const Form = ({ children, className, initialValues }) => {
     const [form, setForm] = useState(initialValues);
     const [data, setData] = useState()
+    const dispatch = useDispatch()
 
     const handleFormChange = (event) => {
         const { name, value } = event.target;
@@ -20,8 +22,27 @@ const Form = ({ children, className, name, method, initialValues }) => {
         setForm(updatedForm);
     }
 
-    const handleSumbit = (event) =>{
+    const handleSumbit = (event) => {
         event.preventDefault()
+
+        const responce = fetch(
+            'https://back.studuniverse.ru/sanctum/', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Referer': 'back.studuniverse.ru',
+
+            },
+            body: JSON.stringify({
+                email: 'tester123@yandex.ru',
+                password: 'ZCSIqWCQ'
+            })
+        }
+        );
+
+        responce.then((data) => {
+            console.log(data)
+        })
 
     }
 
@@ -35,7 +56,7 @@ const Form = ({ children, className, name, method, initialValues }) => {
             form,
             handleFormChange
         }}>
-            <form action="#" className={formClass} name={name} method={method ?? 'post'} onSubmit={handleSumbit}>
+            <form className={formClass} name={initialValues?.name} method={initialValues?.method ?? 'post'} onSubmit={handleSumbit}>
                 {children}
             </form>
         </FormContext.Provider>
